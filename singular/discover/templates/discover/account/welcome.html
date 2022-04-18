@@ -1,0 +1,19 @@
+{% extends "discover/index.html" %}
+{% load static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="containerInfo">
+    {% if user.avatar_user %}
+        <img src="{{ user.avatar_user.url }}">
+    {% endif %} 
+    <h1 class="title4">Bienvenue {{last_name}} {{first_name}}!</h1>
+    <p class="p_detail">Connexion réussi !</p>
+    <a class="fancy-btn" href="{% url 'discover:index' %}">Page d'accueil</a>
+</div>
+
+{% endblock %}

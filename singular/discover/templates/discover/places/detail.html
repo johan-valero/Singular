@@ -1,0 +1,33 @@
+{% extends 'discover/index.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+        <div>
+            <h1>{{ detail.name_publication }}</h1>
+            {% for category in detail.subcategory.all %}
+                {% for categ in category.category.all %}
+                    <p><strong>{{ categ.name_category }}</strong> {{ category.name_subCategory }}</p>
+                {% endfor%}
+            {% endfor %}
+            {% language 'fr' %}
+            <p> {{ detail.date_publication|date:'d F Y' }}</p>
+            {% endlanguage %}
+            {% if detail.pictures_publication %}
+                <img src="{{ detail.pictures_publication.url }}">
+            {% endif %} 
+            {{ detail.adress }}
+            <p> Description :<br> {{ detail.description_publication }}</p>
+            {{ detail.creator }}
+            {% for create in detail.creator.all %}
+                <p>{{ create.name_creator }}</p>
+                <p>{{ create.firstname_creator }}</p>
+                <p>{{ create.birthdate_creator }}</p>
+                <p>{{ create.statut }}</p>
+            {% endfor %}
+        </div>
+{% endblock %}

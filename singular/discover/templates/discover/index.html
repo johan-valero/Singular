@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'discover/CSS/style.css' %}"> <!--CSS-->
+    <script src="https://kit.fontawesome.com/8e8d5e63b3.js"></script><!--Icone -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS Librairy-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" /><!--Wrapper -->
+    <title>Singular &mdash; Accueil</title>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#">Informations</a></li>
+                <li><a href="{% url 'discover:category' %}">Catégories</a></li>
+                <a class="logo_title" href="{% url 'discover:index' %}">Singular</a>
+                <li><a href="#">Carte</a></li>
+                <li><a href="{% url 'discover:search' %}">Recherche</a></li>
+            </ul>
+        </nav>
+        <div class="user_navbar">
+            <ul>    
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'discover:login' %}">Connexion</a></li>
+                    <li><a href="{% url 'discover:register' %}">Inscription</a></li>
+                {% else %}
+                    <li><a href="#">Publier</a></li>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="{% url 'discover:logout' %}">Déconnexion</a></li>
+                {% endif %}  
+            </ul>
+        </div>
+    </div>
+
+    {% block title %}
+    <div class="swiper" data-aos="fade">
+        <div class="swiper-wrapper">
+            {% for publication in publish_list %}
+                <div class="swiper-slide">
+                    <div class="slider-box">
+                        {% if publication.pictures_publication %}
+                            <img class="img_slider" src="{{ publication.pictures_publication.url }}">
+                        {% endif %}
+                    </div>
+                    <div class="text_slider">
+                        <p class="adress_title" data-aos="fade-right">à explorer </p>                            
+                        <h2 class="title_swaper" data-aos="fade-left">{{ publication.name_publication }}</h2>
+                        <h3 class="adress_title" data-aos="fade-right">{{ publication.adress}}</h3>
+                        <a class="button_template" href="{% url 'discover:detail' publication.id %}">Découvrir </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div><!--fin du swiper wrapper -->   
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+    </div><!--fin du swiper contenaire -->
+    {% endblock %}
+
+    <!-- -------------------- CATEGORY --------------------------->
+    
+    {% block content %}
+        <section class="category_section">
+            <div class="head_category">
+                <p class="top_title" data-aos="fade-left" >Notre</p>
+                <h2 data-aos="fade-right">Sélection</h2>
+                <p class="top_title" data-aos="fade-left">Découvrez nos catégories disponibles</p>
+            </div>
+            
+            <div data-aos="fade" class="container_category" >
+                {% for categ in category %}
+                <div class="container_overlay" style="background-image:url({{ categ.avatar_category.url }})">
+                    <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                            <p>{{ categ.name_category }}</p>
+                        </div>
+                        <div class = "items price">
+                            <hr>
+                            {% for subcateg in categ.subcategory.all %}
+                                <p class="top_title">{{ subcateg.name_subCategory }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="items cart">
+                            <span>Explorer</span>
+                        </div>
+                    
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <center>
+                <a class="button_template" href="#">Découvrir plus </a>
+            </center>
+        </section>
+    
+        <!-- --------------------DISCOVER --------------------------->
+
+        <section>
+            {% if publish_list %}
+            <div class="container_box">
+                <div class="head_category">
+                    <p data-aos= "fade-left" class="top_title">Pour vous</p>
+                    <h2 data-aos= "fade-right">Nos découvertes</h2>
+                    <p  data-aos= "fade-left" class="top_title">Les dernières publications du jour</p>
+                </div>
+                
+                {% for publication in publish_list %}    
+                    <div data-aos="fade-top" class="card">
+                        <div>
+                            <h1>{{ publication.name_publication }}</h1>
+                            <div><img src="{{ publication.pictures_publication.url }}"/>
+                                <h2>{{ publication.creator }}</h2>
+                            </div>
+                            <div class="separator"></div>
+                            <p>{{ publication.description_publication }}</p>
+                        </div>
+                        <div>
+                            {% language 'fr' %}
+                            <h5>{{ publication.date_publication|date:'d' }}</h5>
+                            <h6>{{ publication.date_publication|date:'F' }}</h6>
+                            {% endlanguage %}
+                        </div>
+                    </div>
+            {% endfor %}
+        {% else %}
+            <p>Pas de publications récentes disponibles</p>
+        </div>
+        {% endif %}
+        </section>
+
+        <!-- --------------------NEWSLETTER --------------------------->
+        <section>
+            <div>
+                <h2 >Le meilleur de Singular dans votre boite email</h2>
+                <p>
+                    Découvrez les dernières nouveautés, les offres exclusives spécialement négociées pour vous et soyez parmi les premiers au courant.
+                </p>
+                <input type="text" value="Votre adresse mail">
+                <input type="submit">
+            </div>
+        </section>
+        {% endblock %}
+
+    <!-- SCRIPT -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'discover/JS/script.js' %}"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- END SCRIPT -->
+</body>
+</html>

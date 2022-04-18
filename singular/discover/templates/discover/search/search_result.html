@@ -1,0 +1,79 @@
+{% extends 'discover/index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<h1>Resultat des recherches</h1>
+
+{% if category %}
+    <h3> Catégories</h3>
+    {% for categ in category %}
+        {{ categ.name_category }}
+    {% endfor %}
+
+    {% for pub in subcategory.publication_set.all %}
+        {{ pub.name_publication }}
+    {% endfor %}
+{% endif %}<br>
+
+{% if creator %}
+    <h3> Créateur </h3>
+    {% for crea in creator %}
+        {{ crea.name_creator }} {{ crea.firstname_creator }}
+    {% endfor %}
+{% endif %}<br>
+
+{% if subcategory %}
+    <h3> Sous catégorie</h3>
+    {% for sub in subcategory %}
+        {{ sub.name_subCategory }}
+    {% endfor %}
+
+{% endif %}<br>
+
+{% if publication %}
+    <h3> Publication </h3>
+    {% for pub in publication %}
+        {{ pub.name_publication }}<br>
+        {% language 'fr' %}
+            {{ pub.date_publication|date:'d F Y' }}<br>
+        {% endlanguage %}
+        {% if pub.pictures_publication %}
+            <img src="{{ pub.pictures_publication.url }}">
+        {% endif %} 
+        <a href="{% url 'discover:detail' pub.id %}">{{ pub.name_publication }}</a>
+    {% endfor %}
+{% endif %}<br>
+
+{% if layout %}
+    <h3> Aménagement</h3>
+    {% for lay in layout %}
+        {{ lay.name_layout }}
+    {%endfor%}
+{% endif %}<br>
+
+{% if typelayout %}
+    <h3> Type d'aménagement</h3>
+    {% for typelay in typelayout %}
+        {{ typelay.name_typeLayout }}
+    {% endfor %}
+{% endif %}<br>
+
+{% if adress %}
+    <h3> Adresse</h3>
+    {% for ad in adress %}
+        {{ ad.street_adress }} {{ ad.city_adress }} {{ ad.cp_adress }}
+    {% endfor %}
+{% endif %}<br>
+
+{% if statut %}
+    <h3> Statut de créateur</h3>
+    {% for stat in statut %}
+        {{ stat.name_statut }}
+    {% endfor %}
+{% endif %}<br>
+
+{% endblock %}

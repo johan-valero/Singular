@@ -1,0 +1,356 @@
+/* ---- Font Playfair Display ---- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  */
+/* font-family: 'Playfair Display', serif; */
+
+
+/* ---- Font Nighttree ---- */
+@import url('http://fonts.cdnfonts.com/css/nighttree?styles=115778');
+/* <link href="http://fonts.cdnfonts.com/css/nighttree?styles=115778" rel="stylesheet"> */
+/* font-family: 'Nighttree', sans-serif; */                                            
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    background-color: #1d2f25;
+    overflow-x: hidden;
+}
+
+/* ######################################### */
+/* ################ NAVBAR ################# */
+/* ######################################### */
+
+.logo_title{
+    font-family: 'Nighttree', sans-serif;
+    font-size: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fff;
+    background-image: url('../images/logo/Logo_orange.png');
+    background-position: right;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 2px 3px 5px #00000080;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+.navbar nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+nav li{
+    padding: 15px;
+}
+
+nav li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 2px 3px 5px #00000080;
+    font-size: 15px;
+}
+
+.user_navbar{
+    display: flex;
+    justify-content: end;
+}
+
+.user_navbar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+.user_navbar li{
+    padding: 15px;
+}
+
+.user_navbar li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 2px 3px 5px #00000080;
+    font-size: 15px;
+}
+
+/* ######################################### */
+/* ############ CAROUSEL HEADER ############ */
+/* ######################################### */
+
+.swiper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.img_slider{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(45%);
+}
+
+.text_slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -20%;
+    z-index: 9999;
+}
+
+.title_swaper{
+    color: #fff;
+    font-size: clamp(40px,9vw , 70px);
+    text-shadow: 2px 3px 5px #00000080;
+    font-weight: 800;
+}
+
+.title_swaper1{
+    color: #fff;
+    font-size: clamp(50px, 9vw, 100px);
+    font-weight: 400;
+    text-shadow: 2px 3px 5px #00000080;
+    font-family: 'Nighttree', sans-serif;
+    background-image: url(../images/logo/Logo_orange.png);
+    background-position: center;
+    background-size: 155px;
+    background-repeat: no-repeat;
+    letter-spacing: 6px;
+}
+
+.adress_title{
+    font-size: clamp(10px, 4vw, 15px);
+    text-shadow: 2px 3px 5px #00000080;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #cd701c;
+    font-weight: 400;
+}
+
+.adress_title1{
+    color: #fff;
+    text-shadow: 2px 3px 5px #00000080;
+    font-size: clamp(15px, 4vw, 25px);
+}   
+
+.button_template{
+    border: 1px solid #fff;
+    padding: 15px;
+    color: #fff;
+    background-color: transparent;
+    margin: 30px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+    text-shadow: 2px 3px 5px #00000080;
+    text-decoration: none;
+}
+
+.swiper-button-prev {
+    background-image: url(../images/logo/icons8-gauche-100.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    background-position: center;
+    margin: 20px;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-prev:hover{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+}
+
+.swiper-button-next {
+    background-image: url(../images/logo/icons8-droite-100.png);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    background-position: center;
+    margin: 20px;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-next:hover{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+}
+
+/* ######################################### */
+/* ############# CATEGORY SECTION ########## */
+/* ######################################### */
+
+section{
+    width: 100vw;
+}
+
+.head_category{
+    padding: 50px;
+    text-align: center;
+}
+
+.top_title{
+    letter-spacing: 8px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #cd701c;
+    text-shadow: 2px 3px 5px #00000080;
+}
+
+.head_category h2{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 2px 3px 5px #00000080;
+    padding: 10px;
+}
+
+.container_category {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.container_overlay {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #000;
+    background-color: #000;
+    background-size: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FEF5DF;
+    opacity: 0;
+    transition: all 0.5s;
+    font-family: "Playfair Display", serif;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    letter-spacing: 3px;
+    flex-direction: column;
+}
+
+.head {
+    font-size: 30px;
+    line-height: 40px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.head p{
+    font-weight: 600;
+}
+
+hr {
+    display: block;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px #FEF5DF;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    transition: all 0.5s;
+}
+
+.price {
+    font-size: 22px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.cart {
+    font-size: 12px;
+    opacity: 0;
+    letter-spacing: 1px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+
+.cart span {
+margin-left: 10px;
+}
+
+.container_overlay:hover .overlay {
+    opacity: 1;
+}
+
+.container_overlay:hover .overlay .head {
+    transform: translateY(0px);
+}
+
+.container_overlay:hover .overlay hr {
+    width: 200px;
+    transition-delay: 0.4s;
+}
+
+.container_overlay:hover .overlay .price {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+.container_overlay:hover .overlay .cart {
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+    opacity: 1;
+}
+
+/* ######################################### */
+/* ############### DISCOVER SECTION ######## */
+/* ######################################### */
+
+.img_discover{
+    width: 500px;
+    height: 500px;
+}
+
+/* ######################################### */
+/* ######### Newsletter SECTION ############ */
+/* ######################################### */

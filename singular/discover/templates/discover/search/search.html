@@ -1,0 +1,16 @@
+{% extends 'discover/index.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock%}
+
+{% block content%}
+<div>
+    <form method="post" action="{% url 'discover:search' %}">
+        {% csrf_token %}
+        <input type="text" id="searchInput" name="searchInput"/>
+        <input type="submit" value="Rechercher">
+    </form>
+</div>
+
+{% endblock %}

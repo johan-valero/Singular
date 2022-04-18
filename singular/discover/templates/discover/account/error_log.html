@@ -1,0 +1,12 @@
+{% extends 'discover/index.html' %}
+{% load static %}
+
+{% block title%}
+{% endblock %}
+{% block content%}
+<div class="containerInfo">
+    <h1 class="p_detail">Nom d'utilisateur ou mot de passe incorrect </h1>
+    <a class="fancy-btn" href="{% url 'discover:login' %}">Connexion</a>
+    <a class="fancy-btn" href="{% url 'discover:index' %}">Revenir sur l'accueil</a>
+</div>
+{% endblock %}

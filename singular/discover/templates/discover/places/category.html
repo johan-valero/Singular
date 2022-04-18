@@ -1,0 +1,27 @@
+{% extends 'discover/index.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock%}
+
+{% block content%}
+<section class="category_section" data-aos="fade-left">
+    <div class="head_category">
+        <h2>Nos catégories</h2>
+    </div>
+    <div class="container_category" >
+        {% for categ in category %}    
+        <div class="box" data-aos="fade-left">
+                {% if categ.avatar_category %}
+                    <img data-aos= "fade-right" src="{{ categ.avatar_category.url }}">
+                {% endif %}
+                <span>{{ categ.name_category }}</span>
+                {% for subcateg in categ.subcategory.all %}
+                    <span>{{ subcateg.name_subCategory }}</span>
+                {% endfor %}
+                <button href="#">Découvrir </button>        
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
