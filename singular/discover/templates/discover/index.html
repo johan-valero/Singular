@@ -71,32 +71,26 @@
                 <h2 data-aos="fade-right">Sélection</h2>
                 <p class="top_title" data-aos="fade-left">Découvrez nos catégories disponibles</p>
             </div>
-            
-            <div data-aos="fade" class="container_category" >
+
+            <ul class="cards" data-aos="fade">
                 {% for categ in category %}
-                <div class="container_overlay" style="background-image:url({{ categ.avatar_category.url }})">
-                    <div class="overlay">
-                        <div class = "items"></div>
-                        <div class = "items head">
-                            <p>{{ categ.name_category }}</p>
-                        </div>
-                        <div class = "items price">
-                            <hr>
-                            {% for subcateg in categ.subcategory.all %}
-                                <p class="top_title">{{ subcateg.name_subCategory }}</p>
-                            {% endfor %}
-                        </div>
-                        <div class="items cart">
-                            <span>Explorer</span>
-                        </div>
-                    
-                    </div>
-                </div>
+                    <li>
+                        <a href="" class="card">
+                            <img src={{ categ.avatar_category.url }} class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">{{ categ.name_category }}</h3>            
+                                    </div>
+                                </div>
+                                {% for subcateg in categ.subcategory.all %}
+                                    <p class="card__description">{{ subcateg.name_subCategory }}</p>
+                                {% endfor %}
+                            </div>
+                        </a>      
+                    </li>
                 {% endfor %}
-            </div>
-            <center>
-                <a class="button_template" href="#">Découvrir plus </a>
-            </center>
+            </ul>
         </section>
     
         <!-- --------------------DISCOVER --------------------------->
