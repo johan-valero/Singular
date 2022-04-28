@@ -272,7 +272,7 @@ section{
 .card__title{
     color: #fff;
     font-size: 30px;
-    /* text-align: center; */
+    text-align: center;
     letter-spacing: 2px;
     font-weight: 800;
     text-shadow: 2px 3px 5px #00000080;
