@@ -53,7 +53,7 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Accueil</a></li>
+                <li class="active"><a href="<?=ROOT?>home">Accueil</a></li>
                 <li><a href="./rooms.html">Logements</a></li>
                 <li><a href="./about-us.html">A propos</a></li>
                 <li><a href="./pages.html">Pages</a>
