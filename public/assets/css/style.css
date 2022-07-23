@@ -1,16 +1,7 @@
-/******************************************************************
-  Template Name: Sona
-  Description: Sona Hotel Html Template
-  Author: Colorlib
-  Author URI: https://colorlib.com
-  Version: 1.0
-  Created: Colorlib
-******************************************************************/
-
 /*------------------------------------------------------------------
 [Table of contents]
 
-1.  Template default CSS
+1.  Default CSS
 	1.1	Variables
 	1.2	Mixins
 	1.3	Flexbox
@@ -29,7 +20,7 @@
 
 /*----------------------------------------*/
 
-/* Template default CSS
+/* Default CSS
 /*----------------------------------------*/
 
 html, body {
@@ -95,7 +86,7 @@ ul, ol {
 }
 .section-title span {
 	font-size: 14px;
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -139,7 +130,7 @@ ul, ol {
 	bottom: -5px;
 	width: 100%;
 	height: 2px;
-	background: #dfa974;
+	background: #CD701C;
 	content: "";
 }
 /* Preloder */
@@ -298,7 +289,7 @@ ul, ol {
 	display: none;
 }
 .top-nav .tn-left li i {
-	color: #dfa974;
+	color: #CD701C;
 	margin-right: 4px;
 }
 .top-nav .tn-right {
@@ -320,7 +311,7 @@ ul, ol {
 	font-size: 13px;
 	font-weight: 700;
 	padding: 16px 28px 15px;
-	background: #dfa974;
+	background: #CD701C;
 	color: #ffffff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -380,7 +371,7 @@ ul, ol {
 	transition: all 0.3s;
 }
 .top-nav .tn-right .language-option .flag-dropdown ul li a:hover {
-	color: #dfa974;
+	color: #CD701C;
 }
 .menu-item {
 	position: relative;
@@ -433,7 +424,7 @@ ul, ol {
 	top: 52px;
 	width: 100%;
 	height: 2px;
-	background: #dfa974;
+	background: #CD701C;
 	content: "";
 	opacity: 0;
 	-webkit-transition: all 0.3s;
@@ -470,7 +461,7 @@ ul, ol {
 	transition: all 0.3s;
 }
 .menu-item .nav-menu .mainmenu li .dropdown li a:hover {
-	color: #dfa974;
+	color: #CD701C;
 }
 .menu-item .nav-menu .mainmenu li .dropdown li a:after {
 	display: none;
@@ -550,7 +541,7 @@ ul, ol {
 	padding-left: 20px;
 }
 .booking-form form .check-date i {
-	color: #dfa974;
+	color: #CD701C;
 	position: absolute;
 	right: 18px;
 	bottom: 17px;
@@ -575,8 +566,8 @@ ul, ol {
 	float: none;
 }
 .booking-form form .select-option .nice-select:after {
-	border-bottom: 2px solid #dfa974;
-	border-right: 2px solid #dfa974;
+	border-bottom: 2px solid #CD701C;
+	border-right: 2px solid #CD701C;
 	height: 10px;
 	margin-top: 0;
 	right: 20px;
@@ -597,9 +588,9 @@ ul, ol {
 	display: block;
 	font-size: 14px;
 	text-transform: uppercase;
-	border: 1px solid #dfa974;
+	border: 1px solid #CD701C;
 	border-radius: 2px;
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 500;
 	background: transparent;
 	width: 100%;
@@ -685,7 +676,7 @@ ul, ol {
 	transition: all 0.3s;
 }
 .service-item:hover {
-	background: #dfa974;
+	background: #CD701C;
 }
 .service-item:hover i {
 	color: #ffffff;
@@ -698,7 +689,7 @@ ul, ol {
 }
 .service-item i {
 	display: inline-block;
-	color: #dfa974;
+	color: #CD701C;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
@@ -753,7 +744,7 @@ ul, ol {
 	margin-bottom: 15px;
 }
 .hp-room-items .hp-room-item .hr-text h2 {
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 700;
 	margin-bottom: 50px;
 	-webkit-transition: all 0.2s;
@@ -895,15 +886,15 @@ ul, ol {
 	margin-right: 7px;
 }
 .footer-section .footer-text .ft-about .fa-social a:hover {
-	background: #dfa974;
-	border-color: #dfa974;
+	background: #CD701C;
+	border-color: #CD701C;
 }
 .footer-section .footer-text .ft-contact {
 	margin-bottom: 30px;
 }
 .footer-section .footer-text .ft-contact h6 {
 	font-size: 14px;
-	color: #dfa974;
+	color: #CD701C;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 3px;
@@ -918,7 +909,7 @@ ul, ol {
 }
 .footer-section .footer-text .ft-newslatter h6 {
 	font-size: 14px;
-	color: #dfa974;
+	color: #CD701C;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 3px;
@@ -947,7 +938,7 @@ ul, ol {
 	right: 0;
 	top: 0;
 	font-size: 16px;
-	background: #dfa974;
+	background: #CD701C;
 	color: #ffffff;
 	padding: 0 16px;
 	height: 50px;
@@ -1046,7 +1037,7 @@ ul, ol {
 	line-height: 42px;
 }
 .about-page-text .ap-services li i {
-	color: #dfa974;
+	color: #CD701C;
 	margin-right: 5px;
 }
 .about-page-services .ap-service-item {
@@ -1175,7 +1166,7 @@ ul, ol {
 	margin-bottom: 17px;
 }
 .room-item .ri-text h3 {
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 700;
 	margin-bottom: 14px;
 }
@@ -1219,7 +1210,7 @@ ul, ol {
 	margin-right: 0;
 }
 .room-pagination a:hover {
-	background: #dfa974;
+	background: #CD701C;
 	color: #ffffff;
 }
 /*-----------------------
@@ -1262,11 +1253,11 @@ ul, ol {
 	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 700;
-	background: #dfa974;
+	background: #CD701C;
 	padding: 14px 28px 13px;
 }
 .room-details-item .rd-text h2 {
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 700;
 	margin-bottom: 25px;
 }
@@ -1332,7 +1323,7 @@ ul, ol {
 }
 .rd-reviews .review-item .ri-text span {
 	font-size: 12px;
-	color: #dfa974;
+	color: #CD701C;
 	text-transform: uppercase;
 	letter-spacing: 3px;
 }
@@ -1429,7 +1420,7 @@ ul, ol {
 	text-transform: uppercase;
 	color: #ffffff;
 	letter-spacing: 2px;
-	background: #dfa974;
+	background: #CD701C;
 	border: none;
 	padding: 14px 34px 13px;
 	display: inline-block;
@@ -1463,7 +1454,7 @@ ul, ol {
 	padding-left: 20px;
 }
 .room-booking form .check-date i {
-	color: #dfa974;
+	color: #CD701C;
 	position: absolute;
 	right: 18px;
 	bottom: 17px;
@@ -1488,8 +1479,8 @@ ul, ol {
 	float: none;
 }
 .room-booking form .select-option .nice-select:after {
-	border-bottom: 2px solid #dfa974;
-	border-right: 2px solid #dfa974;
+	border-bottom: 2px solid #CD701C;
+	border-right: 2px solid #CD701C;
 	height: 10px;
 	margin-top: 0;
 	right: 20px;
@@ -1510,9 +1501,9 @@ ul, ol {
 	display: block;
 	font-size: 14px;
 	text-transform: uppercase;
-	border: 1px solid #dfa974;
+	border: 1px solid #CD701C;
 	border-radius: 2px;
-	color: #dfa974;
+	color: #CD701C;
 	font-weight: 500;
 	background: transparent;
 	width: 100%;
@@ -1550,7 +1541,7 @@ ul, ol {
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	background: #dfa974;
+	background: #CD701C;
 	padding: 3px 10px;
 	border-radius: 2px;
 }
@@ -1588,7 +1579,7 @@ ul, ol {
 .bd-hero-text span {
 	font-size: 12px;
 	color: #ffffff;
-	background: #dfa974;
+	background: #CD701C;
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -1606,7 +1597,7 @@ ul, ol {
 .bd-hero-text ul li {
 	list-style: none;
 	font-size: 14px;
-	color: #dfa974;
+	color: #CD701C;
 	margin-right: 35px;
 	display: inline-block;
 }
@@ -1687,7 +1678,7 @@ ul, ol {
 }
 .blog-details-text .tag-share .tags a:hover {
 	color: #ffffff;
-	background: #dfa974;
+	background: #CD701C;
 }
 .blog-details-text .tag-share .social-share {
 	float: right;
@@ -1756,7 +1747,7 @@ ul, ol {
 }
 .blog-details-text .comment-option .single-comment-item .sc-text span {
 	font-size: 12px;
-	color: #dfa974;
+	color: #CD701C;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -1786,9 +1777,9 @@ ul, ol {
 	margin-right: 10px;
 }
 .blog-details-text .comment-option .single-comment-item .sc-text a:hover {
-	background: #dfa974;
+	background: #CD701C;
 	color: #ffffff;
-	border-color: #dfa974;
+	border-color: #CD701C;
 }
 .blog-details-text .leave-comment h4 {
 	color: #19191a;
@@ -1808,7 +1799,7 @@ ul, ol {
 	transition: all 0.3s;
 }
 .blog-details-text .leave-comment .comment-form input:focus {
-	border-color: #dfa974;
+	border-color: #CD701C;
 }
 .blog-details-text .leave-comment .comment-form textarea {
 	width: 100%;
@@ -1826,7 +1817,7 @@ ul, ol {
 	padding-top: 12px;
 }
 .blog-details-text .leave-comment .comment-form textarea:focus {
-	border-color: #dfa974;
+	border-color: #CD701C;
 }
 .blog-details-text .leave-comment .comment-form button {
 	font-size: 13px;
@@ -1834,7 +1825,7 @@ ul, ol {
 	text-transform: uppercase;
 	color: #ffffff;
 	letter-spacing: 2px;
-	background: #dfa974;
+	background: #CD701C;
 	border: none;
 	padding: 14px 42px 13px;
 	display: inline-block;
@@ -1936,7 +1927,7 @@ ul, ol {
 	text-transform: uppercase;
 	color: #ffffff;
 	letter-spacing: 2px;
-	background: #dfa974;
+	background: #CD701C;
 	border: none;
 	padding: 14px 34px 13px;
 	display: inline-block;
@@ -2117,14 +2108,14 @@ ul, ol {
 		transition: all 0.3s;
 	}
 	.offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a:hover {
-		color: #dfa974;
+		color: #CD701C;
 	}
 	.offcanvas-menu-wrapper .header-configure-area .bk-btn {
 		display: inline-block;
 		font-size: 13px;
 		font-weight: 700;
 		padding: 16px 28px 15px;
-		background: #dfa974;
+		background: #CD701C;
 		color: #ffffff;
 		text-transform: uppercase;
 		letter-spacing: 2px;
@@ -2165,7 +2156,7 @@ ul, ol {
 	.offcanvas-menu-wrapper .slicknav_menu .slicknav_nav ul li a:hover {
 		border-radius: 0;
 		background: transparent;
-		color: #dfa974;
+		color: #CD701C;
 	}
 	.offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row a {
 		border-bottom: 0;
@@ -2181,10 +2172,10 @@ ul, ol {
 		transition: all 0.3s;
 	}
 	.offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover a {
-		color: #dfa974;
+		color: #CD701C;
 	}
 	.offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover span {
-		color: #dfa974;
+		color: #CD701C;
 	}
 	.offcanvas-menu-wrapper .top-social {
 		display: inline-block;
@@ -2208,7 +2199,7 @@ ul, ol {
 		line-height: 28px;
 	}
 	.offcanvas-menu-wrapper .top-widget li i {
-		color: #dfa974;
+		color: #CD701C;
 		margin-right: 4px;
 	}
 	.offcanvas-menu-wrapper.show-offcanvas-menu-wrapper {
