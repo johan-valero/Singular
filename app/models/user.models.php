@@ -58,7 +58,6 @@ class User{
 
             /* Inserting the data into the database. */
             $query = "insert into users (url_address,name,firstname,email,phone,password,date,rank) values (:url_address,:name,:firstname,:email,:phone,:password,:date,:rank)";
-            $this->mail_sign_up2($_POST['email'],$_POST['name'],$_POST['firstname'],$_POST['phone'],$_POST['password']);
             $result = $db->write($query,$data);
             if($result){
                 header("location: ". ROOT ."login");
