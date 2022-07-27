@@ -11,13 +11,6 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
     define('DB_TYPE', "mysql");
     define('DB_HOST', "localhost");
 }
-// else{
-//     define('DB_NAME', "cotedeucotedejad");
-//     define('DB_USER', "cotedeucotedejad");
-//     define('DB_PASS', "Cotedejadeevents2022");
-//     define('DB_TYPE', "mysql");
-//     define('DB_HOST', "cotedeucotedejad.mysql.db");
-// }
 
 // Definir la global url
 $url = 'http://'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] .  str_replace("index.php", "",$_SERVER['PHP_SELF']) . str_replace("url=", "",$_SERVER['QUERY_STRING']);

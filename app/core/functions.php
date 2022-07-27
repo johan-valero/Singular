@@ -1,7 +1,6 @@
 <?php
 
 // Fonction générale de l'app applicable sur n'importe quelles données ou pages
-
 // Fonction pour afficher des informations de manière clair 
 function show($data){
     echo "<pre>";
