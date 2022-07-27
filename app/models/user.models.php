@@ -42,7 +42,7 @@ class User{
         }
 
         // check if email already exists
-        $sql = "select * from users where email = :email limit 1 ";
+        $sql = "select * from users where email_user = :email limit 1 ";
         $arr['email'] = $data['email'];
         $check = $db->read($sql,$arr);
         if(is_array($check)){
@@ -52,12 +52,12 @@ class User{
         if($this->error == ""){
             // save to the database 
             $data['rank'] = "customer";
-            $data['url_address'] = $this->get_random_string_max(60);
+            $data['url_user'] = $this->get_random_string_max(60);
             $data['date'] = date("Y-m-d H:i:s");
             $data['password'] = hash('sha1', $data['password']);
 
             /* Inserting the data into the database. */
-            $query = "insert into users (url_address,name,firstname,email,phone,password,date,rank) values (:url_address,:name,:firstname,:email,:phone,:password,:date,:rank)";
+            $query = "insert into users (url_user,name_user,firstname_user,email_user,phone_user,password_user,date,rank) values (:url_user,:name,:firstname,:email,:phone,:password,:date,:rank)";
             $result = $db->write($query,$data);
             if($result){
                 header("location: ". ROOT ."login");
@@ -90,20 +90,13 @@ class User{
             $data['password'] = hash('sha1', $data['password']);
 
             // check if email already exists
-            $sql = "select * from users where email = :email && password = :password limit 1 ";
+            $sql = "select * from users where email_user = :email && password_user = :password limit 1 ";
             $result = $db->read($sql,$data);
+            show($result);
             if(is_array($result)){
-
-                $_SESSION['user_url'] = $result[0]->url_address;
-
-                if(isset($_SESSION['intended_url'])){
-                    $url = $_SESSION['intended_url'];
-                    unset($_SESSION['intended_url']);
-                    header("location: ". $url);
-
-                }else{
-                    header("location: ". ROOT ."home");
-                }
+                show($_SESSION);
+                $_SESSION['user_url'] = $result[0]->url_user;
+                header("location: ". ROOT ."home");
                 die;
             }
             $this->error .= "Email ou mot de passe incorrect <br>";
@@ -117,7 +110,7 @@ class User{
         $arr = false;
 
         $arr['url'] = addslashes($url);
-        $query = "select * from users where url_address = :url limit 1";
+        $query = "select * from users where url_user = :url limit 1";
         $result = $db->read($query,$arr);
         
         if(is_array($result)){
@@ -174,7 +167,7 @@ class User{
         
         if(count($allowed) > 0){
             $arr['url'] = isset($_SESSION['user_url']) ? $_SESSION['user_url'] : '';
-            $query = "select * from users where url_address = :url limit 1";
+            $query = "select * from users where url_user = :url limit 1";
             $result = $db->read($query,$arr);
 
             if(is_array($result)){
@@ -193,7 +186,7 @@ class User{
             if(isset($_SESSION['user_url'])){
                 $arr = false;
                 $arr['url'] = $_SESSION['user_url'];
-                $query = "select * from users where url_address = :url limit 1";
+                $query = "select * from users where url_user = :url limit 1";
                 $result = $db->read($query,$arr);
                 if(is_array($result)){
                     return $result[0];
@@ -221,7 +214,7 @@ class User{
     public function get_one($id){
         $id = (int)$id;
         $DB = Database::newInstance();
-        $data = $DB->read("select * from users where id = '$id' limit 1 ");
+        $data = $DB->read("select * from users where id_user = '$id' limit 1 ");
         return $data[0];
     } 
 
@@ -271,7 +264,7 @@ class User{
     public function delete($id){
         $DB = Database::newInstance();
         $id = (int)$id;
-        $query = "delete from users where id = '$id' limit 1 ";
+        $query = "delete from users where id_user = '$id' limit 1 ";
         $DB->write("$query");
     } 
 
@@ -285,7 +278,7 @@ class User{
             $arr['phone'] = $data['phone'];
             $arr['password'] = hash('sha1', $data['password']);;
             
-            $query = "update users set name = :name, firstname = :firstname, email = :email, password = :password, phone = :phone where id = '$id' limit 1 ";
+            $query = "update users set name_user = :name, firstname_user = :firstname, email_user = :email, password_user = :password, phone_user = :phone where id_user = '$id' limit 1 ";
             $DB->write($query,$arr);    
         }
     }

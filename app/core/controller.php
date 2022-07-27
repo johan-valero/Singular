@@ -1,6 +1,5 @@
 <?php
 
-// Cette class controller permet d'avoir acces aux mêmes fonctions sur les controllers pour éviter les répetitions
 Class Controller{
     public function view($path, $data =[]){
 
@@ -16,8 +15,8 @@ Class Controller{
 
     // Chargement dynamique du models des qu'il est détecter par le nom 
     public function load_model($model){
-        if(file_exists("../app/models/" .strtolower($model).".class.php")){
-            include_once "../app/models/".strtolower($model).".class.php";
+        if(file_exists("../app/models/" .strtolower($model).".models.php")){
+            include_once "../app/models/".strtolower($model).".models.php";
             // On retourne une instance
             return $a = new $model();
         }

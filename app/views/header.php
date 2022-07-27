@@ -118,7 +118,7 @@
                                     else{
                                         echo '
                                         <i class="fa fa-user"></i>
-                                        <span> '. ucwords($data["user_data"]->firstname)," ",ucwords($data["user_data"]->name).' <i class="fa fa-angle-down"></i></span>
+                                        <span> '. ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user).' <i class="fa fa-angle-down"></i></span>
                                         <div class="flag-dropdown">
                                             <ul>
                                                 <li><a href="'.ROOT.'profil">Profil</a></li>
