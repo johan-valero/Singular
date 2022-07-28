@@ -1,34 +1,35 @@
 <?php $this->view("header", $data); ?>	
-	<section><!--form-->
-		<div class="container" style="display:flex; justify-content:center; text-align:center;">
-			<div class="checkout__form"><!--login form-->
-			<span><?php check_error() ?></span>
-				<form method="POST">
-					<div class="card" style="display:flex; justify-content:center; align-items:center; text-align:center; margin-top:50px; margin-bottom:15px; width:500px; padding:15px;">
-						<div class="col-lg-8 col-md-6">
-							<div class="card-header" style="text-align:center;">  
-								<h6>Se connecter</h6>
-							</div>	
-							<div class="checkout__input" style="width=200px;">
-								<p>Adresse email<span>*</span></p>
-								<input name="email" value="<?= isset($_POST['email']) ?$_POST['email']: ""; ?>" type="email" placeholder="Adresse email"/>
+	<section>
+		<div class="d-lg-flex half">
+			<div class="bg order-1 order-md-2" style="background-image: url('<?=ASSETS?>img/slider/1.jpg');"></div>
+			<div class="contents order-2 order-md-1">
+				<div class="container">
+					<div class="row align-items-center justify-content-center">
+						<div class="col-md-7">
+							<h3>Connexion à <strong>Singular</strong></h3>
+							<p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+							<span style="color:#cd701c;"><?php check_error() ?></span>
+							<form method="POST">
+							<div class="form-group first">
+								<label for="email">Email <span style="color:#CD701C;">*</span></label>
+								<input type="email" class="form-control" placeholder="votre-email@gmail.com" name="email">
 							</div>
-							<div class="checkout__input">
-								<p>Mot de passe<span>*</span></p>
-								<input  style="margin-bottom:0px;" name="password" value="<?= isset($_POST['password']) ?$_POST['password']: ""; ?>" type="password" placeholder="Mot de passe"/>
-								<a href="<?= ROOT ?>forget" style="margin-bottom:20px important!;color:#000;font-size:15px;" class="a_hov"><i>Mot de passe oublié</i></a>
+							<div class="form-group last mb-3">
+								<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>
+								<input type="password" class="form-control" placeholder="Votre mot de passe"  name="password">
 							</div>
+							
+							<div class="d-flex mb-5 align-items-center">
+								<span class="ml-left"><a href="<?=ROOT?>signup" class="forgot-pass">Pas encore de compte ?</a></span> 
+								</label>
+								<span class="ml-auto"><a href="#" class="forgot-pass">Mot de passe oublié</a></span> 
+							</div>
+							<input type="submit" value="Connexion" class="btn btn-block btn-form1-submit">
+							</form>
 						</div>
-						<button class="primary-btn" type="submit">Connexion</button>
-						<a href="<?= ROOT ?>signup" style="margin-bottom:20px important!;color:#000;font-size:15px;" class="a_hov"> Pas encore de compte ? Inscrivez-vous ici !</a>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
-		<style>
-			.a_hov:hover{
-				color: #000000a3 !important;
-			}
-		</style>
-	</section><!--/form-->
+	</section>
 <?php $this->view("footer", $data); ?>	

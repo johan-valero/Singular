@@ -1,91 +1,84 @@
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-text">
+ <!-- Footer -->
+ <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="ft-about">
-                            <div class="logo">
-                                <a href="#">
-                                    <img src="img/footer-logo.png" alt="">
-                                </a>
-                            </div>
-                            <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>
-                            <div class="fa-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                    <div class="col-md-4">
+                        <div class="footer-column footer-about">
+                            <h3 class="footer-title">About Hotel</h3>
+                            <p class="footer-about-text">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
+
+                            <div class="footer-language"> <i class="lni ti-world"></i>
+                                <select onchange="location = this.value;">
+                                    <option value="http://duruthemes.com/">English</option>
+                                    <option value="http://duruthemes.com/">German</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 offset-lg-1">
-                        <div class="ft-contact">
-                            <h6>Contactez-nous</h6>
-                            <ul>
-                                <li>(12) 345 67890</li>
-                                <li>info.colorlib@gmail.com</li>
-                                <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+                    <div class="col-md-3 offset-md-1">
+                        <div class="footer-column footer-explore clearfix">
+                            <h3 class="footer-title">Explore</h3>
+                            <ul class="footer-explore-list list-unstyled">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="rooms.html">Rooms & Suites</a></li>
+                                <li><a href="restaurant.html">Restaurant</a></li>
+                                <li><a href="spa-wellness.html">Spa & Wellness</a></li>
+                                <li><a href="about.html">About Hotel</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 offset-lg-1">
-                        <div class="ft-newslatter">
-                            <h6>Dernières nouveautées</h6>
-                            <p>Retrouvez toutes nos dernières offres.</p>
-                            <form action="#" class="fn-form">
-                                <input type="text" placeholder="Email">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </form>
+                    <div class="col-md-4">
+                        <div class="footer-column footer-contact">
+                            <h3 class="footer-title">Contact</h3>
+                            <p class="footer-contact-text">1616 Broadway NY, New York 10001<br>United States of America</p>
+                            <div class="footer-contact-info">
+                                <p class="footer-contact-phone"><span class="flaticon-call"></span> 855 100 4444</p>
+                                <p class="footer-contact-mail">info@luxuryhotel.com</p>
+                            </div>
+                            <div class="footer-about-social-list">
+                                <a href="#"><i class="ti-instagram"></i></a>
+                                <a href="#"><i class="ti-twitter"></i></a>
+                                <a href="#"><i class="ti-youtube"></i></a>
+                                <a href="#"><i class="ti-facebook"></i></a>
+                                <a href="#"><i class="ti-pinterest"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright-option">
+        <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <ul>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Environmental Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="co-text">
-                            <p>
-                                All rights reserved | Singular
-                            </p>
+                    <div class="col-md-12">
+                        <div class="footer-bottom-inner">
+                            <p class="footer-bottom-copy-right">© Copyright Adrar formation 2022 par Johan Valero</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Votre recherche.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
-
-    <!-- Js Plugins -->
-    <script src="<?=ASSETS?>js/jquery-3.3.1.min.js"></script>
+    <!-- jQuery -->
+    <script src="<?=ASSETS?>js/jquery-3.6.0.min.js"></script>
+    <script src="<?=ASSETS?>js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="<?=ASSETS?>js/modernizr-2.6.2.min.js"></script>
+    <script src="<?=ASSETS?>js/imagesloaded.pkgd.min.js"></script>
+    <script src="<?=ASSETS?>js/jquery.isotope.v3.0.2.js"></script>
+    <script src="<?=ASSETS?>js/pace.js"></script>
+    <script src="<?=ASSETS?>js/popper.min.js"></script>
     <script src="<?=ASSETS?>js/bootstrap.min.js"></script>
-    <script src="<?=ASSETS?>js/jquery.magnific-popup.min.js"></script>
-    <script src="<?=ASSETS?>js/jquery.nice-select.min.js"></script>
-    <script src="<?=ASSETS?>js/jquery-ui.min.js"></script>
-    <script src="<?=ASSETS?>js/jquery.slicknav.js"></script>
+    <script src="<?=ASSETS?>js/scrollIt.min.js"></script>
+    <script src="<?=ASSETS?>js/jquery.waypoints.min.js"></script>
     <script src="<?=ASSETS?>js/owl.carousel.min.js"></script>
-    <script src="<?=ASSETS?>js/main.js"></script>
+    <script src="<?=ASSETS?>js/jquery.stellar.min.js"></script>
+    <script src="<?=ASSETS?>js/jquery.magnific-popup.js"></script>
+    <script src="<?=ASSETS?>js/YouTubePopUp.js"></script>
+    <script src="<?=ASSETS?>js/select2.js"></script>
+    <script src="<?=ASSETS?>js/datepicker.js"></script>
+    <script src="<?=ASSETS?>js/smooth-scroll.min.js"></script>
+    <script src="<?=ASSETS?>js/custom.js"></script>
 </body>
-
 </html>

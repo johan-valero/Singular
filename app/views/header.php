@@ -7,160 +7,74 @@
     <meta name="keywords" content="Singular">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Titre page -->
     <title><?= $page_title ?> | <?= WEBSITE_TITLE ?></title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&display=swap" rel="stylesheet"> 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="<?=ASSETS?>css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="<?=ASSETS?>css/style.css" type="text/css">
+    <link rel="shortcut icon" href="<?=ASSETS?>img/favicon.png">
+    <link rel="stylesheet" href="<?=ASSETS?>css/plugins.css">
+    <link rel="stylesheet" href="<?=ASSETS?>css/style.css">
 </head>
 <body>
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="canvas-open">
-        <i class="icon_menu"></i>
+    <!-- Preloader -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="preloader-position loader"> <span></span> </div>
+        </div>
     </div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
-            <i class="icon_close"></i>
-        </div>
-        <div class="search-icon  search-switch">
-            <i class="icon_search"></i>
-        </div>
-        <div class="header-configure-area">
-            <div class="language-option">
-                <img src="<?=ASSETS?>img/flag.jpg" alt="">
-                <span>EN <i class="fa fa-angle-down"></i></span>
-                <div class="flag-dropdown">
-                    <ul>
-                        <li><a href="#">Zi</a></li>
-                        <li><a href="#">Fr</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a href="#" class="bk-btn">Réserver</a>
-        </div>
-        <nav class="mainmenu mobile-menu">
-            <ul>
-                <li class="active"><a href="<?=ROOT?>home">Accueil</a></li>
-                <li><a href="./rooms.html">Logements</a></li>
-                <li><a href="./about-us.html">A propos</a></li>
-                <li><a href="./pages.html">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./room-details.html">Room Details</a></li>
-                        <li><a href="#">Deluxe Room</a></li>
-                        <li><a href="#">Family Room</a></li>
-                        <li><a href="#">Premium Room</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="top-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-        <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
-        </ul>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
     </div>
-    <!-- Offcanvas Menu Section End -->
-
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i>06 27 89 02 54</li>
-                            <li><i class="fa fa-envelope"></i> <?= EMAIL_WEBSITE?></li>
-                        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo-wrapper navbar-brand valign">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="<?=ASSETS?>img/logo.png" class="logo-img" alt="logo_singular">
                     </div>
-                    <div class="col-lg-6">
-                        <div class="tn-right">
-                            <div class="top-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                            <a href="#" class="bk-btn">Réserver</a>
-                            <div class="language-option">
-                                <?php
-                                    if (!isset($data['user_data'])){
-                                        echo '
-                                            <i class="fa fa-user"></i>
-                                            <span> Compte <i class="fa fa-angle-down"></i></span>
-                                            <div class="flag-dropdown">
-                                                <ul>
-                                                    <li><a href="'.ROOT.'signup">Inscription</a></li>
-                                                    <li><a href="'.ROOT.'login">Connexion</a></li>
-                                                </ul>
-                                            </div>
-                                            ';}
-                                    else{
-                                        echo '
-                                        <i class="fa fa-user"></i>
-                                        <span> '. ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user).' <i class="fa fa-angle-down"></i></span>
-                                        <div class="flag-dropdown">
-                                            <ul>
-                                                <li><a href="'.ROOT.'profil">Profil</a></li>
-                                                <li><a href="'.ROOT.'logout">Déconnexion</a></li>
-                                            </ul>
-                                        </div>
-                                        ';}       
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="<?=ROOT?>home"> Accueil </a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Logements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <?php
+                        if (!isset($data['user_data'])){
+                            echo '
+                                <li class="nav-item dropdown"> <span class="nav-link">Compte <i class="ti-angle-down"></i></span>
+                                    <ul class="dropdown-menu last">
+                                        <li class="dropdown-item"><a href="'.ROOT.'signup">Inscription</a></li>
+                                        <li class="dropdown-item"><a href="'.ROOT.'login">Connexion</a></li>
+                                    </ul>
+                                </li>
+                            ';}
+                        else{
+                            echo '
+                                <li class="nav-item dropdown"> <span class="nav-link">'. ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user).'<i class="ti-angle-down"></i></span>
+                                    <ul class="dropdown-menu last">
+                                        <li class="dropdown-item"><a href="'.ROOT.'profil">Profil</a></li>
+                                        <li class="dropdown-item"><a href="'.ROOT.'logout">Déconnexion</a></li>
+                                    </ul>
+                                </li>						
+                            ';}       
+				    ?>
+                </ul>
             </div>
         </div>
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="logo">
-                            <a href="<?=ROOT?>home">
-                                <img style="margin-top:-25px;height:80px;" src="<?=ASSETS?>img/logo/logow.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-10">
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li class="active"><a href="./index.html">Accueil</a></li>
-                                    <li><a href="./rooms.html">Logements</a></li>
-                                    <li><a href="./about-us.html">A propos</a></li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <div class="nav-right search-switch">
-                                <i class="icon_search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
+    </nav>
