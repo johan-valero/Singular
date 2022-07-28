@@ -51,9 +51,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="<?=ROOT?>home"> Accueil </a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Logements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>rooms">Logements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>contact">Contact</a></li>
                     <?php
                         if (!isset($data['user_data'])){
                             echo '

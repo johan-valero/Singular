@@ -4757,8 +4757,8 @@ select {
 /* Login */
 
 .half, .half .container > .row {
-    height: 100vh;
-    min-height: 700px; 
+    /* height: 100vh; */
+    min-height: 100vh; 
 }
 
 @media (max-width: 991.98px) {

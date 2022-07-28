@@ -1,46 +1,42 @@
 <?php $this->view("header", $data); ?>	
-		<section id="form" style="margin-top:5px;"><!--form-->
-			<div class="container" style="display:flex; justify-content:center;">
-				<div class="card" style="display:flex; justify-content:center; align-items:center; text-align:center; margin-top:50px; margin-bottom:15px; width:500px; padding:15px;">
-					<div class="col-lg-8 col-md-6">
-
-						<span><?php check_error() ?></span>
-
-						<!-- <div style="float:none;display:inline-block;" > -->
-							<div class="signup-form"><!--sign up form-->
-							<div class="card-header" style="text-align:center;">  
-								<h6>Inscription</h6>
-							</div>	
-								<form method="post" style="display:flex;flex-direction:column;">
-									<div class="checkout__input" style="margin-bottom:0;">
-										<p style="margin-bottom: 2px;">Nom<span>*</span></p>
-										<input name="name" value="<?= isset($_POST['name']) ?$_POST['name']: ""; ?>" type="text" placeholder="Nom"/>
-									</div>
-									<div class="checkout__input" style="margin-bottom:0;">
-										<p style="margin-bottom: 2px;">Prénom<span>*</span></p>
-										<input value="<?= isset($_POST['firstname']) ?$_POST['firstname']: ""; ?>" type="text" name="firstname" placeholder="Prénom" required>
-									</div>
-									<div class="checkout__input" style="margin-bottom:0;">
-										<p style="margin-bottom: 2px;">Adresse email<span>*</span></p>
-										<input name="email" value="<?= isset($_POST['email']) ?$_POST['email']: ""; ?>" type="email" placeholder="Email"/>
-									</div>
-									<div class="checkout__input" style="margin-bottom:0;">
-										<p style="margin-bottom: 2px;">Téléphone<span>*</span></p>
-										<input value="<?= isset($_POST['phone']) ?$_POST['phone']: ""; ?>" type="text" name="phone" placeholder="Téléphone" required>
-									</div>
-									<div class="checkout__input" style="margin-bottom:0;">
-										<p style="margin-bottom: 2px;">Mot de passe<span>*</span></p>
-										<input name="password" type="password" placeholder="Mot de passe"/>
-									</div>
-									<div class="checkout__input" style="margin-bottom:0;">
-										<input name="password2" type="password" placeholder="Retaper mot de passe"/>
-									</div>
-									<button class="primary-btn" type="submit">Inscription</button>
-								</form>
-							</div><!--/sign up form-->
-						<!-- </div> -->
+	<section>
+		<div class="d-lg-flex half">
+			<div class="bg order-1 order-md-2" style="background-image: url('<?=ASSETS?>img/slider/1.jpg');"></div>
+			<div class="contents order-2 order-md-1">
+				<div class="container">
+					<div class="row align-items-center justify-content-center">
+						<div class="col-md-7">
+							<h3 style="margin: 0 0 0 0;">Inscription à <strong>Singular</strong></h3>
+							<!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+							<span style="color:#cd701c;line-height:17px;"><?php check_error() ?></span>
+							<form method="POST">
+							<div class="form-group first">
+								<label for="name">Nom <span style="color:#CD701C;">*</span></label>
+								<input type="text" class="form-control" placeholder="Nom" name="name">
+							</div>
+							<div class="form-group first">
+								<label for="firstname">Prénom <span style="color:#CD701C;">*</span></label>
+								<input type="text" class="form-control" placeholder="Prénom" name="firstname">
+							</div>
+							<div class="form-group first">
+								<label for="email">Adresse email <span style="color:#CD701C;">*</span></label>
+								<input type="email" class="form-control" placeholder="votre-email@gmail.com" name="email">
+							</div>
+							<div class="form-group first">
+								<label for="phone">Téléphone <span style="color:#CD701C;">*</span></label>
+								<input type="pho,e" class="form-control" placeholder="Téléphone" name="phone">
+							</div>
+							<div class="form-group last mb-3">
+								<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>
+								<input type="password" class="form-control" placeholder="Votre mot de passe"  name="password">
+								<input type="password" class="form-control" placeholder="Vérifier votre mot de passe"  name="password2">
+							</div>
+							<input type="submit" value="Inscription" class="btn btn-block btn-form1-submit">
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section><!--/form-->
+		</div>
+	</section>
 <?php $this->view("footer", $data); ?>	
