@@ -26,8 +26,5 @@ class Room_details extends Controller{
         $data['page_title'] = "Détails du logement";
         $data['details'] = $details[0];
         $this->view("room_details", $data);
-
-        var_dump($data['accom']); 
-
     }
 }
