@@ -17,18 +17,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&display=swap" rel="stylesheet"> 
 
     <!-- Css Styles -->
-    <link rel="shortcut icon" href="<?=ASSETS?>img/favicon.png">
+    <link rel="shortcut icon" href="<?=ASSETS?>img/icon_singular.png">
     <link rel="stylesheet" href="<?=ASSETS?>css/plugins.css">
     <link rel="stylesheet" href="<?=ASSETS?>css/style.css">
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader-bg"></div>
+    <!-- <div class="preloader-bg"></div>
     <div id="preloader">
         <div id="preloader-status">
             <div class="preloader-position loader"> <span></span> </div>
         </div>
-    </div>
+    </div> -->
     <!-- Progress scroll totop -->
     <div class="progress-wrap cursor-pointer">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">

@@ -28,7 +28,7 @@ class User{
 
         /* Checking if the firstname is empty or if it does not match the regular expression. */
         if (empty($data['firstname']) or !preg_match("/^[a-zA-Z]+$/", $data['firstname'])){
-            $this->error .= "Veuillez entrer un prenom valide <br>";
+            $this->error .= "Veuillez entrer un prénom valide <br>";
         }
 
         /* Checking if the password and password2 are the same. */

@@ -1,79 +1,6 @@
 <?php $this->view("header", $data); ?>
-        <!-- Slider -->
-        <header class="header slider-fade">
-        <div class="owl-carousel owl-theme">
-            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="<?=ASSETS?>img/slider/2.jpg">
-                <div class="v-middle caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                                <span>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                </span>
-                                <h4>Luxury Hotel & Best Resort</h4>
-                                <h1>Enjoy a Luxury Experience</h1>
-                                <div class="butn-light mt-30 mb-30"> <a href="#" data-scroll-nav="1"><span>Rooms & Suites</span></a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="<?=ASSETS?>img/slider/3.jpg">
-                <div class="v-middle caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                                <span>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                </span>
-                                <h4>Unique Place to Relax & Enjoy</h4>
-                                <h1>The Perfect Base For You</h1>
-                                <div class="butn-light mt-30 mb-30"> <a href="#" data-scroll-nav="1"><span>Rooms & Suites</span></a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="<?=ASSETS?>img/slider/1.jpg">
-                <div class="v-middle caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1">
-                                <span>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                    <i class="star-rating"></i>
-                                </span>
-                                <h4>The Ultimate Luxury Experience</h4>
-                                <h1>Enjoy The Best Moments of Life</h1>
-                                <div class="butn-light mt-30 mb-30"> <a href="#" data-scroll-nav="1"><span>Rooms & Suites</span></a> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- slider reservation -->
-        <div class="reservation">
-            <a href="tel:8551004444">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <i class="flaticon-call"></i>
-                </div>
-                <div class="call"><span>855 100 4444</span> <br>Reservation</div>
-            </a>
-        </div>
-    </header>
+<?php $this->view("slider", $data); ?>
+        
     <!-- Booking Search -->
     <div class="booking-wrapper">
             <div class="container">
@@ -81,62 +8,62 @@
                     <form action="rooms.html" class="form1 clearfix">
                         <div class="col1 c1">
                             <div class="input1_wrapper">
-                                <label>Check in</label>
+                                <label>Arrivée</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Check in">
+                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée">
                                 </div>
                             </div>
                         </div>
                         <div class="col1 c2">
                             <div class="input1_wrapper">
-                                <label>Check out</label>
+                                <label>Départ</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Check out">
+                                    <input type="text" class="form-control input datepicker" placeholder="Départ">
                                 </div>
                             </div>
                         </div>
                         <div class="col2 c3">
                             <div class="select1_wrapper">
-                                <label>Adults</label>
+                                <label>Adultes</label>
                                 <div class="select1_inner">
                                     <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Adult</option>
-                                        <option value="2">2 Adults</option>
-                                        <option value="3">3 Adults</option>
-                                        <option value="4">4 Adults</option>
+                                        <option value="1">1 Adulte</option>
+                                        <option value="2">2 Adultes</option>
+                                        <option value="3">3 Adultes</option>
+                                        <option value="4">4 Adultes</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="col2 c4">
                             <div class="select1_wrapper">
-                                <label>Children</label>
+                                <label>Enfants</label>
                                 <div class="select1_inner">
                                     <select class="select2 select" style="width: 100%">
-                                        <option value="1">Children</option>
-                                        <option value="1">1 Child</option>
-                                        <option value="2">2 Children</option>
-                                        <option value="3">3 Children</option>
-                                        <option value="4">4 Children</option>
+                                        <option value="1">Enfant</option>
+                                        <option value="1">1 Enfant</option>
+                                        <option value="2">2 Enfants</option>
+                                        <option value="3">3 Enfants</option>
+                                        <option value="4">4 Enfants</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="col2 c5">
                             <div class="select1_wrapper">
-                                <label>Rooms</label>
+                                <label>Logements</label>
                                 <div class="select1_inner">
                                     <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Room</option>
-                                        <option value="2">2 Rooms</option>
-                                        <option value="3">3 Rooms</option>
-                                        <option value="4">4 Rooms</option>
+                                        <option value="1">1 Chambre</option>
+                                        <option value="2">2 Chambres</option>
+                                        <option value="3">3 Chambres</option>
+                                        <option value="4">4 Chambres</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="col3 c6">
-                            <button type="submit" class="btn-form1-submit">Check Now</button>
+                            <button type="submit" class="btn-form1-submit">Réserver</button>
                         </div>
                     </form>
                 </div>
@@ -154,15 +81,18 @@
                         <i class="star-rating"></i>
                         <i class="star-rating"></i>
                     </span>
-                    <div class="section-subtitle">The Cappa Luxury Hotel</div>
-                    <div class="section-title">Enjoy a Luxury Experience</div>
-                    <p>Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat. Donec in quis the pellentesque velit. Donec id velit ac arcu posuere blane.</p>
-                    <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
+                    <div class="section-subtitle">Singular</div>
+                    <div class="section-title">Vivez une expérience hors du commun</div>
+                    <p>
+                        Nous sélectionnons pour vous des hébergements insolites partout en France !  Découvrez des endroits atypiques au cœur de nos belles régions françaises.
+                        Singular vous garantit un séjour unique hors des sentiers battus ! Défiez le vertige dans une cabane à 12 mètres de hauteur, laissez-vous flotter sur une cabane au milieu d’un lac, observez les étoiles depuis votre lit dans une bulle ou expérimentez la vie de bohème dans une roulotte…
+                        Réservez instantanément votre coup de cœur directement en ligne depuis smartphone, tablette ou ordinateur. Sélectionnez une date, un type d'hébergement, une thématique et offrez-vous la magie d’une nuit insolite ! 
+                    </p>
                     <!-- call -->
                     <div class="reservations">
                         <div class="icon"><span class="flaticon-call"></span></div>
                         <div class="text">
-                            <p>Reservation</p> <a href="tel:855-100-4444">855 100 4444</a>
+                            <p>Réservation</p> <a href="tel:855-100-4444">06 27 89 02 54</a>
                         </div>
                     </div>
                 </div>
@@ -180,126 +110,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-subtitle">The Cappa Luxury Hotel</div>
-                    <div class="section-title">Rooms & Suites</div>
+                    <div class="section-subtitle">Singular</div>
+                    <div class="section-title">Nos hébergements et suites</div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="<?=ASSETS?>img/rooms/1.jpg" alt=""> </div> <span class="category"><a href="rooms2.html">Book</a></span>
-                        <div class="con">
-                            <h6><a href="room-details.html">150$ / Night</a></h6>
-                            <h5><a href="room-details.html">Junior Suite</a> </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-7">
-                                    <ul>
-                                        <li><i class="flaticon-bed"></i></li>
-                                        <li><i class="flaticon-bath"></i></li>
-                                        <li><i class="flaticon-breakfast"></i></li>
-                                        <li><i class="flaticon-towel"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="col col-md-5 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="<?=ASSETS?>img/rooms/2.jpg" alt=""> </div> <span class="category"><a href="rooms2.html">Book</a></span>
-                        <div class="con">
-                            <h6><a href="room-details.html">200$ / Night</a></h6>
-                            <h5><a href="room-details.html">Family Room</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-7">
-                                    <ul>
-                                        <li><i class="flaticon-bed"></i></li>
-                                        <li><i class="flaticon-bath"></i></li>
-                                        <li><i class="flaticon-breakfast"></i></li>
-                                        <li><i class="flaticon-towel"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="col col-md-5 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="<?=ASSETS?>img/rooms/3.jpg" alt=""> </div> <span class="category"><a href="rooms2.html">Book</a></span>
-                        <div class="con">
-                            <h6><a href="room-details.html">250$ / Night</a></h6>
-                            <h5><a href="room-details.html">Double Room</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-7">
-                                    <ul>
-                                        <li><i class="flaticon-bed"></i></li>
-                                        <li><i class="flaticon-bath"></i></li>
-                                        <li><i class="flaticon-breakfast"></i></li>
-                                        <li><i class="flaticon-towel"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="col col-md-5 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="<?=ASSETS?>img/rooms/4.jpg" alt=""> </div> <span class="category"><a href="rooms2.html">Book</a></span>
-                        <div class="con">
-                            <h6><a href="room-details.html">300$ / Night</a></h6>
-                            <h5><a href="room-details.html">Deluxe Room</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-7">
-                                    <ul>
-                                        <li><i class="flaticon-bed"></i></li>
-                                        <li><i class="flaticon-bath"></i></li>
-                                        <li><i class="flaticon-breakfast"></i></li>
-                                        <li><i class="flaticon-towel"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="col col-md-5 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="<?=ASSETS?>img/rooms/7.jpg" alt=""> </div> <span class="category"><a href="rooms2.html">Book</a></span>
-                        <div class="con">
-                            <h6><a href="room-details.html">150$ / Night</a></h6>
-                            <h5><a href="room-details.html">Superior Room</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-7">
-                                    <ul>
-                                        <li><i class="flaticon-bed"></i></li>
-                                        <li><i class="flaticon-bath"></i></li>
-                                        <li><i class="flaticon-breakfast"></i></li>
-                                        <li><i class="flaticon-towel"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="col col-md-5 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                if($rooms){
+                    foreach($rooms as $room){
+                        $this->view("rooms.inc", $room);
+                    }
+                }else{
+                    echo '<div class="section-subtitle">Pas de logements disponibles.</div>';
+                }
+                ?>
             </div>
         </div>
     </section>

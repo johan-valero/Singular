@@ -14,6 +14,10 @@ class Home extends Controller{
 
         $DB = Database::newInstance();
 
+        // Afficher tout les logements dans la BDD
+        $rooms = $DB->read("select * from rooms");
+        
+        $data['rooms'] = $rooms;
         $data['page_title'] = "Accueil";     
         $this->view("index", $data);
     }
