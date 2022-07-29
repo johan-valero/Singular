@@ -6,6 +6,7 @@ class Home extends Controller{
     public function index(){  
 
         $User = $this->load_model('User');
+        $Accomodation = $this->load_model('Accomodation');
         $user_data = $User->check_login();
         
         if(is_object($user_data)){
@@ -14,11 +15,11 @@ class Home extends Controller{
 
         $DB = Database::newInstance();
 
-        // Afficher tout les logements dans la BDD
-        $rooms = $DB->read("select * from rooms");
+        // Afficher tout les logements dans la BDD + les aménagements qui lui sont liés
+        $rooms = $DB->read("select * from rooms join accomodations on accomodations.id_accomodation = rooms.accomodation");
         
         $data['rooms'] = $rooms;
-        $data['page_title'] = "Accueil";     
+        $data['page_title'] = "Accueil";  
         $this->view("index", $data);
     }
 }
