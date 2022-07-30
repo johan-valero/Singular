@@ -12,7 +12,7 @@
 							<form method="POST">
 							<div class="form-group first">
 								<label for="email">Email <span style="color:#CD701C;">*</span></label>
-								<input type="email" class="form-control" placeholder="votre-email@gmail.com" name="email">
+								<input type="email" class="form-control" placeholder="Votre-email@gmail.com" name="email">
 							</div>
 							<div class="form-group last mb-3">
 								<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>

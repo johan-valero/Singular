@@ -5,7 +5,7 @@ define("WEBSITE_TITLE", 'Singular');
 
 // Nom de la Database
 if($_SERVER['SERVER_NAME'] == "localhost"){
-    define('DB_NAME', "singular");
+    define('DB_NAME', "db_singular");
     define('DB_USER', "root");
     define('DB_PASS', "");
     define('DB_TYPE', "mysql");

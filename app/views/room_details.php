@@ -69,11 +69,10 @@
                             <li>
                                 <div class="page-list-icon"> <span class="flaticon-bed"></span> </div>
                                 <div class="page-list-text">
-                                    <p><?= $details->bedding?></p>
+                                    <p><?= $details->name_bedding?></p>
                                 </div>
                             </li>                    
                             <?php 
-                            if(count(array($accom)) > 1){
                                 foreach($accom as $accomodation){
                                     echo '
                                         <li>
@@ -83,15 +82,6 @@
                                             </div>
                                         </li>';
                                 }
-                            }else{
-                                echo '
-                                    <li>
-                                        <div class="page-list-icon"> <span class="'.$accom->icon_accomodation.'"></span> </div>
-                                        <div class="page-list-text">
-                                            <p>'.$accom->name_accomodation.'</p>
-                                        </div>
-                                    </li>';
-                            }
                             ?>
                         </ul>
                     </div>

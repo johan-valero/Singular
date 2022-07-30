@@ -9,17 +9,12 @@
                 <div class="col col-md-7">
                     <ul>
                         <?php
-                            if($data->accomodation > 1){
-                                foreach($data->accomodation as $accom){
-                                    echo '
-                                        <li><i class="'.$accom->icon_accomodation.'"></i></li>
-                                    ';
-                                }
-                            }else{
+                            // foreach($data->icon_accomodation as $icon){
+                                // show($icon);
                                 echo '
-                                        <li><i class="'.$data->icon_accomodation.'"></i></li>
+                                    <li><i class="'.$data->icon_accomodation.'"></i></li>
                                 ';
-                            }
+                            // }
                         ?>
                     </ul>
                 </div>

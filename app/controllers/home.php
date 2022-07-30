@@ -16,10 +16,12 @@ class Home extends Controller{
         $DB = Database::newInstance();
 
         // Afficher tout les logements dans la BDD + les aménagements qui lui sont liés
-        $rooms = $DB->read("select * from rooms join accomodations on accomodations.id_accomodation = rooms.accomodation");
-        
+        $rooms = $DB->read("select * from rooms join avoir on avoir.id_room = rooms.id_room inner join accomodations on avoir.id_accomodation = accomodations.id_accomodation GROUP BY rooms.id_room");
+
+        show($rooms);
         $data['rooms'] = $rooms;
-        $data['page_title'] = "Accueil";  
+        $data['page_title'] = "Accueil";
+
         $this->view("index", $data);
     }
 }

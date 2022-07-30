@@ -1,6 +1,6 @@
 <?php $this->view("header", $data); ?>
 <?php $this->view("slider", $data); ?>
-        
+
     <!-- Booking Search -->
     <div class="booking-wrapper">
             <div class="container">
@@ -203,7 +203,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2 text-center">
-                       <span><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i></span>
+                        <span><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i></span>
                         <div class="section-subtitle"><span>The Cappa Luxury Hotel</span></div>
                         <div class="section-title"><span>Promotional Video</span></div>
                     </div>

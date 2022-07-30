@@ -19,9 +19,8 @@ class Room_details extends Controller{
         $DB = Database::newInstance();
 
         // Query pour récolté toutes les informations lorsque le slug est le même 
-        $details = $DB->read("select * from rooms where slug = :slug", ['slug'=>$slug]);
-        $accom = $Accomodation->get_one($details[0]->accomodation);
-        
+        $details = $DB->read("select * from rooms join beddings on rooms.id_room = beddings.id_bedding where slug = :slug", ['slug'=>$slug]);
+        $accom = $Accomodation->get_accom($details[0]->id_room);
         $data['accom'] = $accom;
         $data['page_title'] = "Détails du logement";
         $data['details'] = $details[0];

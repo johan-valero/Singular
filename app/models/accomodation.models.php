@@ -6,12 +6,19 @@ class Accomodation{
             $DB = Database::newInstance();
             return $DB->read("select * from accomodations order by id_accomodation desc ");
         } 
-    
-        // Aménagements en fonction de l'id
-        public function get_one($id){
-            $id = (int)$id;
-            $DB = Database::newInstance();
-            $data = $DB->read("select * from accomodations where id_accomodation = '$id' limit 1 ");
-            return $data[0];
-        } 
+        
+        // Récupère les aménagements des logements grace à l'id
+        public function get_accom($id){
+            $DB =Database::newInstance();
+            $query = "
+            SELECT * FROM accomodations
+            JOIN avoir 
+            ON accomodations.id_accomodation = avoir.id_accomodation
+            JOIN rooms 
+            ON rooms.id_room = avoir.id_room
+			WHERE rooms.id_room = '$id'
+            ";
+            $data = $DB->read($query);
+            return $data;
+        }
 }
