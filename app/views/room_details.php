@@ -55,7 +55,7 @@
                         <h6>Options</h6>
                         <ul class="list-unstyled page-list mb-30">
                             <li>
-                                <div class="page-list-icon"> <span class="flaticon-group"></span> </div>
+                                <div class="page-list-icon"> <span><i class="fa-solid fa-people-group"></i></span> </div>
                                 <div class="page-list-text">
                                     <?php
                                         if($details->persons > 1 ){
@@ -67,7 +67,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="page-list-icon"> <span class="flaticon-bed"></span> </div>
+                                <div class="page-list-icon"> <span><i class="fa-solid fa-bed"></i></span> </div>
                                 <div class="page-list-text">
                                     <p><?= $details->name_bedding?></p>
                                 </div>
@@ -76,7 +76,7 @@
                                 foreach($accom as $accomodation){
                                     echo '
                                         <li>
-                                            <div class="page-list-icon"> <span class="'.$accomodation->icon_accomodation.'"></span> </div>
+                                            <div class="page-list-icon"> <span><i class="'.$accomodation->icon_accomodation.'"></i></span></div>
                                             <div class="page-list-text">
                                                 <p>'.$accomodation->name_accomodation.'</p>
                                             </div>

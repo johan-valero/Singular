@@ -9,12 +9,11 @@
                 <div class="col col-md-7">
                     <ul>
                         <?php
-                            // foreach($data->icon_accomodation as $icon){
-                                // show($icon);
+                            foreach(array($data->icon_accomodation) as $icon){
                                 echo '
-                                    <li><i class="'.$data->icon_accomodation.'"></i></li>
+                                    <li><i class="'.$icon.'"></i></li>
                                 ';
-                            // }
+                            }
                         ?>
                     </ul>
                 </div>

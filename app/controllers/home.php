@@ -1,6 +1,6 @@
 <?php
 
-// Avec le extends la class Home a accès aux fonction de la Class Controller même si elles sont protégés ou en private
+// Gestion des datas pour l'index
 class Home extends Controller{
 
     public function index(){  
@@ -16,9 +16,8 @@ class Home extends Controller{
         $DB = Database::newInstance();
 
         // Afficher tout les logements dans la BDD + les aménagements qui lui sont liés
-        $rooms = $DB->read("select * from rooms join avoir on avoir.id_room = rooms.id_room inner join accomodations on avoir.id_accomodation = accomodations.id_accomodation GROUP BY rooms.id_room");
+        $rooms = $DB->read("select * from rooms join avoir on avoir.id_room = rooms.id_room inner join accomodations on avoir.id_accomodation = accomodations.id_accomodation");
 
-        show($rooms);
         $data['rooms'] = $rooms;
         $data['page_title'] = "Accueil";
 

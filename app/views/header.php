@@ -11,6 +11,9 @@
     <!-- Titre page -->
     <title><?= $page_title ?> | <?= WEBSITE_TITLE ?></title>
 
+    <!-- Icon -->
+    <script src="https://kit.fontawesome.com/a1dea6f958.js" crossorigin="anonymous"></script>
+    
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +49,7 @@
                     </div>
                 </a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="fa-solid fa-bars"></i></span> </button>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">

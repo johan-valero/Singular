@@ -90,7 +90,7 @@
                     </p>
                     <!-- call -->
                     <div class="reservations">
-                        <div class="icon"><span class="flaticon-call"></span></div>
+                        <div class="icon"><span class="fa-solid fa-phone"></span></div>
                         <div class="text">
                             <p>Réservation</p> <a href="tel:855-100-4444">06 27 89 02 54</a>
                         </div>

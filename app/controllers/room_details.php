@@ -1,5 +1,6 @@
 <?php
 
+// Gestion des détails d'un logement
 class Room_details extends Controller{
     public function index($slug){
         
