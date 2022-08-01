@@ -40,9 +40,9 @@
                                 <h6>Animaux</h6>
                                 <?php 
                                     if($details->animals == "yes"){
-                                        echo '<p>Animaux autorisés</p>';
+                                        echo '<p>Animaux admis au sein de l\'établissement.</p>';
                                     }else{
-                                        echo '<p>Animaux non-autorisés</p>';
+                                        echo '<p>Les animaux de compagnie ne sont pas admis au sein de l\'établissement. </p>';
                                     }
                                 ?>
                             </div>
@@ -107,7 +107,7 @@
                     <div class="col-md-8">
                         <div class="owl-carousel owl-theme">
                             <div class="pricing-card">
-                                <img src="img/pricing/1.jpg" alt="">
+                                <img src="<?=ASSETS?>img/pricing/1.jpg" alt="">
                                 <div class="desc">
                                     <div class="name">Room cleaning</div>
                                     <div class="amount">$50<span>/ month</span></div>
@@ -119,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="pricing-card">
-                                <img src="img/pricing/2.jpg" alt="">
+                                <img src="<?=ASSETS?>img/pricing/2.jpg" alt="">
                                 <div class="desc">
                                     <div class="name">Drinks included</div>
                                     <div class="amount">$30<span>/ daily</span></div>
@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                             <div class="pricing-card">
-                                <img src="img/pricing/3.jpg" alt="">
+                                <img src="<?=ASSETS?>img/pricing/3.jpg" alt="">
                                 <div class="desc">
                                     <div class="name">Room Breakfast</div>
                                     <div class="amount">$30<span>/ daily</span></div>
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                             <div class="pricing-card">
-                                <img src="img/pricing/4.jpg" alt="">
+                                <img src="<?=ASSETS?>img/pricing/4.jpg" alt="">
                                 <div class="desc">
                                     <div class="name">Safe & Secure</div>
                                     <div class="amount">$15<span>/ daily</span></div>

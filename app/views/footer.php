@@ -5,44 +5,43 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="footer-column footer-about">
-                            <h3 class="footer-title">About Hotel</h3>
-                            <p class="footer-about-text">Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
-
-                            <div class="footer-language"> <i class="lni ti-world"></i>
-                                <select onchange="location = this.value;">
-                                    <option value="http://duruthemes.com/">English</option>
-                                    <option value="http://duruthemes.com/">German</option>
-                                </select>
-                            </div>
+                            <!-- <h3 class="footer-title">À propos de Singular</h3> -->
+                            <img class="logo-img" src="<?=ASSETS?>img/logo.png" alt="logo Singular">
+                            <br><br>
+                            <p class="footer-about-text">Nous sélectionnons pour vous des hébergements insolites partout en France ! Découvrez des endroits atypiques au cœur de nos belles régions françaises. Offrez-vous la magie d’une nuit insolite !</p>
+                            <br>
+                            <div class="butn-dark"><a href="<?=ROOT?>about" style="font-size:13px;"><span>En savoir plus</span></a></div>
                         </div>
                     </div>
                     <div class="col-md-3 offset-md-1">
                         <div class="footer-column footer-explore clearfix">
-                            <h3 class="footer-title">Explore</h3>
+                            <h3 class="footer-title">Navigation</h3>
                             <ul class="footer-explore-list list-unstyled">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="rooms.html">Rooms & Suites</a></li>
-                                <li><a href="restaurant.html">Restaurant</a></li>
-                                <li><a href="spa-wellness.html">Spa & Wellness</a></li>
-                                <li><a href="about.html">About Hotel</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="<?=ROOT?>home">Accueil</a></li>
+                                <li><a href="<?=ROOT?>rooms">Logements</a></li>
+                                <li><a href="<?=ROOT?>about">À propos</a></li>
+                                <li><a href="<?=ROOT?>contact">Contact</a></li>
+                                <li><a href="<?=ROOT?>profil">Compte</a></li>
+                                <?php
+                                    if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ){
+                                            echo '<li><a href="'.ROOT.'admin">Admin</a></li>'
+                                        ;}
+                                ?>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="footer-column footer-contact">
                             <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">1616 Broadway NY, New York 10001<br>United States of America</p>
+                            <p class="footer-contact-text">11 avenue de l'Europe, 31520 <br>Ramonville-Saint-Agne</p>
                             <div class="footer-contact-info">
-                                <p class="footer-contact-phone"><span class="flaticon-call"></span> 855 100 4444</p>
-                                <p class="footer-contact-mail">info@luxuryhotel.com</p>
+                                <p class="footer-contact-phone"><span><i class="fa-solid fa-phone"></i></span> 06 27 89 02 54</p>
+                                <p class="footer-contact-mail">contact.singular.jv@gmail.com</p>
                             </div>
                             <div class="footer-about-social-list">
                                 <a href="#"><i class="ti-instagram"></i></a>
                                 <a href="#"><i class="ti-twitter"></i></a>
-                                <a href="#"><i class="ti-youtube"></i></a>
                                 <a href="#"><i class="ti-facebook"></i></a>
-                                <a href="#"><i class="ti-pinterest"></i></a>
                             </div>
                         </div>
                     </div>

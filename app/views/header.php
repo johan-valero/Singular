@@ -25,13 +25,6 @@
     <link rel="stylesheet" href="<?=ASSETS?>css/style.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <!-- <div class="preloader-bg"></div>
-    <div id="preloader">
-        <div id="preloader-status">
-            <div class="preloader-position loader"> <span></span> </div>
-        </div>
-    </div> -->
     <!-- Progress scroll totop -->
     <div class="progress-wrap cursor-pointer">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
@@ -43,7 +36,7 @@
         <div class="container">
             <!-- Logo -->
             <div class="logo-wrapper navbar-brand valign">
-                <a href="index.html">
+                <a href="<?=ROOT?>">
                     <div class="logo">
                         <img src="<?=ASSETS?>img/logo.png" class="logo-img" alt="logo_singular">
                     </div>
@@ -70,7 +63,11 @@
                         else{
                             echo '
                                 <li class="nav-item dropdown"> <span class="nav-link">'. ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user).'<i class="ti-angle-down"></i></span>
-                                    <ul class="dropdown-menu last">
+                                    <ul class="dropdown-menu last">';
+                                        if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ){
+                                            echo '<li class="dropdown-item"><a href="'.ROOT.'admin">Admin</a></li>'
+                                        ;}
+                                        echo '
                                         <li class="dropdown-item"><a href="'.ROOT.'profil">Profil</a></li>
                                         <li class="dropdown-item"><a href="'.ROOT.'logout">Déconnexion</a></li>
                                     </ul>
