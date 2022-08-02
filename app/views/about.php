@@ -1,7 +1,7 @@
 <?php $this->view('header',$data)?>
 
 <!-- Header Banner -->
-<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="uploads/hobbit3.jpg" style="background-position:center;">
+<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/hobbit3.jpg" style="background-position:center;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left caption mt-90">
@@ -14,8 +14,8 @@
 <!-- about -->
 <section class="section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8"> 
+            <div class="row" style="justify-content:center;">
+                <div class="col-md-9"> 
                     
                     <h2 style="color:#cd701c;">Un hébergement insolite ?</h2>
                     <p>Parler d’un hébergement insolite revient à définir un style d’hébergement hors du commun, original, atypique, qui sortirait dans tous les cas des clichés auxquels les voyageurs sont habitués à trouver dans différents pays du monde. Par opposition à un hébergement classique, un hébergement insolite se démarquerait certainement par son style, sa construction, son emplacement, ou encore sa fonction. Parmi les styles d’hébergement les plus insolites qu’on pourrait trouver, on retrouve par exemple les cabanes nichées en haut des arbres, les yourtes, les bulles habitables placées en plein milieu de la forêt ou encore les wagons de train transformés en chambres tout confort.</p>
@@ -26,15 +26,15 @@
                     </blockquote>
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="uploads/c1.jpg" class="mb-30" style="height:250px;object-fit:cover;object-position:center;" alt="">
+                            <img src="<?=ROOT?>uploads/c1.jpg" class="mb-30" style="height:250px;object-fit:cover;object-position:center;" alt="">
                         </div>
                         <div class="col-md-6">
-                            <img src="uploads/c2.jpg" class="mb-30" style="height:250px;object-fit:cover;object-position:center;" alt="">
+                            <img src="<?=ROOT?>uploads/c2.jpg" class="mb-30" style="height:250px;object-fit:cover;object-position:bottom;" alt="">
                         </div>
                     </div>
                     <h2 style="color:#cd701c;">Notre mission</h2>
                     <p>Nous sélectionnons pour vous des hébergements insolites partout en France ! Découvrez des endroits atypiques au cœur de nos belles régions françaises. Singular vous garantit un séjour unique hors des sentiers battus ! Défiez le vertige dans une cabane à 12 mètres de hauteur, laissez-vous flotter sur une cabane au milieu d’un lac, observez les étoiles depuis votre lit dans une bulle ou expérimentez la vie de bohème dans une roulotte… Réservez instantanément votre coup de cœur directement en ligne depuis smartphone, tablette ou ordinateur. Sélectionnez une date, un type d'hébergement, une thématique et offrez-vous la magie d’une nuit insolite.</p>
-                    <img src="uploads/hobbit1.jpg" class="mb-30" alt="">
+                    <img src="<?=ROOT?>uploads/hobbit1.jpg" class="mb-30" alt="">
                 </div>
             </div>
         </div>

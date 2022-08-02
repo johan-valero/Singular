@@ -38,7 +38,7 @@
             <div class="logo-wrapper navbar-brand valign">
                 <a href="<?=ROOT?>">
                     <div class="logo">
-                        <img src="<?=ASSETS?>img/logo.png" class="logo-img" alt="logo_singular">
+                        <img src="<?=ROOT?>assets/img/logo.png" class="logo-img" alt="logo_singular">
                     </div>
                 </a>
             </div>
@@ -73,7 +73,7 @@
                                     </ul>
                                 </li>						
                             ';}       
-				    ?>
+                    ?>
                 </ul>
             </div>
         </div>

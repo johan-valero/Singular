@@ -8,6 +8,7 @@ class Room_details extends Controller{
         $slug = addslashes($slug);
         $User = $this->load_model('User');
         $Accomodation = $this->load_model('Accomodation');
+        $Rooms = $this->load_model('Room');
 
         // On vérifie si l'utilisateur est connecté 
         $user_data = $User->check_login();
@@ -17,10 +18,9 @@ class Room_details extends Controller{
             $data['user_data'] = $user_data;
         }
 
-        $DB = Database::newInstance();
-
         // Query pour récolté toutes les informations lorsque le slug est le même 
-        $details = $DB->read("select * from rooms join beddings on rooms.id_room = beddings.id_bedding where slug = :slug", ['slug'=>$slug]);
+        $details = $Rooms->get_all_with_bedding($slug);
+
         $accom = $Accomodation->get_accom($details[0]->id_room);
         $data['accom'] = $accom;
         $data['page_title'] = "Détails du logement";

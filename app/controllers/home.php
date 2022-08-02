@@ -8,16 +8,15 @@ class Home extends Controller{
         $User = $this->load_model('User');
         $Accomodation = $this->load_model('Accomodation');
         $Categories = $this->load_model('Category');
+        $Rooms = $this->load_model('Room');
         $user_data = $User->check_login();
         
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
         }
 
-        $DB = Database::newInstance();
-
         // Afficher les 4 derniers logements par id 
-        $rooms = $DB->read("select * from rooms order by id_room desc limit 4 ");
+        $rooms = $Rooms->get_last();
 
         // Afficher tous les amanégements disponibles
         $facilities = $Accomodation->get_all();

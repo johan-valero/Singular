@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<!-- <div class="col-md-4"> -->
     <div class="item">
         <div class="position-re o-hidden"> <img style="height:400px;object-fit:cover;" src="<?= ROOT.$data->img_room?>" alt="Logement"> </div> <span class="category"><a href="#">Réserver</a></span>
         <div class="con">
@@ -23,4 +23,4 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->

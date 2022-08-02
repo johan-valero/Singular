@@ -90,10 +90,10 @@
                     </p>
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="<?=ASSETS?>img/rooms/8.jpg" alt="" class="mt-90 mb-30">
+                    <img src="<?=ROOT?>uploads/c1.jpg" alt="" class="mt-90 mb-30" style="height:340px;object-fit:cover;">
                 </div>
-                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="<?=ASSETS?>img/rooms/2.jpg" alt="">
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp" >
+                    <img src="<?=ROOT?>uploads/c5.jpg" alt="" style="height:340px;object-fit:cover;">
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                             foreach($categories as $category){
                                 echo'
                                     <div class="item" style="text-align:center;">
-                                        <div class="position-re o-hidden"> <img style="height:275px;" src="'.ROOT.$category->img_category.'" alt="">
+                                        <div class="position-re o-hidden"> <img style="height:275px;object-fit:cover;" src="'.ROOT.$category->img_category.'" alt="">
                                             <div class="date" style="background-color:#fff;">
                                                 <span><i style="color:#cd701c;">'.$category->id_category.'</i></span> 
                                             </div>
@@ -146,7 +146,9 @@
                 <?php
                 if($rooms){
                     foreach($rooms as $room){
+                        echo'<div class="col-md-4">';
                         $this->view("rooms.inc", $room);
+                        echo '</div>';
                     }
                 }else{
                     echo '<div class="section-subtitle">Pas de logements disponibles.</div>';

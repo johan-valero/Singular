@@ -49,11 +49,11 @@
                             <div class="col-12">
                             <?php if(is_array($error) && count($error) > 0):?>
                                 <?php foreach($error as $err):?>
-                                    <div><?= $err ?></div>
+                                    <div style="color:red;font-size:15px;" ><?= $err ?></div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                             <?php if(isset($_GET['success'])):?>
-                                <div> Votre message a était envoyé avec succés. </div>
+                                <div style="color:green;font-size:15px;"> Votre message a était envoyé avec succés. </div>
                             <?php endif; ?>
                             </div>
                         </div>
