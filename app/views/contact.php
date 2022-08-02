@@ -1,11 +1,11 @@
 <?php $this->view("header", $data); ?>
     <!-- Header Banner -->
-    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ASSETS?>img/slider/5.jpg">
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="uploads/c5.jpg" style="background-position:center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left caption mt-90">
-                    <h5>Restons en contact</h5>
-                    <h1>Contactez-nous</h1>
+                    <h2 style="letter-spacing:10px;text-transform:uppercase;text-align:center">Contactez-nous</h2>
+                    <h5 style="text-align:center;">Gardons le <span style="color:#cd701c;">contact</span></h5>
                 </div>
             </div>
         </div>
@@ -44,29 +44,36 @@
                 </div>
                 <div class="col-md-5 mb-30 offset-md-1">
                     <h3>Formulaire de contact</h3>
-                    <form method="POST" class="contact__form">
-                        <!-- form message -->
+                    <form method="POST" >
                         <div class="row">
                             <div class="col-12">
-                                <div class="alert alert-success contact__msg" style="display: none" role="alert"> Message envoyé avec succès ! </div>
+                            <?php if(is_array($error) && count($error) > 0):?>
+                                <?php foreach($error as $err):?>
+                                    <div><?= $err ?></div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <?php if(isset($_GET['success'])):?>
+                                <div> Votre message a était envoyé avec succés. </div>
+                            <?php endif; ?>
                             </div>
                         </div>
+                        <!-- form message -->
                         <!-- form elements -->
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input name="name" type="text" placeholder="Votre nom *" required="">
+                                <input name="name" type="text" placeholder="Votre nom *" required value="<?=isset($POST['name']) ? $POST['name'] : ''?>">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input name="email" type="email" placeholder="Votre adresse email *" required="">
+                                <input name="email" type="email" placeholder="Votre adresse email *" required value="<?=isset($POST['email']) ? $POST['email'] : ''?>">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input name="phone" type="text" placeholder="Votre numéro *" required="">
+                                <input name="phone" type="text" placeholder="Votre numéro *" required value="<?=isset($POST['phone']) ? $POST['phone'] : ''?>">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input name="subject" type="text" placeholder="Sujet *" required="">
+                                <input name="subject" type="text" placeholder="Sujet *" required value="<?=isset($POST['subject']) ? $POST['subject'] : ''?>" >
                             </div>
                             <div class="col-md-12 form-group">
-                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required=""></textarea>
+                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="btn-form1-submit">Envoyer<button>

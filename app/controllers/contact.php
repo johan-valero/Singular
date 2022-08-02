@@ -12,13 +12,17 @@ class Contact extends Controller{
             $data['user_data'] = $user_data;
         }
 
-        if($_POST){
+        $data['error'] = array();
+        if(count($_POST)>0){
             $data['POST'] = $_POST;
-            $Contact->create($_POST);
+            $data['error'] = $Contact->create($_POST);
+            if(!is_array($data['error']) && $data['error']){
+                header("Location: ".ROOT."contact?success=true");
+                die;
+            }
         }
 
         $DB = Database::newInstance();
-
         $data['page_title'] = "Contact";
         $this->view("contact", $data);
     }
