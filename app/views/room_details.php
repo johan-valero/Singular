@@ -19,13 +19,6 @@
                 <!-- project content -->
                 <div class="row">
                     <div class="col-md-12"> 
-                        <span>
-                            <i class="star-rating"></i>
-                            <i class="star-rating"></i>
-                            <i class="star-rating"></i>
-                            <i class="star-rating"></i>
-                            <i class="star-rating"></i>
-                        </span>
                         <div class="section-subtitle">Singular</div>
                         <div class="section-title"><?= $details->name_room ?></div>
                     </div>
@@ -37,14 +30,8 @@
                                 <p>Les visiteurs recevront un email lors de la réservations contenant les instructions liées à leurs location. Pour plus de détails, veuillez contacter le service client avec vos informations de réservations.</p>
                             </div>
                             <div class="col-md-12">
-                                <h6>Animaux</h6>
-                                <?php 
-                                    if($details->animals == "yes"){
-                                        echo '<p>Animaux admis au sein de l\'établissement.</p>';
-                                    }else{
-                                        echo '<p>Les animaux de compagnie ne sont pas admis au sein de l\'établissement. </p>';
-                                    }
-                                ?>
+                                <h6>Adresse</h6>
+                                <p><?= $details->address_room.' '.$details->zip_room.' '.$details->city_room?></p>
                             </div>
                             <div class="col-md-12">
                                 <div class="butn-dark mt-15 mb-30"> <a href="rooms2.html"><span>Réserver maintenant</span></a> </div>
@@ -52,8 +39,14 @@
                         </div>
                     </div>
                     <div class="col-md-3 offset-md-1">
-                        <h6>Options</h6>
+                        <h6>Informations pratiques</h6>
                         <ul class="list-unstyled page-list mb-30">
+                            <li>
+                                <div class="page-list-icon"><span><i class="fa-solid fa-igloo"></i></span> </div>
+                                <div class="page-list-text">
+                                    <p><a href="<?=ROOT?>rooms/category/<?= $details->name_category?>"><?= $details->name_category?></a></p>
+                                </div>
+                            </li>  
                             <li>
                                 <div class="page-list-icon"> <span><i class="fa-solid fa-people-group"></i></span> </div>
                                 <div class="page-list-text">
@@ -67,11 +60,20 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="page-list-icon"> <span><i class="fa-solid fa-bed"></i></span> </div>
+                                <div class="page-list-icon"><span><i class="fa-solid fa-bed"></i></span> </div>
                                 <div class="page-list-text">
                                     <p><?= $details->name_bedding?></p>
                                 </div>
-                            </li>                    
+                            </li> 
+                            <li>
+                                <div class="page-list-icon"><span><i class="fa-solid fa-dog"></i></span> </div>
+                                <div class="page-list-text">
+                                    <p>Animaux <?= $details->name_animal?></p>
+                                </div>
+                            </li>                  
+                        </ul>
+                        <h6>Options et services</h6>
+                        <ul class="list-unstyled page-list mb-30">                   
                             <?php 
                                 foreach($accom as $accomodation){
                                     echo '
@@ -88,76 +90,36 @@
                 </div>
             </div>
         </section>
-        <!-- Pricing -->
-        <section class="pricing section-padding">
+        <!-- Similiar Room -->
+        <section class="pricing section-padding bg-black">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="section-subtitle"><span>Best Prices</span></div>
-                        <div class="section-title">Extra Services</div>
-                        <p>The best prices for your relaxing vacation. The utanislen quam nestibulum ac quame odion elementum sceisue the aucan.</p>
-                        <p>Orci varius natoque penatibus et magnis disney parturient monte nascete ridiculus mus nellen etesque habitant morbine.</p>
-                        <div class="reservations mb-30">
-                            <div class="icon"><span class="flaticon-call"></span></div>
-                            <div class="text">
-                                <p>For information</p> <a href="tel:855-100-4444">855 100 4444</a>
-                            </div>
-                        </div>
+                        <div class="section-subtitle"><span>Logements</span></div>
+                        <div class="section-title"><span>Similaire</span></div>
+                        <p class="color-2">Nous vous proposons une liste d'hébergements similaires à votre recherche.</p>
                     </div>
                     <div class="col-md-8">
                         <div class="owl-carousel owl-theme">
+                            <?php foreach($similar_rooms as $room): ?>
                             <div class="pricing-card">
-                                <img src="<?=ASSETS?>img/pricing/1.jpg" alt="">
+                                <img src="<?=ROOT.$room->img_room?>" alt="">
                                 <div class="desc">
-                                    <div class="name">Room cleaning</div>
-                                    <div class="amount">$50<span>/ month</span></div>
+                                    <div class="name"><?=$room->name_room?></div>
+                                    <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
                                     <ul class="list-unstyled list">
-                                        <li><i class="ti-check"></i> Hotel ut nisan the duru</li>
-                                        <li><i class="ti-check"></i> Orci miss natoque vasa ince</li>
-                                        <li><i class="ti-close unavailable"></i>Clean sorem ipsum morbin</li>
+                                        <li><i class="fa-solid fa-people-group"></i>1 - <?=$room->persons?> personnes</li>
+                                        <li><i class="fa-solid fa-bed"></i><?=$room->name_bedding?></li>
+                                        <li><i class="fa-solid fa-dog"></i>Animaux <?=$room->name_animal?></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="pricing-card">
-                                <img src="<?=ASSETS?>img/pricing/2.jpg" alt="">
-                                <div class="desc">
-                                    <div class="name">Drinks included</div>
-                                    <div class="amount">$30<span>/ daily</span></div>
-                                    <ul class="list-unstyled list">
-                                        <li><i class="ti-check"></i> Hotel ut nisan the duru</li>
-                                        <li><i class="ti-check"></i> Orci miss natoque vasa ince</li>
-                                        <li><i class="ti-close unavailable"></i>Clean sorem ipsum morbin</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="pricing-card">
-                                <img src="<?=ASSETS?>img/pricing/3.jpg" alt="">
-                                <div class="desc">
-                                    <div class="name">Room Breakfast</div>
-                                    <div class="amount">$30<span>/ daily</span></div>
-                                    <ul class="list-unstyled list">
-                                        <li><i class="ti-check"></i> Hotel ut nisan the duru</li>
-                                        <li><i class="ti-check"></i> Orci miss natoque vasa ince</li>
-                                        <li><i class="ti-close unavailable"></i>Clean sorem ipsum morbin</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="pricing-card">
-                                <img src="<?=ASSETS?>img/pricing/4.jpg" alt="">
-                                <div class="desc">
-                                    <div class="name">Safe & Secure</div>
-                                    <div class="amount">$15<span>/ daily</span></div>
-                                    <ul class="list-unstyled list">
-                                        <li><i class="ti-check"></i> Hotel ut nisan the duru</li>
-                                        <li><i class="ti-check"></i> Orci miss natoque vasa ince</li>
-                                        <li><i class="ti-close unavailable"></i>Clean sorem ipsum morbin</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
 <?php endif; ?>
 <?php $this->view("footer", $data); ?>

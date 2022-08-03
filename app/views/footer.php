@@ -33,10 +33,10 @@
                     <div class="col-md-4">
                         <div class="footer-column footer-contact">
                             <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">11 avenue de l'Europe, 31520 <br>Ramonville-Saint-Agne</p>
+                            <p class="footer-contact-text" style="padding-bottom: 0px;">11 avenue de l'Europe, 31520 <br>Ramonville-Saint-Agne</p>
                             <div class="footer-contact-info">
-                                <p class="footer-contact-phone"><span><i class="fa-solid fa-phone"></i></span> 06 27 89 02 54</p>
-                                <p class="footer-contact-mail">contact.singular.jv@gmail.com</p>
+                                <p class="footer-contact-text" style="padding-bottom: 0px;"><span><i class="fa-solid fa-phone"></i></span> 06 27 89 02 54</p>
+                                <p class="footer-contact-text" style="padding-bottom: 0px;"><span><i class="fa-solid fa-envelope"></i></span> contact.singular.jv@gmail.com</p>
                             </div>
                             <div class="footer-about-social-list">
                                 <a href="#"><i class="ti-instagram"></i></a>

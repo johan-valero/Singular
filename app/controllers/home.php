@@ -24,13 +24,6 @@ class Home extends Controller{
         // Afficher toutes les catégories disponible
         $categories = $Categories->get_all();
 
-        // Affichage de chaques aménagements lié à un logement 
-        $acc = array();
-        foreach($rooms as $key => $row){
-            $acc = $Accomodation->get_accom($row->id_room);
-            $rooms[$key]->acc = $acc;
-        }   
-
         $data['categories'] = $categories;
         $data['facilities'] = $facilities;
         $data['rooms'] = $rooms;

@@ -23,29 +23,38 @@ Class Rooms extends Controller{
         if($search){
             $search = "%".$find."%";
             $rooms = $Rooms->search_results($search);
-            $acc = array();
-            if($rooms){
-                foreach($rooms as $key => $row){
-                    // Affiche les aménagement lié à un logement
-                    $acc = $Accomodation->get_accom($row->id_room);
-                    $rooms[$key]->acc = $acc;
-                } 
-            }
         }else{
             $rooms = $Rooms->get_all();
-            foreach($rooms as $key => $row){
-                // Affiche les aménagement lié à un logement
-                $acc = $Accomodation->get_accom($row->id_room);
-                $rooms[$key]->acc = $acc;
-            } 
-        }
+        } 
 
-        // Récupération de toutes les catgéories 
-        $categories = $Categories->get_all();
+        // Get all category
+        $data['categories'] = $Categories->get_all();
 
-        $data['categories'] = $categories;
         $data['rooms'] = $rooms;
         $data['page_title'] = "Logements";
         $this->view('rooms', $data);
+    }
+
+    // Fonction d'affichage des items d'une categorie dans la section produit
+    public function category($name){
+        // Connexion de l'utilisateur
+        $User = $this->load_model('User');
+        $Categories = $this->load_model('Category');
+        $Rooms = $this->load_model('Room');
+        $user_data = $User->check_login();
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        
+        $rooms = $Categories->get_rooms_by_name_category($name);
+        $all_rooms = $Rooms->get_all();
+
+        // Get all category
+        $data['categories'] = $Categories->get_all();
+        $data['rooms'] = $rooms;
+        $data['all_rooms'] = $all_rooms;
+        $data['page_title'] = "Logements";
+        $this->view("rooms", $data);
     }
 }

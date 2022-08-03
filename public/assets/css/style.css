@@ -1717,12 +1717,11 @@ hr {
   list-style: none;
 }
 .rooms1 .facilities ul li {
-  color: #fff;
-  font-size: 10px;
-  text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
     letter-spacing: 3px;
-  line-height: 1.2em;
-  padding-bottom: 20px;
+    line-height: 1em;
     float: left;
 }
 .rooms1 .facilities ul li i {

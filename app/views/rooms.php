@@ -16,7 +16,7 @@
                 <?php $this->view('sidebar.inc', $data)?>
                 <?php
                     if(isset($_GET['find'])){
-                        if($rooms){
+                        if(isset($rooms) && is_array($rooms)){
                             echo '<div>';
                                 echo '<h5><b>'.count($rooms).'</b> résultats pour "<b>'.ucwords($_GET['find']).'</b>" :</h5>';
                             echo '</div>';
@@ -30,10 +30,20 @@
                             ';
                         }
                     }else{
-                        foreach($rooms as $room){
-                            echo '<div class="col-md-4">';
-                                $this->view('rooms.inc', $room);
-                            echo '</div>';
+                        if(isset($rooms) && is_array($rooms)){
+                            foreach($rooms as $room){
+                                echo '<div class="col-md-4">';
+                                    $this->view('rooms.inc', $room);
+                                echo '</div>';
+                            }
+                        }elseif(isset($all_rooms) && is_array($rooms)){
+                            foreach($all_rooms as $all_room){
+                                echo '<div class="col-md-4">';
+                                    $this->view('rooms.inc', $all_room);
+                                echo '</div>';
+                            }
+                        }else{
+                            echo '<div class="col-md-4">Pas de logements disponibles dans cette catégorie.</div>';
                         }
                     }
                 ?>

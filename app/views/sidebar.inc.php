@@ -27,6 +27,7 @@
                     <h6>Catégories</h6>
                 </div>
                 <ul>
+                    <li><a href="<?= ROOT."rooms/category"?>">Toutes les catégories</a></li>
                     <?php
                         foreach($categories as $category){
                             echo '<li><a href="'.ROOT."rooms/category/". $category->name_category.'"><i class="ti-angle-right"></i>'.$category->name_category.'</a></li>';

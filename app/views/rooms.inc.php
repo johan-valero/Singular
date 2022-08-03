@@ -8,13 +8,7 @@
             <div class="row facilities">
                 <div class="col col-md-7">
                     <ul>
-                        <?php
-                            foreach($data->acc as $icon){
-                                echo '
-                                    <li><i class="'.$icon->icon_accomodation.'"></i></li>
-                                ';
-                            }
-                        ?>
+                        <li><?= $data->address_room.' '.$data->zip_room.' '.$data->city_room?></li>
                     </ul>
                 </div>
                 <div class="col col-md-5 text-right">
