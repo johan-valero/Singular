@@ -138,8 +138,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="section-subtitle">Singular</div>
-                    <div class="section-title">Nos hébergements et suites</div>
+                    <div class="section-subtitle">Logements</div>
+                    <div class="section-title">Nos derniers hébergements</div>
                 </div>
             </div>
             <div class="row">
@@ -243,7 +243,7 @@
                         <a class="vid" href="https://youtu.be/gbbLm5qgWU8">
                         <div class="vid-butn">
                             <span class="icon">
-                                <i class="ti-control-play"></i>
+                                <i class="ti-control-play" style="line-height:0;"></i>
                             </span>
                         </div>
                     </a>

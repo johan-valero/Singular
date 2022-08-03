@@ -46,34 +46,29 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="<?=ROOT?>home"> Accueil </a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>rooms">Logements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=ROOT?>contact">Contact</a></li>
-                    <?php
-                        if (!isset($data['user_data'])){
-                            echo '
-                                <li class="nav-item dropdown"> <span class="nav-link">Compte <i class="ti-angle-down"></i></span>
-                                    <ul class="dropdown-menu last">
-                                        <li class="dropdown-item"><a href="'.ROOT.'signup">Inscription</a></li>
-                                        <li class="dropdown-item"><a href="'.ROOT.'login">Connexion</a></li>
-                                    </ul>
-                                </li>
-                            ';}
-                        else{
-                            echo '
-                                <li class="nav-item dropdown"> <span class="nav-link">'. ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user).'<i class="ti-angle-down"></i></span>
-                                    <ul class="dropdown-menu last">';
-                                        if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ){
-                                            echo '<li class="dropdown-item"><a href="'.ROOT.'admin">Admin</a></li>'
-                                        ;}
-                                        echo '
-                                        <li class="dropdown-item"><a href="'.ROOT.'profil">Profil</a></li>
-                                        <li class="dropdown-item"><a href="'.ROOT.'logout">Déconnexion</a></li>
-                                    </ul>
-                                </li>						
-                            ';}       
-                    ?>
+                    <li class="nav-item"><a class="<?= $page_title == "Accueil" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>home"> Accueil </a></li>
+                    <li class="nav-item"><a class="<?= $page_title == "À propos" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>about">À propos</a></li>
+                    <li class="nav-item"><a class="<?= $page_title == "Logements" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>rooms">Logements</a></li>
+                    <li class="nav-item"><a class="<?= $page_title == "Contact" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>contact">Contact</a></li>
+                    <?php if(!isset($data['user_data'])): ?>
+                        <li class="nav-item dropdown"> <span class="<?= $page_title == "Inscription" || $page_title == "Connexion" ? "nav-link active" : "nav-link";?>">Compte <i class="ti-angle-down"></i></span>
+                            <ul class="dropdown-menu last">
+                                <li class="dropdown-item"><a href="<?=ROOT?>signup">Inscription</a></li>
+                                <li class="dropdown-item"><a href="<?=ROOT?>login">Connexion</a></li>
+                            </ul>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item dropdown"> <span class="<?= $page_title == "Profil" ? "nav-link active" : "nav-link";?>"><?= ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user)?><i class="ti-angle-down"></i></span>
+                            <ul class="dropdown-menu last">
+                                <?php if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ): ?>
+                                    <li class="dropdown-item"><a href="<?=ROOT?>admin">Admin</a></li>
+                                <?php else: ?>
+                                <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
+                                <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </li>						
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

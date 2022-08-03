@@ -18,27 +18,32 @@ class User{
         
         /* Checking if the email is valid. */
         if (empty($data['email']) ){
-            $this->error .= "Veuillez entrer une adresse valide <br>";
+            $this->error .= "Veuillez entrer une adresse email valide. <br>";
+        }
+
+        /* Checking if the phone is valid. */
+        if (!is_numeric($data['phone'])){
+            $this->error .= "Veuillez entrer un numéro de téléphone valide. <br>";
         }
 
         /* Checking if the name is valid. */
         if (empty($data['name']) or !preg_match("/^[a-zA-Z]+$/", $data['name'])){
-            $this->error .= "Veuillez entrer un nom valide <br>";
+            $this->error .= "Veuillez entrer un nom valide. <br>";
         }
 
         /* Checking if the firstname is empty or if it does not match the regular expression. */
         if (empty($data['firstname']) or !preg_match("/^[a-zA-Z]+$/", $data['firstname'])){
-            $this->error .= "Veuillez entrer un prénom valide <br>";
+            $this->error .= "Veuillez entrer un prénom valide. <br>";
         }
 
         /* Checking if the password and password2 are the same. */
         if($data['password'] !== $password2){
-            $this->error .= "Les mots de passe ne correspondent pas <br>";
+            $this->error .= "Les mots de passe ne correspondent pas. <br>";
         }
 
         /* Checking if the password is less than 4 characters. */
         if(strlen($data['password']) < 4 ){
-            $this->error .= "Le mot de passe doit contenir au moins 4 caractères <br>";
+            $this->error .= "Le mot de passe doit contenir au moins 4 caractères. <br>";
         }
 
         // check if email already exists
@@ -77,12 +82,12 @@ class User{
 
         /* Checking if the email is valid. */
         if (empty($data['email'])){
-            $this->error .= "Veuillez entrer une adresse valide <br>";
+            $this->error .= "Veuillez entrer une adresse email valide. <br>";
         }
 
         /* Checking if the password is less than 4 characters. */
         if(strlen($data['password']) < 4 ){
-            $this->error .= "Le mot de passe doit contenir au moins 4 caractères <br>";
+            $this->error .= "Le mot de passe doit contenir au moins 4 caractères. <br>";
         }
 
         if($this->error == ""){
