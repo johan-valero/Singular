@@ -21,31 +21,31 @@
 							<p class="mb-0">Veuillez remplir les champs avec vos informations pour vous inscrire. Les champs marqués d'un (<span style="color:#cd701c;">*</span>) sont obligatoires.</p>
 							<span style="color:#cd701c;"><?php check_error() ?></span>
 							<form method="POST">
-							<div class="form-group first">
-								<label for="name">Nom <span style="color:#CD701C;">*</span></label>
-								<input type="text" class="form-control" placeholder="Nom" name="name" required>
-							</div>
-							<div class="form-group first">
-								<label for="firstname">Prénom <span style="color:#CD701C;">*</span></label>
-								<input type="text" class="form-control" placeholder="Prénom" name="firstname" required>
-							</div>
-							<div class="form-group first">
-								<label for="email">Adresse email <span style="color:#CD701C;">*</span></label>
-								<input type="email" class="form-control" placeholder="Votre-email@gmail.com" name="email" required>
-							</div>
-							<div class="form-group first">
-								<label for="phone">Téléphone <span style="color:#CD701C;">*</span></label>
-								<input type="phone" class="form-control" placeholder="Téléphone" name="phone" required>
-							</div>
-							<div class="form-group last mb-3">
-								<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>
-								<input type="password" class="form-control" placeholder="Votre mot de passe"  name="password" required>
-								<input type="password" class="form-control" placeholder="Vérifier votre mot de passe"  name="password2" required>
-							</div>
-							<div class="d-flex mb-4 align-items-center">
-								<span class="ml-center"><a href="<?=ROOT?>login" class="forgot-pass">Vous êtes déjà inscrit ?</a></span> 
-							</div>
-							<input type="submit" value="Inscription" class="btn btn-block btn-form1-submit">
+								<div class="form-group first">
+									<label for="name">Nom <span style="color:#CD701C;">*</span></label>
+									<input type="text" class="form-control" placeholder="Nom" name="name" required>
+								</div>
+								<div class="form-group first">
+									<label for="firstname">Prénom <span style="color:#CD701C;">*</span></label>
+									<input type="text" class="form-control" placeholder="Prénom" name="firstname" required>
+								</div>
+								<div class="form-group first">
+									<label for="email">Adresse email <span style="color:#CD701C;">*</span></label>
+									<input type="email" class="form-control" placeholder="Votre-email@gmail.com" name="email" required>
+								</div>
+								<div class="form-group first">
+									<label for="phone">Téléphone <span style="color:#CD701C;">*</span></label>
+									<input type="phone" class="form-control" placeholder="Téléphone" name="phone" required>
+								</div>
+								<div class="form-group last mb-3">
+									<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>
+									<input type="password" class="form-control" placeholder="Votre mot de passe"  name="password" required>
+									<input type="password" class="form-control" placeholder="Vérifier votre mot de passe"  name="password2" required>
+								</div>
+								<div class="d-flex mb-4 align-items-center">
+									<span class="ml-center"><a href="<?=ROOT?>login" class="forgot-pass">Vous êtes déjà inscrit ?</a></span> 
+								</div>
+								<input type="submit" value="Inscription" class="btn btn-block btn-form1-submit">
 							</form>
 						</div>
 					</div>

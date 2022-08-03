@@ -62,7 +62,8 @@ class User{
             $data['password'] = hash('sha1', $data['password']);
 
             /* Inserting the data into the database. */
-            $query = "insert into users (url_user,name_user,firstname_user,email_user,phone_user,password_user,date,rank) values (:url_user,:name,:firstname,:email,:phone,:password,:date,:rank)";
+            $query = "insert into users (url_user,name_user,firstname_user,email_user,phone_user,password_user,date_user,rank_user) values (:url_user,:name,:firstname,:email,:phone,:password,:date,:rank)";
+            show($query);
             $result = $db->write($query,$data);
             if($result){
                 header("location: ". ROOT ."login");
@@ -181,8 +182,6 @@ class User{
                     return $result;
                 }
             }
-
-
             $_SESSION['intended_url'] =  FULL_URL;
             header("location:".ROOT."login");
             die;
@@ -236,31 +235,30 @@ class User{
         }
 
         if(strlen($data['password']) < 4 ){
-            $this->error .= "Le mot de passe doit contenir au moins 4 caractères <br>";
+            $this->error .= "Le mot de passe doit contenir au moins 4 caractères. <br>";
         }
 
         if($data['password'] !== $password2){
-            $this->error .= "Les mots de passe ne correspondent pas <br>";
+            $this->error .= "Les mots de passe ne correspondent pas. <br>";
         }
 
-        $sql = "select * from users where email = :email limit 1 ";
+        $sql = "select * from users where email_user = :email limit 1 ";
         $arr['email'] = $data['email'];
         $check = $db->read($sql,$arr);
 
         if(is_array($check)){
             if($this->error == ""){
                 $data['password'] = hash('sha1', $data['password']);
-                $query = "update users set password  = :password where email = :email";
+                $query = "update users set password_user  = :password where email_user = :email";
                 $result = $db->write($query,$data);
                 if($result){
-                    $this->mail_sign_up($_POST['email'],$_POST['name'],$_POST['firstname'],$_POST['phone'],$_POST['password']);
-                    $this->error .= "Votre mot de passe à bien était modifié";
-                    header("location: ". ROOT ."login");
+                    $this->error .= "Votre mot de passe à bien était modifié.";
+                    header("location: ". ROOT ."forget/password_message");
                     die;
                 }
             }
         }else{
-            $this->error .= "Cette adresse n'est pas reconnu <br>";
+            $this->error .= " Adresse email inconnue. Veuillez indiquez une adresse email existante.<br>";
         }
         $_SESSION['error'] = $this->error;
     } 
