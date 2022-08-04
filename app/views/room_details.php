@@ -42,7 +42,7 @@
                         <h6>Informations pratiques</h6>
                         <ul class="list-unstyled page-list mb-30">
                             <li>
-                                <div class="page-list-icon"><span><i class="fa-solid fa-igloo"></i></span> </div>
+                                <div class="page-list-icon"><span><i class="<?= $details->icon_category?>"></i></span> </div>
                                 <div class="page-list-text">
                                     <p><a href="<?=ROOT?>rooms/category/<?= $details->name_category?>"><?= $details->name_category?></a></p>
                                 </div>
@@ -75,14 +75,16 @@
                         <h6>Options et services</h6>
                         <ul class="list-unstyled page-list mb-30">                   
                             <?php 
-                                foreach($accom as $accomodation){
-                                    echo '
-                                        <li>
-                                            <div class="page-list-icon"> <span><i class="'.$accomodation->icon_accomodation.'"></i></span></div>
-                                            <div class="page-list-text">
-                                                <p>'.$accomodation->name_accomodation.'</p>
-                                            </div>
-                                        </li>';
+                                if(is_array($accom)){
+                                    foreach($accom as $accomodation){
+                                        echo '
+                                            <li>
+                                                <div class="page-list-icon"> <span><i class="'.$accomodation->icon_accomodation.'"></i></span></div>
+                                                <div class="page-list-text">
+                                                    <p>'.$accomodation->name_accomodation.'</p>
+                                                </div>
+                                            </li>';
+                                    }
                                 }
                             ?>
                         </ul>
@@ -121,5 +123,28 @@
             </div>
         </section>
         
+<?php else: ?>
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/h1.jpg" style="background-position:bottom;">
+        <div class="container">
+            <div class="row">
+				<div class="col-md-12 caption mt-90">
+					<h2 style="letter-spacing:10px;text-transform:uppercase;text-align:center;">Nos hébergements</h2>
+                    <h5 style="text-align:center;"><span style="color:#cd701c;font-weight:600;">Insolite</span></h5>
+				</div>
+			</div>
+        </div>
+    </div>
+    <section class="rooms-page section-padding" data-scroll-index="1">
+            <div class="container">
+                <!-- project content -->
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <div class="section-subtitle">Singular</div>
+                        <div class="section-title"><h5>Pas de détails disponibles pour cet hébergement.</h5></div>
+                    </div>
+                </div>
+            </div>
+    </section>
 <?php endif; ?>
 <?php $this->view("footer", $data); ?>

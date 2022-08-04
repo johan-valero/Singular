@@ -2,7 +2,7 @@
 
 class Room{
 
-    // Affichage des logements en incluant le bedding
+    // Affichage des logements en incluant le lit la catégorie et les animaux via le "slug"
     public function get_all_with_details($slug){
         $DB = Database::newInstance();
         return $DB->read("
@@ -16,12 +16,17 @@ class Room{
     // Affichage des 4 derniers logements
     public function get_last(){
         $DB = Database::newInstance();
-        return $DB->read("select * from rooms order by id_room desc limit 4");
+        return $DB->read("select * from rooms 
+        join categories on rooms.id_category = categories.id_category 
+        order by id_room desc 
+        limit 6");
     } 
     // Affichage des logements
     public function get_all(){
         $DB = Database::newInstance();
-        return $DB->read("select * from rooms");
+        return $DB->read("select * from rooms
+        join categories on rooms.id_category = categories.id_category 
+        ");
     } 
 
     // Affichage des logements pour une recherche

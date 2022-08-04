@@ -22,15 +22,15 @@ Class Rooms extends Controller{
         // Si il ya une recherche on la cherche via son nom
         if($search){
             $search = "%".$find."%";
-            $rooms = $Rooms->search_results($search);
+            $search_rooms = $Rooms->search_results($search);
         }else{
-            $rooms = $Rooms->get_all();
+            $search_rooms = $Rooms->get_all();
         } 
 
         // Get all category
         $data['categories'] = $Categories->get_all();
 
-        $data['rooms'] = $rooms;
+        $data['search_rooms'] = $search_rooms;
         $data['page_title'] = "Logements";
         $this->view('rooms', $data);
     }
