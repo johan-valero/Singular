@@ -20,4 +20,47 @@
                 </ul>
             </div>
         </div>
+        <div class="col-md-12">
+            <form action="<?=ROOT?>rooms" method="GET">
+                <div class="widget">
+                    <div class="widget-title">
+                        <h6 style="font-size:20px;">Catégories</h6>
+                        <select name="categories">
+                            <option>-- Catégories --</option>
+                            <?php foreach($categories as $category):?>
+                                <option value="<?=$category->id_category?>"><?=$category->name_category?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="widget-title">
+                        <h6 style="font-size:20px;">Litterie</h6>
+                        <select name="beddings">
+                            <option>-- Lit --</option>
+                            <?php foreach($beddings as $bedding):?>
+                                <option value="<?=$bedding->id_bedding?>"><?=$bedding->name_bedding?></option>
+                            <?php endforeach;?>
+                        </select>
+                    </div>
+                    <div class="widget-title">
+                        <h6 style="font-size:20px;">Animaux</h6>
+                        <?php foreach($animals as $animal):?>
+                            <div>
+                                <input type="checkbox" name="animals">
+                                <label for="animals"><?=$animal->name_animal?></label>
+                            </div>
+                        <?php endforeach;?>
+                    </div> 
+                    <div class="widget-title">
+                        <h6 style="font-size:20px;">Options et services</h6>
+                        <?php foreach($accomodations as $accomodation):?>
+                            <div>
+                                <input type="checkbox" name="accomodations">
+                                <label for="accomodations"><?=$accomodation->name_accomodation?></label>
+                            </div>
+                        <?php endforeach;?>
+                    </div>       
+                    <button type="submit" name="filter" class="btn-form1-submit">Rechercher</button>
+                </div>
+            </form>
+        </div>
     </div>

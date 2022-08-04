@@ -34,4 +34,38 @@ class Room{
         $DB = Database::newInstance();
         return $DB->read("select * from rooms join categories on rooms.id_category = categories.id_category where CONCAT(name_room, name_category)  like '$find'");
     }
+
+    // Affichage des logements via le formulaire de recherche avancée 
+    public function results_filter($GET){
+        $DB = Database::newInstance();
+        $query = "
+        SELECT * FROM rooms 
+        JOIN categories 
+        ON categories.id_category = rooms.id_category
+        JOIN beddings 
+        ON beddings.id_bedding = rooms.id_bedding
+        JOIN animals 
+        ON animals.id_animal = rooms.id_animal
+        ";
+
+        if(count($GET) > 0){
+            $query .= " WHERE ";
+        }
+
+        if(isset($GET['categories'])){
+            $query .= " categories.id_category = '$GET[categories]' AND ";
+        }
+
+        // if(isset($GET['beddings'])){
+        //     $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
+        // }
+
+        $query = trim($query);
+        $query = trim($query, 'AND');
+        $query .= "
+        ORDER BY id_room desc
+        ";
+        $rooms = $DB->read($query);
+        return $rooms;
+    }
 }

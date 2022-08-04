@@ -62,6 +62,8 @@
                             <ul class="dropdown-menu last">
                                 <?php if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ): ?>
                                     <li class="dropdown-item"><a href="<?=ROOT?>admin">Admin</a></li>
+                                    <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
+                                    <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>
                                 <?php else: ?>
                                 <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
                                 <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>

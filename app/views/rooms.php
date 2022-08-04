@@ -1,7 +1,7 @@
 <?php $this->view('header', $data)?>
 
 <!-- Header Banner -->
-<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/h1.jpg">
+<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/h1.jpg" style="background-position:bottom;background-size:cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left caption mt-90">
@@ -55,17 +55,6 @@
                                     Pas de logements disponibles dans cette catégorie.
                                 </div>
                             <?php endif; ?>
-                        </div>
-                                
-                        <div class="col-md-12">
-                            <!-- Pagination -->
-                            <ul class="news-pagination-wrap align-center mb-30 mt-30">
-                                <li><a href="blog2.html#"><i class="ti-angle-left"></i></a></li>
-                                <li><a href="blog2.html#">1</a></li>
-                                <li><a href="blog2.html#" class="active">2</a></li>
-                                <li><a href="blog2.html#">3</a></li>
-                                <li><a href="blog2.html#"><i class="ti-angle-right"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
