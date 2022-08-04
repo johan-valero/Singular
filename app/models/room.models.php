@@ -13,7 +13,7 @@ class Room{
         where slug = :slug", ['slug'=>$slug]);
     }
 
-    // Affichage des 4 derniers logements
+    // Affichage des 4 derniers logementsen incluant la catégorie pour le template des cards
     public function get_last(){
         $DB = Database::newInstance();
         return $DB->read("select * from rooms 
@@ -21,7 +21,7 @@ class Room{
         order by id_room desc 
         limit 6");
     } 
-    // Affichage des logements
+    // Affichage des logements en incluant la catégorie
     public function get_all(){
         $DB = Database::newInstance();
         return $DB->read("select * from rooms
@@ -29,7 +29,7 @@ class Room{
         ");
     } 
 
-    // Affichage des logements pour une recherche
+    // Affichage des logements pour une recherche en incluant CONCAT qui permet d'inclure la catégorie dans la recherche
     public function search_results($find){
         $DB = Database::newInstance();
         return $DB->read("select * from rooms join categories on rooms.id_category = categories.id_category where CONCAT(name_room, name_category)  like '$find'");
