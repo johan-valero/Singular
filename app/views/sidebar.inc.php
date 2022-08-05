@@ -23,6 +23,9 @@
         <div class="col-md-12">
             <form action="<?=ROOT?>rooms" method="GET">
                 <div class="widget">
+                    <!-- <div class="widget-title"> -->
+                        <h3 style="text-align:center;">Recherche avancée</h3>
+                    <!-- </div> -->
                     <div class="widget-title">
                         <h6 style="font-size:20px;">Catégories</h6>
                         <select name="categories">
@@ -44,12 +47,14 @@
                     <div class="widget-title">
                         <h6 style="font-size:20px;">Animaux</h6>
                         <?php $num = 0 ?>
-                        <?php foreach($animals as $animal):?>
-                            <div>
-                                <input type="checkbox" name="animals<?= ($num += 1)?>" value="<?=$animal->id_animal?>">
-                                <label for="animals"><?=$animal->name_animal?></label>
-                            </div>
-                        <?php endforeach;?>
+                        <div style="display:flex;">
+                            <?php foreach($animals as $animal):?>
+                                <div style="padding: 0px 25px 0px 0px">
+                                    <input type="checkbox" name="animals<?= ($num += 1)?>" value="<?=$animal->id_animal?>">
+                                    <label for="animals"><?=ucwords($animal->name_animal)?></label>
+                                </div>
+                            <?php endforeach;?>
+                        </div>
                     </div> 
                     <div class="widget-title">
                         <h6 style="font-size:20px;">Options et services</h6>
