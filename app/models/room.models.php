@@ -56,15 +56,21 @@ class Room{
             $query .= " categories.id_category = '$GET[categories]' AND ";
         }
 
-        // if(isset($GET['beddings'])){
-        //     $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
-        // }
+        if(isset($GET['beddings'])){
+            $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
+        }
+
+        if(isset($GET['animals1']) && isset($GET['animals2'])){
+            $query .= " animals.id_animal IN ('$GET[animals1]', '$GET[animals2]') AND ";
+        }
 
         $query = trim($query);
         $query = trim($query, 'AND');
+        $query = trim($query, 'OR');
         $query .= "
         ORDER BY id_room desc
         ";
+
         $rooms = $DB->read($query);
         return $rooms;
     }

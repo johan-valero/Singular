@@ -18,7 +18,7 @@ Class App{
         require "../app/controllers/". $this->controller .".php";
         $this->controller = new $this->controller;
 
-        // Si la method (la fonction issu d'une classe) existe on supprime la 2eme partie de l'url 
+        // Si la methode (la fonction issu d'une classe) existe on supprime la 2eme partie de l'url 
         if(isset($url[1])){
             if(method_exists($this->controller, $url[1]) && is_callable([$this->controller, $url[1]])){
                 $this->method = $url[1];

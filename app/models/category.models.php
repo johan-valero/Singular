@@ -14,4 +14,11 @@ class Category{
         join rooms on categories.id_category = rooms.id_category 
         where name_category = '$name'");
     }
+
+    // Affiche les données d'une catégorie via son nom
+    public function get_cat($name){
+        $DB = Database::newInstance();
+        return $DB->read("select * from categories  
+        where name_category = '$name'");
+    }
 }

@@ -21,14 +21,12 @@
                         <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
                             <?php if(isset($_GET['find'])):?>
                                 <div class="col-md-4">
-                                    <h5><b><?= $search_rooms ? count($search_rooms) : 0 ;?></b> résultats pour " <b><?= ucwords($_GET['find'])?></b> " :</h5>  
+                                    <h5><b><?= $rooms ? count($rooms) : 0 ;?></b> résultats pour " <b><?= ucwords($_GET['find'])?></b> " :</h5>  
                                 </div>
-                            <?php else:?>
-                                <?php if(isset($rooms) && is_array($rooms)):?>
+                            <?php elseif(isset($name) && is_array($name)):?>
                                     <div class="col-md-4">
-                                    <h3><b><i class="<?= $rooms[0]->icon_category?>"></i></b> <?= $rooms[0]->name_category?></h3>  
+                                    <h3><b><i class="<?= $name[0]->icon_category?>"></i></b> <?= $name[0]->name_category?></h3>  
                                     </div>
-                                <?php endif;?>
                             <?php endif;?>
                         </div>
                         <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
@@ -36,18 +34,6 @@
                                 <?php foreach($rooms as $room):?>
                                     <div class="col-md-4">
                                         <?php $this->view('rooms.inc',$room)?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php elseif(isset($all_rooms) && is_array($all_rooms)): ?>
-                                <?php foreach($all_rooms as $all_room):?>
-                                    <div class="col-md-4">
-                                        <?php $this->view('rooms.inc',$all_room)?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php elseif(isset($search_rooms) && is_array($search_rooms)): ?>
-                                <?php foreach($search_rooms as $search_room):?>
-                                    <div class="col-md-4">
-                                        <?php $this->view('rooms.inc',$search_room)?>
                                     </div>
                                 <?php endforeach; ?>
                             <?php else: ?>

@@ -13,9 +13,9 @@
                     <h6 style="font-size:20px;">Catégories</h6>
                 </div>
                 <ul>
-                    <li><a href="<?=ROOT?>rooms/category"><i class="ti-angle-right"></i>Toutes les catégories</a></li>
+                    <li><a href="<?=ROOT?>rooms"><i class="ti-angle-right"></i>Toutes les catégories</a></li>
                     <?php foreach($categories as $category):?>
-                        <li><a href="<?=ROOT?>rooms/category/<?= $category->name_category?>"><i class="ti-angle-right"></i><?= $category->name_category?></a></li>
+                        <li><a href="<?=ROOT?>rooms/<?= $category->name_category?>"><i class="ti-angle-right"></i><?= $category->name_category?></a></li>
                     <?php endforeach;?>
                 </ul>
             </div>
@@ -43,9 +43,10 @@
                     </div>
                     <div class="widget-title">
                         <h6 style="font-size:20px;">Animaux</h6>
+                        <?php $num = 0 ?>
                         <?php foreach($animals as $animal):?>
                             <div>
-                                <input type="checkbox" name="animals">
+                                <input type="checkbox" name="animals<?= ($num += 1)?>" value="<?=$animal->id_animal?>">
                                 <label for="animals"><?=$animal->name_animal?></label>
                             </div>
                         <?php endforeach;?>
@@ -54,7 +55,7 @@
                         <h6 style="font-size:20px;">Options et services</h6>
                         <?php foreach($accomodations as $accomodation):?>
                             <div>
-                                <input type="checkbox" name="accomodations">
+                                <input type="checkbox" name="accomodations" value="<?=$accomodation->id_accomodation?>">
                                 <label for="accomodations"><?=$accomodation->name_accomodation?></label>
                             </div>
                         <?php endforeach;?>

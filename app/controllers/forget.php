@@ -1,10 +1,11 @@
 <?php
 
+// Gestion de la fonctionnalité mot de passe oublié 
 class Forget extends Controller{
     public function index(){
         $data['page_title'] = "Mot de passe oublié";
         
-        /* Checking if the form is submitted. */
+        // On check si le formulaire est soumis
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $User = $this->load_model("User");
             $User->forget($_POST);
