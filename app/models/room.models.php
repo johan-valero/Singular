@@ -48,6 +48,7 @@ class Room{
         ON animals.id_animal = rooms.id_animal
         ";
 
+        // Mis en place de la query en ajoutant les filtre lorsqu'ils sont set
         if(count($GET) > 0){
             $query .= " WHERE ";
         }
@@ -60,7 +61,11 @@ class Room{
             $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
         }
 
-        if(isset($GET['animals1']) && isset($GET['animals2'])){
+        if(isset($GET['animals1']) && !isset($GET['animals2'])){
+            $query .= " animals.id_animal = '$GET[animals1]' AND ";
+        }elseif(isset($GET['animals2']) && !isset($GET['animals1']) ){
+            $query .= " animals.id_animal = '$GET[animals2]' AND ";
+        }elseif(isset($GET['animals1']) && isset($GET['animals2'])){
             $query .= " animals.id_animal IN ('$GET[animals1]', '$GET[animals2]') AND ";
         }
 
@@ -71,6 +76,7 @@ class Room{
         ORDER BY id_room desc
         ";
 
+        show($query);
         $rooms = $DB->read($query);
         return $rooms;
     }

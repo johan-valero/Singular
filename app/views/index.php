@@ -172,7 +172,7 @@
                         <a class="vid" href="https://youtu.be/gbbLm5qgWU8">
                         <div class="vid-butn">
                             <span class="icon">
-                                <i class="ti-control-play" style="line-height:0;"></i>
+                                <i class="ti-control-play" style="line-height:2.5;"></i>
                             </span>
                         </div>
                     </a>
@@ -209,7 +209,7 @@
     </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?=ASSETS?>img/slider/2.jpg" data-overlay-dark="2">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?=ROOT?>uploads/boat1.jpg" data-overlay-dark="2">
             <div class="container">
                 <div class="row">
                     <!-- Reservation -->
