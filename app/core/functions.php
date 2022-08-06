@@ -15,3 +15,9 @@ function check_error(){
         unset($_SESSION['error']);
     }
 }
+
+// Fonction pour contaténer la date en français 
+function fr_date($date){
+    setlocale(LC_ALL, 'fr_FR.UTF8', 'fr_FR','fr','fr','fra','fr_FR@euro');
+    return strftime("%d %B", strtotime($date));
+}

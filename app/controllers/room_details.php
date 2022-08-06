@@ -18,15 +18,20 @@ class Room_details extends Controller{
             $data['user_data'] = $user_data;
         }
 
-        // Récolte toutes les informations lorsque le slug est le même 
-        $details = $Rooms->get_all_with_details($slug);
+        $details = array();
+        if(isset($slug)){
+            // Récolte toutes les informations lorsque le slug est le même 
+            $details = $Rooms->get_all_with_details($slug);
+            // Récolte toutes les options et équipements d'un logements 
+            if($details){
+                $accom = $Accomodation->get_accom($details[0]->id_room);
+                $data['details'] = $details[0];
+                $data['accom'] = $accom;
+            }
+        }
 
-        // Récolte toutes les options et équipements d'un logements 
-        $accom = $Accomodation->get_accom($details[0]->id_room);
 
-        $data['accom'] = $accom;
         $data['page_title'] = "Détails du logement";
-        $data['details'] = $details[0];
         $this->view("room_details", $data);
     }
 }

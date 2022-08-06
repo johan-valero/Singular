@@ -99,70 +99,69 @@
         </div>
     </section>
     <!-- Catégories -->
-    <section class="news section-padding bg-black">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle"><span>Catégories</span></div>
-                    <div class="section-title"><span>Types de logements</span></div>
+    <?php if($categories): ?>
+        <section class="news section-padding bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-subtitle"><span>Catégories</span></div>
+                        <div class="section-title"><span>Types de logements</span></div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme">
-                        <?php
-                            foreach($categories as $category){
-                                echo'
-                                    <div class="item" style="text-align:center;">
-                                        <div class="position-re o-hidden"> <img style="height:275px;object-fit:cover;" src="'.ROOT.$category->img_category.'" alt="">
-                                            <div class="date" style="background-color:#fff;">
-                                                <span><i style="color:#cd701c;">'.$category->id_category.'</i></span> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            <?php
+                                foreach($categories as $category){
+                                    echo'
+                                        <div class="item" style="text-align:center;">
+                                            <div class="position-re o-hidden"> <img style="height:275px;object-fit:cover;" src="'.ROOT.$category->img_category.'" alt="">
+                                                <div class="date" style="background-color:#fff;">
+                                                    <span><i style="color:#cd701c;">'.$category->id_category.'</i></span> 
+                                                </div>
+                                            </div>
+                                            <div class="con"> <span class="category">
+                                                    <a style="font-size:10px;line-height:14px;" href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->description_category.'</a>
+                                                </span>
+                                                <h5><a href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->name_category.'</a></h5>
                                             </div>
                                         </div>
-                                        <div class="con"> <span class="category">
-                                                <a style="font-size:10px;line-height:14px;" href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->description_category.'</a>
-                                            </span>
-                                            <h5><a href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->name_category.'</a></h5>
-                                        </div>
-                                    </div>
-                                ';
-                            }
-                        ?>
+                                    ';
+                                }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
     <!-- Rooms -->
-    <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle">Logements</div>
-                    <div class="section-title">Nos derniers hébergements</div>
+    <?php if($rooms): ?>
+        <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-subtitle">Logements</div>
+                        <div class="section-title">Nos derniers hébergements</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php
+                        foreach($rooms as $room){
+                            echo'<div class="col-md-4">';
+                            $this->view("rooms.inc", $room);
+                            echo '</div>';
+                        }
+                    ?>
                 </div>
             </div>
-            <div class="row">
-                <?php
-                if($rooms){
-                    foreach($rooms as $room){
-                        echo'<div class="col-md-4">';
-                        $this->view("rooms.inc", $room);
-                        echo '</div>';
-                    }
-                }else{
-                    echo '<div class="section-subtitle">Pas de logements disponibles.</div>';
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
     <!-- Promo Video -->
     <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ROOT?>uploads/hobbit3.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2 text-center">
-                        <span><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i></span>
                         <div class="section-subtitle"><span>Singular</span></div>
                         <div class="section-title"><span>Vidéo promotionnelle</span></div>
                     </div>
@@ -172,7 +171,7 @@
                         <a class="vid" href="https://youtu.be/gbbLm5qgWU8">
                         <div class="vid-butn">
                             <span class="icon">
-                                <i class="ti-control-play" style="line-height:2.5;"></i>
+                                <i class="fa-brands fa-youtube" style="line-height:2.5;"></i>
                             </span>
                         </div>
                     </a>
@@ -182,31 +181,33 @@
             </div>
     </section>
     <!-- Facilities -->
-    <section class="facilties section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle">Nos services</div>
-                    <div class="section-title"> Équipements des établissements</div>
+    <?php if($facilities): ?>
+        <section class="facilties section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-subtitle">Nos services</div>
+                        <div class="section-title"> Équipements des établissements</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php foreach($facilities as $facility){
+                        echo '
+                            <div class="col-md-4">
+                                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
+                                    <span><i class="'.$facility->icon_accomodation.'"></i></span>
+                                    <h5>'.$facility->name_accomodation.'</h5>
+                                    <p>'.$facility->description_accomodation.'</p>
+                                    <div class="facility-shape"><span><i class="'.$facility->icon_accomodation.'"></i></span> </div>
+                                </div>
+                            </div>
+                        ';
+                    }
+                    ?>
                 </div>
             </div>
-            <div class="row">
-                <?php foreach($facilities as $facility){
-                    echo '
-                        <div class="col-md-4">
-                            <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                                <span><i class="'.$facility->icon_accomodation.'"></i></span>
-                                <h5>'.$facility->name_accomodation.'</h5>
-                                <p>'.$facility->description_accomodation.'</p>
-                                <div class="facility-shape"><span><i class="'.$facility->icon_accomodation.'"></i></span> </div>
-                            </div>
-                        </div>
-                    ';
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php endif ?>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?=ROOT?>uploads/boat1.jpg" data-overlay-dark="2">

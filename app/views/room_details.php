@@ -1,4 +1,5 @@
 <?php $this->view("header", $data); ?>
+
 <!-- Room Page Slider -->
 <?php if($details): ?>
     <header class="header slider">
@@ -10,7 +11,7 @@
             </div>
             <!-- arrow down -->
             <div class="arrow bounce text-center">
-                <a href="#" data-scroll-nav="1" class=""> <i class="ti-arrow-down"></i> </a>
+                <a href="#" data-scroll-nav="1" class=""> <i class="fa-solid fa-arrow-down"></i> </a>
             </div>
         </header>
         <!-- Room Content -->
@@ -19,7 +20,7 @@
                 <!-- project content -->
                 <div class="row">
                     <div class="col-md-12"> 
-                        <div class="section-subtitle">Singular</div>
+                        <div class="section-subtitle">Logement</div>
                         <div class="section-title"><?= $details->name_room ?></div>
                     </div>
                     <div class="col-md-8">
@@ -29,9 +30,44 @@
                                 <h6>Instructions d'arrivée</h6>
                                 <p>Les visiteurs recevront un email lors de la réservations contenant les instructions liées à leurs location. Pour plus de détails, veuillez contacter le service client avec vos informations de réservations.</p>
                             </div>
+                            <div class="col-md-4">
+                                <h6>Heure d'arrivée</h6>
+                                <ul class="list-unstyled page-list mb-30">
+                                    <li>
+                                        <div class="page-list-icon"> <span class="fa-solid fa-hourglass-start"></span> </div>
+                                        <div class="page-list-text">
+                                            <p>À partir de <?=date("H\Hi",strtotime($details->hour_checkin))?></p>
+                                        </div>
+                                    </li>
+                                </ul> 
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Heure de départ </h6>
+                                <ul class="list-unstyled page-list mb-30">
+                                    <li>
+                                        <div class="page-list-icon"> <span class="fa-solid fa-hourglass-end"></span> </div>
+                                        <div class="page-list-text">
+                                            <p>À partir de <?=date("H\Hi",strtotime($details->hour_checkout))?></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Date d'ouverture</h6>
+                                <ul class="list-unstyled page-list mb-30">
+                                    <li>
+                                        <div class="page-list-icon"> <span class="fa-solid fa-calendar"></span> </div>
+                                        <div class="page-list-text">
+                                            <p>Du <?= fr_date($details->date_open)?> au <?= fr_date($details->date_close)?></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                             <div class="col-md-12">
                                 <h6>Adresse</h6>
                                 <p><?= $details->address_room.' '.$details->zip_room.' '.$details->city_room?></p>
+                                <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?=$details->address_room.' '.$details->zip_room.' '.$details->city_room?>&output=embed"></iframe>
+                                
                             </div>
                             <div class="col-md-12">
                                 <div class="butn-dark mt-15 mb-30"> <a href="rooms2.html"><span>Réserver maintenant</span></a> </div>
@@ -39,7 +75,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 offset-md-1">
-                        <h6>Informations pratiques</h6>
+                        <h6>Caractéristiques du logement</h6>
                         <ul class="list-unstyled page-list mb-30">
                             <li>
                                 <div class="page-list-icon"><span><i class="<?= $details->icon_category?>"></i></span> </div>
@@ -70,7 +106,13 @@
                                 <div class="page-list-text">
                                     <p>Animaux <?= $details->name_animal?></p>
                                 </div>
-                            </li>                  
+                            </li>  
+                            <li>
+                                <div class="page-list-icon"><span><i class="fa-solid fa-maximize"></i></span> </div>
+                                <div class="page-list-text">
+                                    <p><?= $details->area_room ?> m²</p>
+                                </div>
+                            </li>                 
                         </ul>
                         <h6>Options et services</h6>
                         <ul class="list-unstyled page-list mb-30">                   

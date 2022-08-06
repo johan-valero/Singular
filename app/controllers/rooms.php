@@ -43,7 +43,7 @@ Class Rooms extends Controller{
             if(isset($_GET['animals2'])){
                 $GET['animals2'] = $_GET['animals2'];
             }
-
+            
             $filter = $Rooms->results_filter($GET);
             $data['rooms'] = $filter;
         

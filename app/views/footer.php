@@ -40,7 +40,7 @@
                             </div>
                             <div class="footer-about-social-list">
                                 <a href="#"><i class="ti-instagram"></i></a>
-                                <a href="#"><i class="ti-twitter"></i></a>
+                                <a href="#"><i class="ti-github"></i></a>
                                 <a href="#"><i class="ti-facebook"></i></a>
                             </div>
                         </div>
@@ -52,8 +52,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="footer-bottom-inner" style="text-align:center;">
+                            <ul style="display:flex;justify-content:center;" class="footer-bottom-copy-right">
+                                <li style="padding:0px 10px 0px 0px;"><a href="#">Mentions légales</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
+                                <li style="padding:0px 10px 0px 0px;"><a href="#">Confidentialité</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
+                                <li style="padding:0px 10px 0px 0px;"><a href="#">Responsabilités</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
+                                <li style="padding:0px 10px 0px 0px;"><a href="#">Contactez-nous</a></li>
+                            </ul>
+                        </div>
                         <div class="footer-bottom-inner">
-                            <p class="footer-bottom-copy-right">© Copyright Adrar formation 2022 par Johan Valero</p>
+                            <p class="footer-bottom-copy-right">© 2021 - 2022 Singular Tous droits réservés. Projet de fin de formation de l'ADRAR.</p>
                         </div>
                     </div>
                 </div>
