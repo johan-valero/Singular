@@ -1,7 +1,7 @@
 <?php $this->view("header", $data); ?>
 
 <!-- Room Page Slider -->
-<?php if($details): ?>
+<?php if(isset($details)): ?>
     <header class="header slider">
             <div class="owl-carousel owl-theme">
                 <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
@@ -47,7 +47,7 @@
                                     <li>
                                         <div class="page-list-icon"> <span class="fa-solid fa-hourglass-end"></span> </div>
                                         <div class="page-list-text">
-                                            <p>À partir de <?=date("H\Hi",strtotime($details->hour_checkout))?></p>
+                                            <p>Jusqu'à <?=date("H\Hi",strtotime($details->hour_checkout))?></p>
                                         </div>
                                     </li>
                                 </ul>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="col-md-12">
                                 <h6>Adresse</h6>
-                                <p><?= $details->address_room.' '.$details->zip_room.' '.$details->city_room?></p>
+                                <p><?= '<strong>'.$details->name_room.'</strong>, '.$details->address_room.' '.$details->zip_room.' '.$details->city_room?></p>
                                 <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?=$details->address_room.' '.$details->zip_room.' '.$details->city_room?>&output=embed"></iframe>
                                 
                             </div>
@@ -80,7 +80,7 @@
                             <li>
                                 <div class="page-list-icon"><span><i class="<?= $details->icon_category?>"></i></span> </div>
                                 <div class="page-list-text">
-                                    <p><a href="<?=ROOT?>rooms/category/<?= $details->name_category?>"><?= $details->name_category?></a></p>
+                                    <p><a href="<?=ROOT?>rooms/<?= $details->name_category?>"><?= $details->name_category?></a></p>
                                 </div>
                             </li>  
                             <li>
@@ -146,16 +146,19 @@
                     <div class="col-md-8">
                         <div class="owl-carousel owl-theme">
                             <?php foreach($similar_rooms as $room): ?>
-                            <div class="pricing-card">
+                            <div class="pricing-card" style="font-size:21px;">
                                 <img src="<?=ROOT.$room->img_room?>" alt="">
-                                <div class="desc">
-                                    <div class="name"><?=$room->name_room?></div>
+                                <div class="desc" style="padding:25px;">
+                                    <div class="name" style="height:35px;"><?=$room->name_room?></div>
                                     <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
                                     <ul class="list-unstyled list">
                                         <li><i class="fa-solid fa-people-group"></i>1 - <?=$room->persons?> personnes</li>
                                         <li><i class="fa-solid fa-bed"></i><?=$room->name_bedding?></li>
-                                        <li><i class="fa-solid fa-dog"></i>Animaux <?=$room->name_animal?></li>
                                     </ul>
+                                    <div style="display:flex;justify-content:space-between;">
+                                        <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>
+                                        <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Réserver</span></a> </div>                                                                      
+                                    </div>
                                 </div>
                             </div>
                             <?php endforeach;?>

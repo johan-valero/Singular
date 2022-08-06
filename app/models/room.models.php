@@ -7,7 +7,7 @@ class Room{
         $DB = Database::newInstance();
         return $DB->read("
         select * from rooms 
-        join beddings on rooms.id_room = beddings.id_bedding 
+        join beddings on rooms.id_bedding = beddings.id_bedding 
         join categories on rooms.id_category = categories.id_category 
         join animals on rooms.id_animal = animals.id_animal 
         where slug = :slug", ['slug'=>$slug]);
