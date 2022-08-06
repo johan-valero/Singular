@@ -64,7 +64,7 @@
                                 </ul>
                             </div>
                             <div class="col-md-12">
-                                <h6>Adresse</h6>
+                                <h6>Emplacement</h6>
                                 <p><?= '<strong>'.$details->name_room.'</strong>, '.$details->address_room.' '.$details->zip_room.' '.$details->city_room?></p>
                                 <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?=$details->address_room.' '.$details->zip_room.' '.$details->city_room?>&output=embed"></iframe>
                                 
