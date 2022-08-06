@@ -123,7 +123,7 @@
                                             <div class="con"> <span class="category">
                                                     <a style="font-size:10px;line-height:14px;" href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->description_category.'</a>
                                                 </span>
-                                                <h5><a href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->name_category.'</a></h5>
+                                                <h5><a href="'.ROOT.'rooms/'.$category->name_category.'">'.$category->name_category.'</a></h5>
                                             </div>
                                         </div>
                                     ';
