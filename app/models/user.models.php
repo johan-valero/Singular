@@ -182,9 +182,6 @@ class User{
                     return $result;
                 }
             }
-            $_SESSION['intended_url'] =  FULL_URL;
-            header("location:".ROOT."login");
-            die;
 
         }else{
             if(isset($_SESSION['user_url'])){
@@ -195,11 +192,6 @@ class User{
                 if(is_array($result)){
                     return $result[0];
                 }
-            }
-            if($redirect){
-                $_SESSION['intended_url'] =  FULL_URL;
-                header("location:".ROOT."login");
-                die;
             }
         }
         return false;

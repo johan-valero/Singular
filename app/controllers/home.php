@@ -14,7 +14,7 @@ class Home extends Controller{
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
         }
-
+        
         // Afficher tout les aménagements disponibles
         $data['facilities'] = $Accomodation->get_all();
 
