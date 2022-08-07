@@ -11,52 +11,54 @@
         </div>
     </div>
 </div>
-<!-- News 2 -->
+
+<!-- rooms -->
 <section class="news2 section-padding">
-        <div class="container" style="max-width:1800px;">
-            <div class="row rooms1">
-                <div class="col-md-3"><?php $this->view('sidebar.inc', $data) ?></div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
-                            <?php if(isset($_GET['find'])):?>
+    <div class="container" style="max-width:1800px;">
+        <div class="row rooms1">
+            <div class="col-md-3"><?php $this->view('sidebar.inc', $data) ?></div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
+                        <?php if(isset($_GET['find'])):?>
+                            <div class="col-md-4">
+                                <h5><b><?= $rooms ? count($rooms) : 0 ;?></b> résultats pour " <b><?= ucwords($_GET['find'])?></b> " :</h5>  
+                            </div>
+                        <?php elseif(isset($name) && is_array($name)):?>
                                 <div class="col-md-4">
-                                    <h5><b><?= $rooms ? count($rooms) : 0 ;?></b> résultats pour " <b><?= ucwords($_GET['find'])?></b> " :</h5>  
+                                <h3><b><i class="<?= $name[0]->icon_category?>"></i></b> <?= $name[0]->name_category?></h3>  
                                 </div>
-                            <?php elseif(isset($name) && is_array($name)):?>
-                                    <div class="col-md-4">
-                                    <h3><b><i class="<?= $name[0]->icon_category?>"></i></b> <?= $name[0]->name_category?></h3>  
-                                    </div>
-                            <?php endif;?>
-                        </div>
-                        <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
-                            <?php if(isset($rooms) && is_array($rooms)):?>
-                                <?php foreach($rooms as $room):?>
-                                    <div class="col-md-4">
-                                        <?php $this->view('rooms.inc',$room)?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php else: ?>
+                        <?php endif;?>
+                    </div>
+                    <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
+                        <?php if(isset($rooms) && is_array($rooms)):?>
+                            <?php foreach($rooms as $room):?>
                                 <div class="col-md-4">
-                                    Pas de logements disponibles.
+                                    <?php $this->view('rooms.inc',$room)?>
                                 </div>
-                            <?php endif; ?>
-                        </div>
-                        <!-- Pagination -->
-                        <?php if(isset($page_number)): ?>
-                            <div class="col-md-12 text-center">
-                                <ul class="news-pagination-wrap align-center mb-30 mt-30">
-                                    <li><i class="ti-angle-left"></i></li>
-                                    <?php for($i=1;$i<=$page_number;$i++): ?>
-                                            <li><a href="?page=<?=$i?>"><?=$i?></a></li>
-                                    <?php endfor;?>
-                                    <li><i class="ti-angle-right"></i></li>
-                                </ul>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="col-md-4">
+                                Pas de logements disponibles.
                             </div>
                         <?php endif; ?>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <?php if(isset($page_number)): ?>
+                        <div class="col-md-12 text-center">
+                            <ul class="news-pagination-wrap align-center mb-30 mt-30">
+                                <li><i class="ti-angle-left"></i></li>
+                                <?php for($i=1;$i<=$page_number;$i++): ?>
+                                        <li><a href="?page=<?=$i?>"><?=$i?></a></li>
+                                <?php endfor;?>
+                                <li><i class="ti-angle-right"></i></li>
+                            </ul>
                         </div>
-                </div>
+                    <?php endif; ?>
+                    </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <?php $this->view('footer', $data)?>

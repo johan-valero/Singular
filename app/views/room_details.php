@@ -112,7 +112,13 @@
                                 <div class="page-list-text">
                                     <p><?= $details->area_room ?> m²</p>
                                 </div>
-                            </li>                 
+                            </li>     
+                            <li>
+                                <div class="page-list-icon"><span><i class="fa-solid fa-money-bill"></i></span> </div>
+                                <div class="page-list-text">
+                                    <p><?= $details->price_room ?> € / nuits</p>
+                                </div>
+                            </li>            
                         </ul>
                         <h6>Options et services</h6>
                         <ul class="list-unstyled page-list mb-30">                   
@@ -139,7 +145,7 @@
             <section class="pricing section-padding bg-black">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-12">
                             <div class="section-subtitle"><span>Logements</span></div>
                             <div class="section-title"><span>Similaire</span></div>
                             <p class="color-2">Nous vous proposons une liste d'hébergements similaires à votre recherche.</p>
@@ -152,10 +158,6 @@
                                     <div class="desc" style="padding:25px;">
                                         <div class="name" style="height:35px;"><?=$room->name_room?></div>
                                         <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
-                                        <ul class="list-unstyled list">
-                                            <li><i class="fa-solid fa-people-group"></i>1 - <?=$room->persons?> personnes</li>
-                                            <li><i class="fa-solid fa-bed"></i><?=$room->name_bedding?></li>
-                                        </ul>
                                         <div style="display:flex;justify-content:space-between;">
                                             <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>
                                             <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Réserver</span></a> </div>                                                                      

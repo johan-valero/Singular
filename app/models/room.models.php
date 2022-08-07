@@ -21,6 +21,7 @@ class Room{
         order by id_room desc 
         limit 6");
     } 
+    
     // Affichage des logements en incluant la catégorie
     public function get_all(){
         $DB = Database::newInstance();
