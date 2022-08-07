@@ -18,6 +18,23 @@ Class Rooms extends Controller{
             $data['user_data'] = $user_data;
         }
 
+        // Gestion de la pagination 
+        // Nombre de logements par page
+        // $limit = 3; 
+        // $all_rooms = $Rooms->get_all();
+        // $page = $_GET['page'];
+        // if($all_rooms){
+        //     // On détermine le nombre de page en fct du nombre d'élèments, ceil permet d'avoir un nombre entier.
+        //     $page_number = ceil(count($all_rooms) / $limit);
+        //     $data['page_number'] = $page_number;
+        //     // Si on détecte "page" dans l'url
+        //     if(isset($page)){
+        //         $items = ($page-1)*$limit;
+        //         $rooms = $Rooms->get_all_limit($items, $limit);
+        //         $data['rooms'] = $rooms;
+        //     }
+        // }  
+
         // Détermine si la variable est déclarée et est différente de null Si il ya une recherche on la cherche via le nom indiqué ($find)
         if(isset($_GET['find'])){
             $find = addslashes($_GET['find']);
@@ -36,14 +53,18 @@ Class Rooms extends Controller{
                 $GET['beddings'] = $_GET['beddings'];
             }
 
-            if(isset($_GET['animals1'])){
-                $GET['animals1'] = $_GET['animals1'];
-            }
-
-            if(isset($_GET['animals2'])){
-                $GET['animals2'] = $_GET['animals2'];
+            if(isset($_GET['animals'])){
+                foreach($_GET['animals'] as $key=>$value){
+                    $GET['animals'][$key] = $value;
+                }
             }
             
+            if(isset($_GET['accomodations'])){
+                foreach($_GET['accomodations'] as $key=>$value){
+                    $GET['accomodations'][$key] = $value;
+                }
+            }
+
             $filter = $Rooms->results_filter($GET);
             $data['rooms'] = $filter;
         

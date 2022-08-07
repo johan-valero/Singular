@@ -74,13 +74,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                    <span>
-                        <i class="star-rating"></i>
-                        <i class="star-rating"></i>
-                        <i class="star-rating"></i>
-                        <i class="star-rating"></i>
-                        <i class="star-rating"></i>
-                    </span>
                     <div class="section-subtitle">Singular</div>
                     <div class="section-title">Vivez une expérience hors du commun</div>
                     <p>
@@ -181,8 +174,8 @@
             </div>
     </section>
     <!-- Facilities -->
-    <?php if($facilities): ?>
-        <section class="facilties section-padding">
+    <?php if(isset($facilities)): ?>
+        <section class="pricing section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -191,23 +184,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    <?php foreach($facilities as $facility){
-                        echo '
-                            <div class="col-md-4">
-                                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                                    <span><i class="'.$facility->icon_accomodation.'"></i></span>
-                                    <h5>'.$facility->name_accomodation.'</h5>
-                                    <p>'.$facility->description_accomodation.'</p>
-                                    <div class="facility-shape"><span><i class="'.$facility->icon_accomodation.'"></i></span> </div>
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            <?php foreach($facilities as $facility):?>
+                                <div class="item" style="text-align:center;">
+                                    <div class="position-re o-hidden">
+                                        <div class="facilties">
+                                            <div class="col-md-12">
+                                                <div class="single-facility" style="height:200px;">
+                                                    <span><i class="<?=$facility->icon_accomodation?>"></i></span>
+                                                    <h5><?= $facility->name_accomodation?></h5>
+                                                    <p><?= $facility->description_accomodation?></p>
+                                                    <div class="facility-shape"><span><i class="<?= $facility->icon_accomodation?>"></i></span> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        ';
-                    }
-                    ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    <?php endif ?>
+    <?php endif; ?>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?=ROOT?>uploads/boat1.jpg" data-overlay-dark="2">

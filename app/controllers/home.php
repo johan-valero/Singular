@@ -15,18 +15,15 @@ class Home extends Controller{
             $data['user_data'] = $user_data;
         }
 
-        // Afficher les 4 derniers logements par id 
-        $rooms = $Rooms->get_last();
-
-        // Afficher tous les amanégements disponibles
-        $facilities = $Accomodation->get_all();
+        // Afficher tout les aménagements disponibles
+        $data['facilities'] = $Accomodation->get_all();
 
         // Afficher toutes les catégories disponible
-        $categories = $Categories->get_all();
+        $data['categories'] = $Categories->get_all();
 
-        $data['categories'] = $categories;
-        $data['facilities'] = $facilities;
-        $data['rooms'] = $rooms;
+        // Afficher les 4 derniers logements par id 
+        $data['rooms'] = $Rooms->get_last();
+
         $data['page_title'] = "Accueil";
         $this->view("index", $data);
     }

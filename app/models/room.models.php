@@ -46,6 +46,10 @@ class Room{
         ON beddings.id_bedding = rooms.id_bedding
         JOIN animals 
         ON animals.id_animal = rooms.id_animal
+        JOIN avoir
+        ON avoir.id_room = rooms.id_room
+        JOIN accomodations
+        ON accomodations.id_accomodation = avoir.id_accomodation
         ";
 
         // Mis en place de la query en ajoutant les filtre lorsqu'ils sont set
@@ -61,22 +65,43 @@ class Room{
             $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
         }
 
-        if(isset($GET['animals1']) && !isset($GET['animals2'])){
-            $query .= " animals.id_animal = '$GET[animals1]' AND ";
-        }elseif(isset($GET['animals2']) && !isset($GET['animals1']) ){
-            $query .= " animals.id_animal = '$GET[animals2]' AND ";
-        }elseif(isset($GET['animals1']) && isset($GET['animals2'])){
-            $query .= " animals.id_animal IN ('$GET[animals1]', '$GET[animals2]') AND ";
+        if(isset($GET['animals'])){
+            if(count($GET['animals']) > 1){
+                $query .= " animals.id_animal IN (";
+                foreach($GET['animals'] as $key => $value){
+                    $query .= "'$value',";
+                }
+                $query = trim($query, ',');
+                $query .= ") AND";
+            }else{
+                foreach($GET['animals'] as $key => $value){
+                    $query .= " animals.id_animal = '$value' AND";
+                }
+            }
+        }
+
+        if(isset($GET['accomodations'])){
+            if(count($GET['accomodations']) > 1){
+                $query .= " avoir.id_accomodation IN (";
+                foreach($GET['accomodations'] as $key => $value){
+                    $query .= "'$value',";
+                }
+                $query = trim($query, ',');
+                $query .= ")";
+            }else{
+                foreach($GET['accomodations'] as $key => $value){
+                    $query .= " avoir.id_accomodation = '$value'";
+                }
+            }
         }
 
         $query = trim($query);
         $query = trim($query, 'AND');
         $query = trim($query, 'OR');
         $query .= "
-        ORDER BY id_room desc
+        GROUP BY name_room
         ";
 
-        show($query);
         $rooms = $DB->read($query);
         return $rooms;
     }

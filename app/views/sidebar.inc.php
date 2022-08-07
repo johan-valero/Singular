@@ -25,9 +25,7 @@
         <div class="col-md-12">
             <form action="<?=ROOT?>rooms" method="GET">
                 <div class="widget">
-                    <!-- <div class="widget-title"> -->
-                        <h3 style="text-align:center;">Recherche avancée</h3>
-                    <!-- </div> -->
+                    <h3 style="text-align:center;">Recherche avancée</h3>
                     <div class="widget-title">
                         <h6 style="font-size:20px;">Catégories</h6>
                         <select name="categories">
@@ -49,11 +47,10 @@
                     <?php if($animals): ?>
                         <div class="widget-title">
                             <h6 style="font-size:20px;">Animaux</h6>
-                            <?php $num = 0 ?>
                             <div style="display:flex;">
                                 <?php foreach($animals as $animal):?>
                                     <div style="padding: 0px 25px 0px 0px">
-                                        <input type="checkbox" name="animals<?= ($num += 1)?>" value="<?=$animal->id_animal?>">
+                                        <input type="checkbox" name="animals[<?=$animal->name_animal?>]" value="<?=$animal->id_animal?>">
                                         <label for="animals"><?=ucwords($animal->name_animal)?></label>
                                     </div>
                                 <?php endforeach;?>
@@ -66,7 +63,7 @@
                             <?php $num_a = 0 ?>
                             <?php foreach($accomodations as $accomodation):?>
                                 <div>
-                                    <input type="checkbox" name="accomodations_<?=$accomodation->name_accomodation?>" value="<?=$accomodation->id_accomodation?>">
+                                    <input type="checkbox" name="accomodations[<?=$accomodation->name_accomodation?>]" value="<?=$accomodation->id_accomodation?>">
                                     <label for="accomodations"><?=$accomodation->name_accomodation?></label>
                                 </div>
                             <?php endforeach;?>

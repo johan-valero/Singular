@@ -18,22 +18,22 @@ class Room_details extends Controller{
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
         }
-
-
         
         // Récolte toutes les informations lorsque le slug est le même 
         $details = $Rooms->get_all_with_details($slug);
+        
         if(is_array($details)){
             // Récolte toutes les options et équipements d'un logements 
             $accom = $Accomodation->get_accom($details[0]->id_room);
+
             // Récolte les logements disponibles dans la même catégorie
             $similar = $Categories->get_rooms_by_id_category($details[0]->id_category);
+
             $data['accom'] = $accom;
             $data['details'] = $details[0];
             $data['similar_rooms'] = $similar;
         }
         
-
         $data['page_title'] = "Détails du logement";
         $this->view("room_details", $data);
     }

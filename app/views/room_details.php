@@ -135,38 +135,40 @@
             </div>
         </section>
         <!-- Similiar Room -->
-        <section class="pricing section-padding bg-black">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="section-subtitle"><span>Logements</span></div>
-                        <div class="section-title"><span>Similaire</span></div>
-                        <p class="color-2">Nous vous proposons une liste d'hébergements similaires à votre recherche.</p>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="owl-carousel owl-theme">
-                            <?php foreach($similar_rooms as $room): ?>
-                            <div class="pricing-card" style="font-size:21px;">
-                                <img src="<?=ROOT.$room->img_room?>" alt="">
-                                <div class="desc" style="padding:25px;">
-                                    <div class="name" style="height:35px;"><?=$room->name_room?></div>
-                                    <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
-                                    <ul class="list-unstyled list">
-                                        <li><i class="fa-solid fa-people-group"></i>1 - <?=$room->persons?> personnes</li>
-                                        <li><i class="fa-solid fa-bed"></i><?=$room->name_bedding?></li>
-                                    </ul>
-                                    <div style="display:flex;justify-content:space-between;">
-                                        <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>
-                                        <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Réserver</span></a> </div>                                                                      
+        <?php if(isset($similar_rooms)): ?>
+            <section class="pricing section-padding bg-black">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="section-subtitle"><span>Logements</span></div>
+                            <div class="section-title"><span>Similaire</span></div>
+                            <p class="color-2">Nous vous proposons une liste d'hébergements similaires à votre recherche.</p>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="owl-carousel owl-theme">
+                                <?php foreach($similar_rooms as $room): ?>
+                                <div class="pricing-card" style="font-size:21px;">
+                                    <img src="<?=ROOT.$room->img_room?>" alt="">
+                                    <div class="desc" style="padding:25px;">
+                                        <div class="name" style="height:35px;"><?=$room->name_room?></div>
+                                        <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
+                                        <ul class="list-unstyled list">
+                                            <li><i class="fa-solid fa-people-group"></i>1 - <?=$room->persons?> personnes</li>
+                                            <li><i class="fa-solid fa-bed"></i><?=$room->name_bedding?></li>
+                                        </ul>
+                                        <div style="display:flex;justify-content:space-between;">
+                                            <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>
+                                            <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Réserver</span></a> </div>                                                                      
+                                        </div>
                                     </div>
                                 </div>
+                                <?php endforeach;?>
                             </div>
-                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
         
 <?php else: ?>
     <!-- Header Banner -->
