@@ -178,7 +178,7 @@ class User{
 
             if(is_array($result)){
                 $result = $result[0];
-                if(in_array($result->rank, $allowed)){
+                if(in_array($result->rank_user, $allowed)){
                     return $result;
                 }
             }

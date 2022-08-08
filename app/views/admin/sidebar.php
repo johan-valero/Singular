@@ -1,55 +1,59 @@
 <div class="wrapper ">
     <div class="sidebar" data-color="orange">
         <div class="logo">
-            <a href="<?=ROOT?>" class="simple-text logo-mini">
-                <img src="<?=ROOT?>uploads/icon_user.png" style="width:250px;">
+            <a href="<?=ROOT?>" class="simple-text logo-normal" style="text-align:center;">
+                <img src="<?=ASSETS?>img/logo_admin.png" style="width:80%;">
             </a>
-            <a href="<?=ROOT?>" class="simple-text logo-normal">
-                <?= ucwords($data["user_data"]->firstname_user)," ",ucwords($data["user_data"]->name_user)?>
+        </div>
+        <div class="logo">
+            <a href="<?=ROOT?>" class="simple-text logo-normal" style="text-align:center;font-size:12px;line-height:19px;">
+                <b style="font-family: 'Barlow Condensed', sans-serif;letter-spacing:3px;">Administrateur</b><br>
+                <?= ucwords($data['user_data']->firstname_user).' '.ucwords($data['user_data']->name_user)?><br>
+                <?= ucwords($data['user_data']->email_user)?>
             </a>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
-            <li class="active ">
-                <a href="./dashboard.html">
-                <i class="now-ui-icons design_app"></i>
-                <p>Dashboard</p>
+            <li <?=(isset($current_page) && $current_page == "tableau de bord") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin">
+                <i class="fa fa-dashboard"></i>
+                <p>Tableau de bord</p>
+                </a>
+            </li>
+            <li <?=(isset($current_page) && $current_page == "logements") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/rooms">
+                <i class="fa-solid fa-hotel"></i>
+                <p>Logements</p>
+                </a>
+            </li>
+            <li <?=(isset($current_page) && $current_page == "categories") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/categories">
+                <i class="fa-solid fa-dungeon"></i>
+                <p>Catégories</p>
                 </a>
             </li>
             <li>
-                <a href="./icons.html">
-                <i class="now-ui-icons education_atom"></i>
-                <p>Icons</p>
+                <a <?=(isset($current_page) && $current_page == "reservations") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/reservations">
+                <i class="fa-solid fa-book"></i>
+                <p>Réservations</p>
                 </a>
             </li>
             <li>
-                <a href="./map.html">
-                <i class="now-ui-icons location_map-big"></i>
-                <p>Maps</p>
+                <a <?=(isset($current_page) && $current_page == "messages") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/messages">
+                <i class="fa-solid fa-message"></i>
+                <p>Messages</p>
                 </a>
             </li>
             <li>
-                <a href="./notifications.html">
-                <i class="now-ui-icons ui-1_bell-53"></i>
-                <p>Notifications</p>
+                <a <?=(isset($current_page) && $current_page == "settings") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/settings">
+                <i class="fa-solid fa-gear"></i>
+                <p>Paramètres</p>
                 </a>
             </li>
             <li>
-                <a href="./user.html">
-                <i class="now-ui-icons users_single-02"></i>
-                <p>User Profile</p>
-                </a>
-            </li>
-            <li>
-                <a href="./tables.html">
-                <i class="now-ui-icons design_bullet-list-67"></i>
-                <p>Table List</p>
-                </a>
-            </li>
-            <li>
-                <a href="./typography.html">
-                <i class="now-ui-icons text_caps-small"></i>
-                <p>Typography</p>
+                <a <?=(isset($current_page) && $current_page == "users") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/users">
+                <i class="fa-solid fa-users"></i>
+                <p>Clients</p>
                 </a>
             </li>
             </ul>
@@ -67,7 +71,7 @@
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
                 </div>
-                <a class="navbar-brand" href="<?=ROOT?>admin">Dashboard</a>
+                <a class="navbar-brand" href="<?=ROOT?>admin"><i class="fa fa-dashboard"></i> <?= $current_page ?></a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -86,37 +90,34 @@
                 </div>
                 </form>
                 <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                    <i class="now-ui-icons media-2_sound-wave"></i>
-                    <p>
-                        <span class="d-lg-none d-md-block">Stats</span>
-                    </p>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="now-ui-icons location_world"></i>
-                    <p>
-                        <span class="d-lg-none d-md-block">Some Actions</span>
-                    </p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                    <i class="now-ui-icons users_single-02"></i>
-                    <p>
-                        <span class="d-lg-none d-md-block">Compte</span>
-                    </p>
-                    </a>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="now-ui-icons location_world"></i>
+                            <p>
+                                <span class="d-lg-none d-md-block">Générales</span>
+                            </p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?=ROOT?>">Site Web</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>
+                                <span class="d-lg-none d-md-block">Compte</span>
+                            </p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Profil</a>
+                            <a class="dropdown-item" href="#">Paramètres du compte</a>
+                            <a class="dropdown-item" href="#">Déconnexion</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
             </div>
         </nav>
         <!-- End Navbar -->
+    <!-- <div class="panel-header panel-header-lg">
+        <canvas id="bigDashboardChart"></canvas> -->

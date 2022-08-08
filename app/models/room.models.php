@@ -30,6 +30,16 @@ class Room{
         ");
     } 
 
+    // Affichage des logements avec toutes les infos liés
+    public function get_all_admin(){
+        $DB = Database::newInstance();
+        return $DB->read("select * from rooms
+        join categories on rooms.id_category = categories.id_category 
+        join animals on rooms.id_animal = animals.id_animal 
+        join beddings on rooms.id_bedding = beddings.id_bedding 
+        ");
+    } 
+
     // Affichage des logements pour une recherche en incluant CONCAT qui permet d'inclure la catégorie dans la recherche
     public function search_results($find){
         $DB = Database::newInstance();

@@ -4,7 +4,7 @@
 <div class="panel-header panel-header-lg">
     <canvas id="bigDashboardChart"></canvas>
         </div>
-        <div class="content">
+        <div class="content" style="background-color:#f8f5f0;">
             <div class="row">
             <div class="col-lg-4">
                 <div class="card card-chart">

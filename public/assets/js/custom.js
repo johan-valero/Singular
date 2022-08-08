@@ -52,10 +52,10 @@ $(function () {
             logo = $(".navbar .logo> img");
         if (bodyScroll > 100) {
             navbar.addClass("nav-scroll");
-            logo.attr('src', 'http://localhost:80/Singular_PHP/public/assets/img/logo_dark.png');
+            logo.attr('src', 'http://localhost:80/Singular/public/assets/img/logo_dark.png');
         } else {
             navbar.removeClass("nav-scroll");
-            logo.attr('src', 'http://localhost:80/Singular_PHP/public/assets/img/logo.png');
+            logo.attr('src', 'http://localhost:80/Singular/public/assets/img/logo.png');
         }
     });
     
