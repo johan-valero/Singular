@@ -31,4 +31,23 @@ class Category{
         join animals on animals.id_animal = rooms.id_animal   
         where categories.id_category = '$id'");
     }
+
+    // Fonction création d'une catégorie
+    public function create($POST){
+        $DB = Database::getInstance();
+        $arr['category'] = ucwords($POST->name_category);
+        $arr['description'] = $POST->description_category;
+        $arr['icon'] = $POST->icon_category;
+
+        if (isset($_SESSION['error']) || ($_SESSION['error'] == "")){
+            $DB = Database::newInstance();
+            $query = "insert into categories (name_category, description_category, img_category, icon_category ) values (:category,:description,:img, :icon)";
+            $check = $DB->write($query, $arr);
+
+            if($check){
+                return true;
+            }
+        }
+        return false;
+    } 
 }

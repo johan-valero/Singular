@@ -2,7 +2,7 @@
     <div class="sidebar" data-color="orange">
         <div class="logo">
             <a href="<?=ROOT?>" class="simple-text logo-normal" style="text-align:center;">
-                <img src="<?=ASSETS?>img/logo_admin.png" style="width:80%;">
+                <img src="<?=ASSETS?>img/logo_admin_dark.png" style="width:80%;">
             </a>
         </div>
         <div class="logo">
@@ -26,32 +26,38 @@
                 <p>Logements</p>
                 </a>
             </li>
-            <li <?=(isset($current_page) && $current_page == "categories") ? ' class="active" ' : ""; ?>>
+            <li <?=(isset($current_page) && $current_page == "Catégories") ? ' class="active" ' : ""; ?>>
                 <a href="<?=ROOT?>admin/categories">
                 <i class="fa-solid fa-dungeon"></i>
                 <p>Catégories</p>
                 </a>
             </li>
-            <li>
-                <a <?=(isset($current_page) && $current_page == "reservations") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/reservations">
+            <li <?=(isset($current_page) && $current_page == "Litterie") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/beddings">
+                <i class="fa-solid fa-bed"></i>
+                <p>Litteries</p>
+                </a>
+            </li>
+            <li <?=(isset($current_page) && $current_page == "reservations") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/reservations">
                 <i class="fa-solid fa-book"></i>
                 <p>Réservations</p>
                 </a>
             </li>
-            <li>
-                <a <?=(isset($current_page) && $current_page == "messages") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/messages">
+            <li <?=(isset($current_page) && $current_page == "messages") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/messages">
                 <i class="fa-solid fa-message"></i>
                 <p>Messages</p>
                 </a>
             </li>
-            <li>
-                <a <?=(isset($current_page) && $current_page == "settings") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/settings">
+            <li <?=(isset($current_page) && $current_page == "settings") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/settings">
                 <i class="fa-solid fa-gear"></i>
                 <p>Paramètres</p>
                 </a>
             </li>
-            <li>
-                <a <?=(isset($current_page) && $current_page == "users") ? ' class="active" ' : ""; ?> href="<?=ROOT?>admin/users">
+            <li <?=(isset($current_page) && $current_page == "users") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/users">
                 <i class="fa-solid fa-users"></i>
                 <p>Clients</p>
                 </a>

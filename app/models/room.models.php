@@ -116,4 +116,74 @@ class Room{
         $rooms = $DB->read($query);
         return $rooms;
     }
+
+    // Fonction de création d'un logement
+    public function create($DATA, $FILES){
+        $_SESSION['error'] = "";
+        $DB = Database::newInstance();
+        $arr['product'] = ucwords($DATA->product);
+        $arr['description'] = str_replace("'", "`",$DATA->description);
+        $arr['quantity'] = $DATA->quantity;
+        $arr['category'] = ucwords($DATA->category);
+        $arr['price'] = $DATA->price;
+        $arr['date'] = date("Y-m-d H:i:s");
+        $arr['user_url'] = $_SESSION['user_url'];
+        $arr['slag'] = $this->str_to_url($DATA->product);
+
+        if(!is_numeric($arr['quantity'])){
+            $_SESSION['error'] .= "Veuillez entrer une quantité de produit valide <br>";
+        }
+
+        if(!is_numeric($arr['category'])){
+            $_SESSION['error'] .= "Veuillez entrer un nom de catégorie valide <br>";
+        }
+
+        if(!is_numeric($arr['price'])){
+            $_SESSION['error'] .= "Veuillez entrer un prix de produit valide <br>";
+        }
+
+        // Sur que le slag est unique
+        $slag_arr['slag'] = $arr['slag'];
+        $query = "select slag from products where slag = :slag limit 1";
+        $check = $DB->read($query);
+
+        if($check){
+            $arr['slag'] .= "-".rand(0,99999);
+        }
+
+        $arr['image'] = "";
+        $arr['image2'] = "";
+        $arr['image3'] = "";
+
+        $allowed[] = "image/jpeg";
+        $allowed[] = "image/png";
+        $allowed[] = "image/gif";
+
+        $dir = "uploads/";
+
+        if(!file_exists($dir)){
+            mkdir($dir, 0777, true);
+        }
+
+        // Check for files
+        foreach($FILES as $key => $img_row){
+            if($img_row['error'] == 0 && in_array($img_row['type'], $allowed)){
+                $destination = $dir . $this->generate_filename(30). ".jpg";
+                move_uploaded_file($img_row ['tmp_name'], $destination);
+                $arr[$key] = $destination ;              
+            }
+        }
+
+        if (!isset($_SESSION['error']) || ($_SESSION['error'] == "")){
+            $DB = Database::newInstance();
+            $query = "insert into products (name_product, description_product, quantity_product, category_product, price_product, date_product , user_url, image_product, image2_product, image3_product, slag ) values (:product, :description, :quantity, :category, :price, :date, :user_url, :image, :image2, :image3, :slag)";
+            $check = $DB->write($query, $arr);
+
+            if($check){
+                return true;
+            }
+        }
+        return false;
+    } 
+
 }

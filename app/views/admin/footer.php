@@ -20,6 +20,5 @@
     <script src="<?=ASSETS?>admin/js/plugins/bootstrap-notify.js"></script>
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?=ASSETS?>admin/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-    <script src="<?=ASSETS?>admin/demo/demo.js"></script>
 </body>
 </html>
