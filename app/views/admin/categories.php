@@ -75,14 +75,14 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead class=" text-primary" style="font-size:20px;">
                                     <th>Id</th>
                                     <th>Nom</th>
                                     <th>Description</th>
                                     <th>Icone</th>
                                     <th>Image</th>
-                                    <th>Action</th>
+                                    <th class="text-right">Action</th>
                                 </thead>
                                 <tbody>
                                     <?php if(isset($categories)):?>
@@ -105,13 +105,9 @@
                                                 <td>
                                                     <img src="<?=ROOT.$category->img_category?>" alt='' style="width:80px;height:80px;object-fit:cover;">
                                                 </td>
-                                                <td style="font-size:16px;text-align:left;">
-                                                    <a href="#" title="Modifier">
-                                                        <i class="fa-solid fa-square-pen"></i>
-                                                    </a>
-                                                    <a href="#" title="Supprimer">
-                                                        <i class="fa-solid fa-square-xmark"></i>
-                                                    </a>
+                                                <td class="text-right">
+                                                    <a href="#" class="btn btn-round btn-warning btn-icon btn-sm"><i class="fa fa-pen"></i></a>
+                                                    <a href="#" class="btn btn-round btn-danger btn-icon btn-sm"><i class="fas fa-times"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -126,26 +122,3 @@
     </div>
 
 <?php $this->view("admin/footer", $data); ?>
-
-<script>
-    // Fonction pour changer le display du formulaire d'ajout de logements
-    function show(){
-        var show = document.querySelector(".show");
-        
-        if(show.style.display === "none" || show.style.display === ""){
-            show.style.display = "block";
-        }else{
-            show.style.display = "none";
-        }
-    }
-
-    // Réinitialise les valeurs de inputs files
-    function resetFile() {
-        var file1 = document.querySelector('#image');
-        var file2 = document.querySelector('#image2');
-        var file3 = document.querySelector('#image3');
-        file1.value = '';
-        file2.value = '';
-        file3.value = '';
-    }
-</script>

@@ -40,4 +40,39 @@ class Message{
         }
         return $this->error;
     } 
+
+    // fonction pour la suppression d'un message
+    public function delete($id){
+        $DB = Database::newInstance();
+        $query = "delete from contact where id_contact = '$id' limit 1";
+        $DB->write($query);
+    }
+
+    // Fonction modification d'un message
+    public function edit($post, $id){
+        $DB = Database::newInstance();
+        $data['contact'] = ucwords($post['name']);
+        $data['email'] = $post['email'];
+        $data['phone'] = $post['phone'];
+        $data['subject'] = $post['subject'];
+        $data['message'] = $post['message'];
+        $data['date'] = $post['date'];
+
+        $query = "update contact set name_contact = :contact, email_contact = :email, phone_contact = :phone, subject_contact = :subject, message_contact = :message, date_contact = :date where id_contact = '$id' limit 1 ";
+        $DB->write($query,$data);
+    } 
+
+    // Affichage des messages
+    public function get_all(){
+        $DB = Database::newInstance();
+        return $DB->read("select * from contact order by id_contact desc ");
+    } 
+
+    // Affichage d'un message
+    public function get_one($id){
+        $DB = Database::newInstance();
+        $data = $DB->read("select * from contact where id_contact = '$id' limit 1");
+        return $data[0];
+    } 
+    
 }

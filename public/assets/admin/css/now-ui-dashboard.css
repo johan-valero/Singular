@@ -581,6 +581,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 3px;
+  text-align: center;
 }
 
 .btn-primary-custom:hover{
@@ -3069,11 +3070,11 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .alert.alert-success {
-  background-color: #1be611;
+  background-color: #28a745;
 }
 
 .alert.alert-danger {
-  background-color: #ff5050;
+  background-color: #FF3636;
 }
 
 .alert.alert-warning {
@@ -3085,7 +3086,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .alert.alert-primary {
-  background-color: #fa764b;
+  background-color: #cd701c;
 }
 
 .alert i.fa,

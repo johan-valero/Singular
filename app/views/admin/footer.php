@@ -11,6 +11,7 @@
 </div>
     <!-- Core JS Files -->
     <script src="<?=ASSETS?>admin/js/core/jquery.min.js"></script>
+    <script src="<?=ASSETS?>admin/js/script.js"></script>
     <script src="<?=ASSETS?>admin/js/core/popper.min.js"></script>
     <script src="<?=ASSETS?>admin/js/core/bootstrap.min.js"></script>
     <script src="<?=ASSETS?>admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>

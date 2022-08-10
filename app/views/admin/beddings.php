@@ -8,89 +8,132 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <button class="btn-custom btn-primary-custom" onclick="show(event)" ><i class="fa-solid fa-square-plus"></i> Ajouter</button>
-                        <!-- Formulaire d'ajout de logement -->
-                        <div class="content show" style="display:none;">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header" style=display:flex;justify-content:space-between;>
-                                            <h5 class="title">Ajouter une litterie</h5>
-                                            <a onclick="show(event)" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
-                                        </div>
-                                        <div class="card-body">
-                                            <form method="POST">
-                                                <fieldset>
-                                                    <legend>Informations</legend>
-                                                    <!-- Input du nom du logement -->
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label>Nom de la litterie</label>
-                                                                <input type="text" class="form-control" name="name" placeholder="Nom de la litterie" required>
+                        <?php if($mode == "add"): ?>
+                            <?php check_error() ?></p>
+                            <!-- Formulaire d'ajout de litterie -->
+                            <div class="content show">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header" style=display:flex;justify-content:space-between;>
+                                                <h5 class="title">Ajouter une litterie</h5>
+                                                <a href="<?=ROOT?>admin/beddings" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
+                                            </div>
+                                            <div class="card-body">
+                                                <form method="POST"> 
+                                                    <fieldset>
+                                                        <legend>Informations</legend>
+                                                        <!-- Input du nom de la litterie -->
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Nom de la litterie</label>
+                                                                    <input type="text" class="form-control" name="name" placeholder="Nom de la litterie" required>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </fieldset>
-                                                <button type="submit" class="btn-custom btn-primary-custom">Enregistrer</button>
-                                                <button class="btn-custom btn-primary-custom" type="reset">Réinitialiser</button>
-                                            </form>
+                                                    </fieldset>
+                                                    <button type="submit" class="btn-custom btn-primary-custom">Enregistrer</button>
+                                                    <button class="btn-custom btn-primary-custom" type="reset">Réinitialiser</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Fin d'ajout de litterie -->
+                        
+                        <?php elseif($mode == "read"): ?>
+                            <a href="<?=ROOT?>admin/beddings?add">
+                                <button class="btn-custom btn-primary-custom"><i class="fa-solid fa-square-plus"></i> Ajouter</button>
+                            </a>    
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead class=" text-primary" style="font-size:20px;">
+                                            <th>Id</th>
+                                            <th>Nom</th>
+                                            <th class="text-right">Action</th>
+                                        </thead>
+                                        <tbody>
+                                        <?php if(isset($beddings)):?>
+                                            <?php foreach($beddings as $bedding):?>
+                                                <tr>
+                                                    <td >
+                                                        <?= $bedding->id_bedding ?>
+                                                    </td>
+                                                    <td >
+                                                        <?= $bedding->name_bedding ?>
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <a href="<?=ROOT?>admin/beddings?edit=<?=$bedding->id_bedding?>" class="btn btn-round btn-warning btn-icon btn-sm"><i class="fa fa-pen"></i></a>
+                                                        <a href="<?=ROOT?>admin/beddings?delete=<?=$bedding->id_bedding?>" class="btn btn-round btn-danger btn-icon btn-sm"><i class="fas fa-times"></i></a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <!-- Fin d'ajout de logement -->
-                    </div>
-                    <div class="card-body">
+                        <?php elseif($mode == "edit"): ?>
+                            <div class="card-header" style=display:flex;justify-content:space-between;>
+                                <h5 class="title">Modifier une litterie</h5>
+                                <a href="<?=ROOT?>admin/beddings" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
+                            </div>
+                            <div class="card-body">
+                                <form method="POST">
+                                    <!-- Input du nom d'une litterie -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Nom de la litterie</label>
+                                                <input type="text" class="form-control" name="name" value="<?=$beddings->name_bedding ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="btn-custom btn-primary-custom" value="Modifier"/>
+                                    <a href="<?=ROOT?>admin/beddings">
+                                        <input class="btn-custom btn-primary-custom" value="Annuler"/>
+                                    </a>
+                                </form>
+                            </div>
+                        <?php elseif($mode == "delete"): ?>
+                        <div class="card-header" style=display:flex;justify-content:space-between;>
+                            <h5 class="title">Supprimer une litterie</h5>
+                            <a href="<?=ROOT?>admin/beddings" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
+                        </div>    
                         <div class="table-responsive">
-                            <table class="table">
+                                <table class="table table-striped">
                                 <thead class=" text-primary" style="font-size:20px;">
                                     <th>Id</th>
                                     <th>Nom</th>
-                                    <th>Action</th>
                                 </thead>
                                 <tbody>
-                                    <?php if(isset($beddings)):?>
-                                        <?php foreach($beddings as $bedding):?>
-                                            <tr>
-                                                <td>
-                                                    <?= $bedding->id_bedding ?>
-                                                </td>
-                                                <td>
-                                                    <?= $bedding->name_bedding ?>
-                                                </td>
-                                                <td style="font-size:16px;text-align:left;">
-                                                    <a href="#" title="Modifier">
-                                                        <i class="fa-solid fa-square-pen"></i>
-                                                    </a>
-                                                    <a href="#" title="Supprimer">
-                                                        <i class="fa-solid fa-square-xmark"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
+                                    <p class="status alert alert-danger">Etes-vous sur de vouloir supprimer cette litterie ? </p>
+                                    <tr style="position:relative;">
+                                        <td><?= $beddings->id_bedding ?></td>
+                                        <td><?= $beddings->name_bedding ?></td>
+                                    </tr>
+                                    <a href="<?=ROOT?>admin/beddings?delete_confirmed=<?=$beddings->id_bedding?>">
+                                        <input class="btn-custom btn-primary-custom" value="Supprimer"/>
+                                    </a>
+                                    <a href="<?=ROOT?>admin/beddings">
+                                        <input class="btn-custom btn-primary-custom" value="Annuler"/>
+                                    </a>
                                 </tbody>
                             </table>
                         </div>
+                        <?php elseif($mode == "delete_confirmed"): ?>
+                            <p class="status alert alert-success">La litterie a bien était supprimé</p>
+                            <a href="<?=ROOT?>admin/beddings">
+                                <input class="btn-custom btn-primary-custom" value="Retour aux litteries"/>
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-<?php $this->view("admin/footer", $data); ?>
-
-<script>
-    // Fonction pour changer le display du formulaire d'ajout de logements
-    function show(){
-        var show = document.querySelector(".show");
-        
-        if(show.style.display === "none" || show.style.display === ""){
-            show.style.display = "block";
-        }else{
-            show.style.display = "none";
-        }
-    }
-</script>
+<?php $this->view("admin/footer", $data); ?>   

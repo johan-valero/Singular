@@ -5,13 +5,6 @@
                 <img src="<?=ASSETS?>img/logo_admin_dark.png" style="width:80%;">
             </a>
         </div>
-        <div class="logo">
-            <a href="<?=ROOT?>" class="simple-text logo-normal" style="text-align:center;font-size:12px;line-height:19px;">
-                <b style="font-family: 'Barlow Condensed', sans-serif;letter-spacing:3px;">Administrateur</b><br>
-                <?= ucwords($data['user_data']->firstname_user).' '.ucwords($data['user_data']->name_user)?><br>
-                <?= ucwords($data['user_data']->email_user)?>
-            </a>
-        </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
             <li <?=(isset($current_page) && $current_page == "tableau de bord") ? ' class="active" ' : ""; ?>>
@@ -32,10 +25,16 @@
                 <p>Catégories</p>
                 </a>
             </li>
-            <li <?=(isset($current_page) && $current_page == "Litterie") ? ' class="active" ' : ""; ?>>
+            <li <?=(isset($current_page) && $current_page == "Litteries") ? ' class="active" ' : ""; ?>>
                 <a href="<?=ROOT?>admin/beddings">
                 <i class="fa-solid fa-bed"></i>
                 <p>Litteries</p>
+                </a>
+            </li>
+            <li <?=(isset($current_page) && $current_page == "Aménagements") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/accomodations">
+                <i class="fa-solid fa-water-ladder"></i>
+                <p>Aménagements</p>
                 </a>
             </li>
             <li <?=(isset($current_page) && $current_page == "reservations") ? ' class="active" ' : ""; ?>>
@@ -56,8 +55,8 @@
                 <p>Paramètres</p>
                 </a>
             </li>
-            <li <?=(isset($current_page) && $current_page == "users") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/users">
+            <li <?=(isset($current_page) && $current_page == "Clients") ? ' class="active" ' : ""; ?>>
+                <a href="<?=ROOT?>admin/clients">
                 <i class="fa-solid fa-users"></i>
                 <p>Clients</p>
                 </a>

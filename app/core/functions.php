@@ -11,7 +11,7 @@ function show($data){
 // Fonction permettant de vérifier les erreur presente dans la session 
 function check_error(){
     if(isset($_SESSION['error']) && $_SESSION['error'] != ""){
-        echo $_SESSION['error'];
+        echo '<p class="status alert alert-danger">'.$_SESSION['error'].'</p>';
         unset($_SESSION['error']);
     }
 }
@@ -32,4 +32,10 @@ function generate_filename($length){
         $text .= $array[$random];
     }
     return $text;
+}
+
+// Fonction de redirection
+function redirect($link){
+    header("Location: ".ROOT.$link);
+    die;
 }
