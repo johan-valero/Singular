@@ -24,7 +24,7 @@
 							<form method="POST">
 							<div class="form-group first">
 								<label for="email">Email <span style="color:#CD701C;">*</span></label>
-								<input type="email" class="form-control" placeholder="Votre-email@gmail.com" name="email" required>
+								<input type="email" class="form-control" placeholder="Votre-email@gmail.com" value="<?= isset($_POST['email']) ?$_POST['email']: ""; ?>" name="email" required>
 							</div>
 							<div class="form-group last mb-3">
 								<label for="password">Mot de passe <span style="color:#CD701C;">*</span></label>

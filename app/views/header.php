@@ -65,8 +65,8 @@
                                     <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
                                     <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>
                                 <?php else: ?>
-                                <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
-                                <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>
+                                    <li class="dropdown-item"><a href="<?=ROOT?>profil">Profil</a></li>
+                                    <li class="dropdown-item"><a href="<?=ROOT?>logout">Déconnexion</a></li>
                                 <?php endif; ?>
                             </ul>
                         </li>						

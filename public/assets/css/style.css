@@ -124,9 +124,9 @@ input[type="file"],
 textarea {
     max-width: 100%;
     margin-bottom: 15px;
-    padding: 10px 0;
+    padding: 10px ;
     height: auto;
-    background-color: transparent;
+    background-color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
     border-width: 0 0 1px;
@@ -195,10 +195,11 @@ input[type="submit"] {
     letter-spacing: 3px;
 }
 .alert-success {
-    background: transparent;
-    color: #666;
-    border: 1px solid #CD701C;
-    border-radius: 0px;
+    /* background: transparent; */
+    color: #fff;
+    /* border: 1px solid #CD701C; */
+    background-color: rgb(12, 116, 12);
+    border-radius: 2px;
 }
 
 /* placeholder */
@@ -3041,6 +3042,32 @@ button.mfp-arrow {
     background: transparent;
     border: 1px solid transparent;
 }
+
+.btn-custom{
+    border-width: 2px;
+    font-weight: 400;
+    font-size: 0.8571em;
+    line-height: 1.35em;
+    border: none;
+    margin: 10px 1px;
+    border-radius: 0.1875rem;
+    padding: 11px 22px;
+    cursor: pointer;
+    background-color: #888;
+    color: #FFFFFF;
+}
+
+.btn-primary-custom {
+    background-color: #CD701C;
+    color: #FFFFFF;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
 .btn-form1-submit {
     display: block;
     padding: 0;
@@ -3058,6 +3085,7 @@ button.mfp-arrow {
     transition: all 0.3s ease-out;
     letter-spacing: 3px;
     text-transform: uppercase;
+    text-align: center;
 }
 .btn-form1-submit:hover {
     background: #222;
@@ -4875,3 +4903,26 @@ select {
 .control--checkbox input:disabled:checked ~ .control__indicator {
     background-color: #7e0cf5;
     opacity: .2; }
+
+/* Profil */
+.made-up{
+    border-radius: 2px;
+    background: #f8f5f0;
+    border: none;
+    border-radius: 2px;
+}
+
+.made-up label{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.made-up p{
+    line-height: 0;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

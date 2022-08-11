@@ -14,6 +14,7 @@ class User{
         $data['email'] = $_POST['email'];
         $data['phone'] = $_POST['phone'];
         $data['password'] = $_POST['password'];
+        $data['birthday'] = $_POST['birthday'];
         $password2 = $_POST['password2'];
         
         /* Checking if the email is valid. */
@@ -62,8 +63,7 @@ class User{
             $data['password'] = hash('sha1', $data['password']);
 
             /* Inserting the data into the database. */
-            $query = "insert into users (url_user,name_user,firstname_user,email_user,phone_user,password_user,date_user,rank_user) values (:url_user,:name,:firstname,:email,:phone,:password,:date,:rank)";
-            show($query);
+            $query = "insert into users (url_user,name_user,firstname_user,email_user,phone_user,password_user, birthday_user, date_user,rank_user) values (:url_user,:name,:firstname,:email,:phone,:password,:birthday,:date,:rank)";
             $result = $db->write($query,$data);
             if($result){
                 header("location: ". ROOT ."login");
@@ -98,9 +98,7 @@ class User{
             // check if email already exists
             $sql = "select * from users where email_user = :email && password_user = :password limit 1 ";
             $result = $db->read($sql,$data);
-            show($result);
             if(is_array($result)){
-                show($_SESSION);
                 $_SESSION['user_url'] = $result[0]->url_user;
                 header("location: ". ROOT ."home");
                 die;
@@ -147,18 +145,19 @@ class User{
     // Fonction vérification si le user existe dans BDD via son url
     public function check_login($redirect = false, $allowed = array()){
         $db = Database::getInstance();
-        
+
         if(count($allowed) > 0){
             $arr['url'] = isset($_SESSION['user_url']) ? $_SESSION['user_url'] : '';
             $query = "select * from users where url_user = :url limit 1";
             $result = $db->read($query,$arr);
 
-            if(is_array($result)){
+            if(is_array($result) && isset($result)){
                 $result = $result[0];
                 if(in_array($result->rank_user, $allowed)){
                     return $result;
                 }
             }
+            redirect("login");
 
         }else{
             if(isset($_SESSION['user_url'])){
@@ -196,6 +195,7 @@ class User{
         $db = Database::newInstance();
 
         $data['email'] = $_POST['email'];
+        $data['birthday'] = $_POST['birthday'];
         $data['password'] = $_POST['password'];
         $password2 = $_POST['password2'];
 
@@ -211,14 +211,15 @@ class User{
             $this->error .= "Les mots de passe ne correspondent pas. <br>";
         }
 
-        $sql = "select * from users where email_user = :email limit 1 ";
+        $sql = "select * from users where email_user = :email and birthday_user = :birthday limit 1 ";
         $arr['email'] = $data['email'];
+        $arr['birthday'] = $data['birthday'];
         $check = $db->read($sql,$arr);
 
         if(is_array($check)){
             if($this->error == ""){
                 $data['password'] = hash('sha1', $data['password']);
-                $query = "update users set password_user  = :password where email_user = :email";
+                $query = "update users set password_user  = :password where email_user = :email and birthday_user = :birthday";
                 $result = $db->write($query,$data);
                 if($result){
                     $this->error .= "Votre mot de passe à bien était modifié.";
@@ -227,7 +228,7 @@ class User{
                 }
             }
         }else{
-            $this->error .= " Adresse email inconnue. Veuillez indiquez une adresse email existante.<br>";
+            $this->error .= " Adresse email inconnue ou date de naissance incorrect.<br>";
         }
         $_SESSION['error'] = $this->error;
     } 
@@ -237,21 +238,56 @@ class User{
         $DB = Database::newInstance();
         $id = (int)$id;
         $query = "delete from users where id_user = '$id' limit 1 ";
-        $DB->write("$query");
+        $result = $DB->write("$query");
     } 
 
     // Edit user account
-    public function edit($id,$data){
+    public function edit($data, $id){
         $DB = Database::newInstance();
         if($data){
             $arr['name'] = $data['name'];
             $arr['firstname'] = $data['firstname'];
             $arr['email'] = $data['email'];
             $arr['phone'] = $data['phone'];
+            $arr['birthday'] = $data['birthday'];
             $arr['password'] = hash('sha1', $data['password']);;
-            
-            $query = "update users set name_user = :name, firstname_user = :firstname, email_user = :email, password_user = :password, phone_user = :phone where id_user = '$id' limit 1 ";
-            $DB->write($query,$arr);    
+            $password2 = $data['password2'];
+    
+            if (empty($data['name']) ){
+                $this->error .= "Veuillez saisir un nom.<br>";
+            }
+
+            if (empty($data['firstname']) ){
+                $this->error .= "Veuillez saisir un prénom.<br>";
+            }
+
+            if (empty($data['phone']) ){
+                $this->error .= "Veuillez saisir un numéro de téléphone.<br>";
+            }
+
+            if (empty($data['birthday']) ){
+                $this->error .= "Veuillez saisir une date d'anniversaire.<br>";
+            }
+
+            if(isset($data['password']) && !empty($data['password'])){
+                if(strlen($data['password']) < 4 ){
+                    $this->error .= "Le mot de passe doit contenir au moins 4 caractères. <br>";
+                }
+    
+                if($data['password'] !== $password2){
+                    $this->error .= "Les mots de passe ne correspondent pas. <br>";
+                }    
+            }
+            $_SESSION['error'] = $this->error;
+
+            if($this->error == ""){
+                $query = "update users set name_user = :name, firstname_user = :firstname, email_user = :email, password_user = :password, phone_user = :phone, birthday_user = :birthday where id_user = '$id' limit 1 ";
+                $result = $DB->write($query,$arr);  
+                if($result){
+                    $this->error .= "Votre profil à bien était modifié.";
+                    redirect("profil");
+                }
+            }
         }
     }
 }

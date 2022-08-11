@@ -1,4 +1,4 @@
-// Fonction pour changer le display du formulaire d'ajout de logements
+// Fonction pour changer le display du formulaire d'ajout
 function show(){
     var show = document.querySelector(".show");
     

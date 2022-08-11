@@ -43,7 +43,7 @@
                 <p>Réservations</p>
                 </a>
             </li>
-            <li <?=(isset($current_page) && $current_page == "messages") ? ' class="active" ' : ""; ?>>
+            <li <?=(isset($current_page) && $current_page == "Messages") ? ' class="active" ' : ""; ?>>
                 <a href="<?=ROOT?>admin/messages">
                 <i class="fa-solid fa-message"></i>
                 <p>Messages</p>

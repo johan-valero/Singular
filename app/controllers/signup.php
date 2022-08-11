@@ -1,6 +1,6 @@
 <?php
 
-// Gestion de l'inscirption d'un user
+// Gestion de l'inscription d'un utilisateur
 class Signup extends Controller{
     public function index(){
         $data['page_title'] = "Inscription";
