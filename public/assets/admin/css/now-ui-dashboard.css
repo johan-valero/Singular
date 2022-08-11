@@ -3978,6 +3978,7 @@ Created using IcoMoon - icomoon.io
 .sidebar .nav li:focus:not(.active)>a i,
 .off-canvas-sidebar .nav li:hover:not(.active)>a i,
 .off-canvas-sidebar .nav li:focus:not(.active)>a i {
+  /* color: #FFFFFF; */
   color: #FFFFFF;
 }
 
@@ -3985,6 +3986,12 @@ Created using IcoMoon - icomoon.io
 .off-canvas-sidebar .nav li.active>a {
   background-color: #FFFFFF;
   box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+  color: #cd701c;
+}
+
+.sidebar .nav li.active>a i,
+.off-canvas-sidebar .nav li.active>a {
+  color: #cd701c;
 }
 
 .sidebar .nav p,

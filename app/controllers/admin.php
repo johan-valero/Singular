@@ -13,7 +13,7 @@ class Admin extends Controller{
         }
 
         $data['page_title'] = "Admin";
-        $data['current_page'] = "tableau de bord";
+        $data['current_page'] = "Tableau de bord";
         $this->view("admin/index", $data);
     }
 
@@ -36,7 +36,7 @@ class Admin extends Controller{
         $data['categories'] = $Categories->get_all();
         $data['accomodations'] = $Accomodation->get_all();
         $data['rooms'] = $Rooms->get_all_admin();
-        $data['current_page'] = "logements";
+        $data['current_page'] = "Logements";
         $data['page_title'] = "Admin | Logements";
         $this->view("admin/rooms", $data);
     }
@@ -224,5 +224,58 @@ class Admin extends Controller{
         $data['current_page'] = "Clients";
         $data['page_title'] = "Admin | Clients";
         $this->view("admin/clients", $data);
+    }
+
+    // Gestion de l'onglet paramètre/partenaires de la section admin
+    public function Partners(){
+        $Partners = $this->load_model('Partner');
+        $User = $this->load_model('User');
+        $user_data = $User->check_login(true, ["admin"]);
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        
+        $mode = "read";
+        if($mode == "read"){
+            $partners = $Partners->get_all();
+        }
+
+        if(isset($_GET['add'])){
+            $mode = "add";
+            if(isset($_POST) && count($_POST) > 0 ){
+                $check = $Partners->create($_POST, $_FILES);
+            }
+        }
+
+        if(isset($_GET['edit'])){
+            $mode = "edit";
+            $id = $_GET["edit"];
+            $partners = $Partners->get_one($id);
+
+            if(isset($_POST) && count($_POST) > 0){
+                $data['POST_EDIT'] = $_POST;
+                $Partners->edit($data['POST_EDIT'], $id);
+            }
+        }
+
+        if(isset($_GET['delete'])){
+            $mode = "delete";
+            $id = $_GET["delete"];
+            $partners = $Partners->get_one($id);
+        }
+
+        if(isset($_GET['delete_confirmed'])){
+            $mode = "delete_confirmed";
+            $id = $_GET["delete_confirmed"];
+            $Partners->delete($id);
+        } 
+
+
+        $data['mode'] = $mode;
+        $data['partners'] = $partners;
+        $data['current_page'] = "Partenaires";
+        $data['page_title'] = "Admin | Partenaire";
+        $this->view("admin/partners", $data);
     }
 }

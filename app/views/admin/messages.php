@@ -54,7 +54,7 @@
                                             <?php endforeach; ?>
                                         <?php else: ?>
                                             <tr>
-                                                Pas de messages enregistrés.
+                                                <p class="status alert alert-danger">Pas encore de messages enregistrés.</p>
                                             </tr>
                                         <?php endif; ?>
                                     </tbody>

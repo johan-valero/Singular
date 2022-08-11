@@ -28,7 +28,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Nom de la litterie</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Nom de la litterie" required>
+                                                                    <input type="text" class="form-control" name="name" placeholder="Nom de la litterie" value="<?= isset($_POST['name']) ?$_POST['name']: ""; ?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -56,7 +56,7 @@
                                             <th class="text-right">Action</th>
                                         </thead>
                                         <tbody>
-                                        <?php if(isset($beddings)):?>
+                                        <?php if(isset($beddings) && is_array($beddings)):?>
                                             <?php foreach($beddings as $bedding):?>
                                                 <tr>
                                                     <td >

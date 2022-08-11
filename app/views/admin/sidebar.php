@@ -7,60 +7,79 @@
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
-            <li <?=(isset($current_page) && $current_page == "tableau de bord") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin">
-                <i class="fa fa-dashboard"></i>
-                <p>Tableau de bord</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "logements") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/rooms">
-                <i class="fa-solid fa-hotel"></i>
-                <p>Logements</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "Catégories") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/categories">
-                <i class="fa-solid fa-dungeon"></i>
-                <p>Catégories</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "Litteries") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/beddings">
-                <i class="fa-solid fa-bed"></i>
-                <p>Litteries</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "Aménagements") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/accomodations">
-                <i class="fa-solid fa-water-ladder"></i>
-                <p>Aménagements</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "reservations") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/reservations">
-                <i class="fa-solid fa-book"></i>
-                <p>Réservations</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "Messages") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/messages">
-                <i class="fa-solid fa-message"></i>
-                <p>Messages</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "settings") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/settings">
-                <i class="fa-solid fa-gear"></i>
-                <p>Paramètres</p>
-                </a>
-            </li>
-            <li <?=(isset($current_page) && $current_page == "Clients") ? ' class="active" ' : ""; ?>>
-                <a href="<?=ROOT?>admin/clients">
-                <i class="fa-solid fa-users"></i>
-                <p>Clients</p>
-                </a>
-            </li>
+                <li <?=(isset($current_page) && $current_page == "Tableau de bord") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin">
+                    <i class="fa fa-dashboard"></i>
+                    <p>Tableau de bord</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Logements") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/rooms">
+                    <i class="fa-solid fa-hotel"></i>
+                    <p>Logements</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Catégories") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/categories">
+                    <i class="fa-solid fa-dungeon"></i>
+                    <p>Catégories</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Litteries") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/beddings">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>Litteries</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Aménagements") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/accomodations">
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <p>Aménagements</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Réservations") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/reservations">
+                    <i class="fa-solid fa-book"></i>
+                    <p>Réservations</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Messages") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/messages">
+                    <i class="fa-solid fa-message"></i>
+                    <p>Messages</p>
+                    </a>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Partenaires") ? ' class="active" ' : ""; ?>>
+                    <a data-toggle="collapse" href="#settings">
+                        <i class="fa-solid fa-gear"></i>
+                        <p>Paramètres <b class="caret"></b></p>
+                    </a>
+                    <div class="collapse " id="settings">
+                        <ul class="nav">
+                            <li>
+                                <a href="<?=ROOT?>admin/slider">
+                                    <span class="sidebar-normal">Carousel</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?=ROOT?>admin/socials">
+                                    <span class="sidebar-normal">Réseaux sociaux</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?=ROOT?>admin/partners">
+                                    <span class="sidebar-normal">Partenaires</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li <?=(isset($current_page) && $current_page == "Clients") ? ' class="active" ' : ""; ?>>
+                    <a href="<?=ROOT?>admin/clients">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Clients</p>
+                    </a>
+                </li>
             </ul>
         </div>
         </div>

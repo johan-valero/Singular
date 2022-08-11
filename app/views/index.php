@@ -215,7 +215,6 @@
                 <div class="row">
                     <!-- Reservation -->
                     <div class="col-md-5 mb-30 mt-30">
-                        <p><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i></p>
                         <h5>Chacun de nos logements garantit une expérience hors du commun.</h5>
                         <div class="reservations mb-30">
                             <div class="icon color-1"><span style="color:#cd701c;" class="fa-solid fa-phone"></span></div>

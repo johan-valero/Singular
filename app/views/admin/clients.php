@@ -21,7 +21,7 @@
                                             <th class="text-right">Date d'inscription</th>
                                         </thead>
                                         <tbody>
-                                        <?php if(isset($clients)):?>
+                                        <?php if(isset($clients) && is_array($clients)):?>
                                             <?php foreach($clients as $client):?>
                                                 <tr>
                                                     <td >

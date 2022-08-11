@@ -215,7 +215,7 @@
                                     <th class="text-right">Action</th>
                                 </thead>
                                 <tbody>
-                                    <?php if(isset($rooms)):?>
+                                    <?php if(isset($rooms) && is_array($rooms)):?>
                                         <?php foreach($rooms as $room):?>
                                             <tr>
                                                 <td>

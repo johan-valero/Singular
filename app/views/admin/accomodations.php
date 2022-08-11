@@ -28,13 +28,13 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Nom de l'aménagement</label>
-                                                                    <input type="text" class="form-control" name="name" placeholder="Nom de l'aménagement" required>
+                                                                    <input type="text" class="form-control" name="name" placeholder="Nom de l'aménagement" value="<?= isset($_POST['name']) ?$_POST['name']: ""; ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Icone</label>
-                                                                    <input type="text" class="form-control" name="icon" placeholder="Icone de l'aménagement" required>
+                                                                    <input type="text" class="form-control" name="icon" placeholder="Icone de l'aménagement" value="<?= isset($_POST['icon']) ?$_POST['icon']: ""; ?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -42,7 +42,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Description</label>
-                                                                    <textarea type="text" class="form-control" name="description" placeholder="Description de l'aménagement" required></textarea>
+                                                                    <textarea type="text" class="form-control" name="description" placeholder="Description de l'aménagement" required><?= isset($_POST['description']) ?$_POST['description']: ""; ?></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

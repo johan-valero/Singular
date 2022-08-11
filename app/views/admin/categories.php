@@ -85,7 +85,7 @@
                                     <th class="text-right">Action</th>
                                 </thead>
                                 <tbody>
-                                    <?php if(isset($categories)):?>
+                                    <?php if(isset($categories) && is_array($categories)):?>
                                         <?php foreach($categories as $category):?>
                                             <tr>
                                                 <td>
