@@ -1,7 +1,7 @@
 <?php $this->view('header',$data)?>
 
 <!-- Header Banner -->
-<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/mountain.jpg" style="background-position:bottom;background-size:cover;">
+<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ASSETS?>img/pages/mountain.jpg" style="background-position:bottom;background-size:cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left caption mt-90">
@@ -116,7 +116,7 @@
                                 <div class="card-body" style="text-align:center;">
                                     <div class="author">
                                         <fieldset class="made-up">
-                                            <legend><img class="avatar border-gray" src="<?=ROOT?>uploads/icon_user.png" alt="icone" style="width:100px;"></legend>
+                                            <legend><img class="avatar border-gray" src="<?=ASSETS?>img/logo/icon_user.png" alt="icone" style="width:100px;"></legend>
                                             <h5 class="title"><?= strtoupper($user_data->firstname_user.' '.$user_data->name_user)?></h5>
                                             <label>Téléphone</label>
                                             <p><?= $user_data->phone_user ?></p>

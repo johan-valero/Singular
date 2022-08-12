@@ -1,6 +1,6 @@
 <?php $this->view("header", $data); ?>
     <!-- Header Banner -->
-    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="uploads/c5.jpg" style="background-position:center;">
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ASSETS?>img/pages/c5.jpg" style="background-position:center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left caption mt-90">
@@ -17,7 +17,7 @@
                 <div class="col-md-6 mb-60">
                     <!-- <h3>Singular</h3> -->
                     <div class="logo" style="text-align:left;">
-                        <img src="<?=ASSETS?>img/logo_dark.png" class="logo-img" alt="logo_singular">
+                        <img src="<?=ASSETS?>img/logo/logo_dark.png" class="logo-img" alt="logo_singular">
                     </div>
                     <br>
                     <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>

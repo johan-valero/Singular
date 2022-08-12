@@ -8,9 +8,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php check_error() ?></p>
                         <?php if($mode == "add"): ?>
-                            <?php check_error() ?></p>
-                                <!-- Formulaire d'ajout de litterie -->
+                                <!-- Formulaire d'ajout de partenaire -->
                                 <div class="content show">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -22,7 +22,7 @@
                                                 <div class="card-body">
                                                     <form method="POST" enctype="multipart/form-data"> 
                                                         <fieldset>
-                                                            <!-- Input du nom de la litterie -->
+                                                            <!-- Input du nom du partenaire -->
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
@@ -39,7 +39,7 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Logo</label>
-                                                                        <input type="file" name="image" required>
+                                                                        <input type="file" name="image" accept=".jpeg,.png,.gif,.jpg" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -52,7 +52,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Fin d'ajout de litterie -->
+                                <!-- Fin d'ajout de patenaire -->
                         <?php elseif($mode == "read"): ?>
                             <a href="<?=ROOT?>admin/partners?add">
                                 <button class="btn-custom btn-primary-custom"><i class="fa-solid fa-square-plus"></i> Ajouter</button>
@@ -94,7 +94,7 @@
                                 </table>
                             </div>
                         </div>
-                        <?php elseif($mode == "edit"): ?>
+                        <?php elseif($mode == "edit" && isset($partners)): ?>
                             <div class="card-header" style=display:flex;justify-content:space-between;>
                                 <h5 class="title">Modifier un partenaire</h5>
                                 <a href="<?=ROOT?>admin/partners" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -120,8 +120,8 @@
                                     <div class="row">        
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Image</label>
-                                                <input id="image" type="file" name="image">
+                                                <label>Logo</label>
+                                                <input id="image" type="file" name="image" accept=".jpeg,.png,.gif,.jpg">
                                             </div>
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@
                                     <button class="btn-custom btn-primary-custom" type="reset">Réinitialiser</button>
                                 </form>
                             </div>
-                        <?php elseif($mode == "delete"): ?>
+                        <?php elseif($mode == "delete" && isset($partners)): ?>
                             <div class="card-header" style=display:flex;justify-content:space-between;>
                                 <h5 class="title">Supprimer un partenaire</h5>
                                 <a href="<?=ROOT?>admin/partners" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -177,11 +177,15 @@
                             <a href="<?=ROOT?>admin/partners">
                                 <input class="btn-custom btn-primary-custom" value="Retour"/>
                             </a>
+                        <?php else: ?>
+                            <p class="status alert alert-danger">Partenaire inconnu.</p>
+                            <a href="<?=ROOT?>admin/partners">
+                                <input class="btn-custom btn-primary-custom" value="Retour"/>
+                            </a>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-<?php $this->view("admin/footer", $data); ?>   
+<?php $this->view("admin/footer", $data); ?>  

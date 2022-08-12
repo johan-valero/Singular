@@ -1,7 +1,7 @@
 <?php $this->view('header', $data)?>
 
 <!-- Header Banner -->
-<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/h1.jpg" style="background-position:bottom;background-size:cover;">
+<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ASSETS?>img/pages/h1.jpg" style="background-position:bottom;background-size:cover;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-left caption mt-90">

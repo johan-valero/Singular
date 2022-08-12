@@ -1,5 +1,5 @@
 <?php $this->view("header", $data); ?>
-	<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ROOT?>uploads/hobbit3.jpg" style="background-position:center;">
+	<div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="<?=ASSETS?>img/pages/hobbit3.jpg" style="background-position:center;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-left caption mt-90">

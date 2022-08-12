@@ -8,8 +8,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php check_error() ?></p>
                         <?php if($mode == "add"): ?>
-                            <?php check_error() ?></p>
                             <!-- Formulaire d'ajout de litterie -->
                             <div class="content show">
                                 <div class="row">
@@ -76,7 +76,7 @@
                                 </table>
                             </div>
                         </div>
-                        <?php elseif($mode == "edit"): ?>
+                        <?php elseif($mode == "edit" && isset($beddings)): ?>
                             <div class="card-header" style=display:flex;justify-content:space-between;>
                                 <h5 class="title">Modifier une litterie</h5>
                                 <a href="<?=ROOT?>admin/beddings" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -98,7 +98,7 @@
                                     </a>
                                 </form>
                             </div>
-                        <?php elseif($mode == "delete"): ?>
+                        <?php elseif($mode == "delete" && isset($beddings)): ?>
                         <div class="card-header" style=display:flex;justify-content:space-between;>
                             <h5 class="title">Supprimer une litterie</h5>
                             <a href="<?=ROOT?>admin/beddings" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -128,6 +128,11 @@
                             <p class="status alert alert-success">La litterie a bien était supprimé</p>
                             <a href="<?=ROOT?>admin/beddings">
                                 <input class="btn-custom btn-primary-custom" value="Retour aux litteries"/>
+                            </a>
+                        <?php else: ?>
+                            <p class="status alert alert-danger">Litterie inconnu.</p>
+                            <a href="<?=ROOT?>admin/beddings">
+                                <input class="btn-custom btn-primary-custom" value="Retour"/>
                             </a>
                         <?php endif; ?>
                     </div>

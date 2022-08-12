@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="<?=ASSETS?>img/icon_singular.png">
+    <link rel="icon" type="image/png" href="<?=ASSETS?>img/logo/icon_singular.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title><?= $page_title ?> | <?= WEBSITE_TITLE ?></title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />

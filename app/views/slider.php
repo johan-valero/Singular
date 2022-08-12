@@ -1,7 +1,7 @@
 <!-- Slider -->
 <header class="header slider-fade">
         <div class="owl-carousel owl-theme">
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="uploads/h1.jpg">
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background="<?=ASSETS?>img/sliders/h1.jpg">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="uploads/c2.jpg">
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background="<?=ASSETS?>img/sliders/c2.jpg">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">

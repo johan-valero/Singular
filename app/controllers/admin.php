@@ -252,10 +252,8 @@ class Admin extends Controller{
             $mode = "edit";
             $id = $_GET["edit"];
             $partners = $Partners->get_one($id);
-
-            if(isset($_POST) && count($_POST) > 0){
-                $data['POST_EDIT'] = $_POST;
-                $Partners->edit($data['POST_EDIT'], $id);
+            if(isset($_POST) && count($_POST) > 0 ){
+                $Partners->edit($_POST,$_FILES, $id);
             }
         }
 
@@ -268,9 +266,11 @@ class Admin extends Controller{
         if(isset($_GET['delete_confirmed'])){
             $mode = "delete_confirmed";
             $id = $_GET["delete_confirmed"];
+            if(isset($partners)){
+                unlink($partners[0]->img_partner);
+            }
             $Partners->delete($id);
         } 
-
 
         $data['mode'] = $mode;
         $data['partners'] = $partners;

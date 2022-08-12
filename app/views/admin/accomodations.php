@@ -8,8 +8,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php check_error() ?></p>
                         <?php if($mode == "add"): ?>
-                            <?php check_error() ?></p>
                             <!-- Formulaire d'ajout d'aménagements -->
                             <div class="content show">
                                 <div class="row">
@@ -98,7 +98,7 @@
                                 </table>
                             </div>
                         </div>
-                        <?php elseif($mode == "edit"): ?>
+                        <?php elseif($mode == "edit" && isset($accomodations)): ?>
                             <div class="card-header" style=display:flex;justify-content:space-between;>
                                 <h5 class="title">Modifier un aménagement</h5>
                                 <a href="<?=ROOT?>admin/accomodations" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -132,7 +132,7 @@
                                     </a>
                                 </form>
                             </div>
-                        <?php elseif($mode == "delete"): ?>
+                        <?php elseif($mode == "delete" && isset($accomodations)): ?>
                         <div class="card-header" style=display:flex;justify-content:space-between;>
                             <h5 class="title">Supprimer un aménagement</h5>
                             <a href="<?=ROOT?>admin/accomodations" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -162,6 +162,11 @@
                         </div>
                         <?php elseif($mode == "delete_confirmed"): ?>
                             <p class="status alert alert-success">L'aménagement a bien était supprimé</p>
+                            <a href="<?=ROOT?>admin/accomodations">
+                                <input class="btn-custom btn-primary-custom" value="Retour"/>
+                            </a>
+                        <?php else: ?>
+                            <p class="status alert alert-danger">Aménenagement inconnu.</p>
                             <a href="<?=ROOT?>admin/accomodations">
                                 <input class="btn-custom btn-primary-custom" value="Retour"/>
                             </a>

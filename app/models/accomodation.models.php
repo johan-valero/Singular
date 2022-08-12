@@ -28,7 +28,9 @@ class Accomodation{
     public function get_one($id){
         $DB = Database::newInstance();
         $data = $DB->read("select * from accomodations where id_accomodation = '$id' limit 1");
-        return $data[0];
+        if($data){
+            return $data[0];
+        }
     } 
 
     // fonction pour la création d'un aménagement

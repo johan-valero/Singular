@@ -1,6 +1,6 @@
 <?php $this->view("header", $data); ?>
     <!-- Header Banner -->
-    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ROOT?>uploads/royal1.jpg" style="background-position:center;">
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ASSETS?>img/pages/royal1.jpg" style="background-position:center;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left caption mt-90">

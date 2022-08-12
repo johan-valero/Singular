@@ -2,7 +2,7 @@
     <div class="sidebar" data-color="orange">
         <div class="logo">
             <a href="<?=ROOT?>" class="simple-text logo-normal" style="text-align:center;">
-                <img src="<?=ASSETS?>img/logo_admin_dark.png" style="width:80%;">
+                <img src="<?=ASSETS?>img/logo/logo_admin_dark.png" style="width:80%;">
             </a>
         </div>
         <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -143,5 +143,3 @@
             </div>
         </nav>
         <!-- End Navbar -->
-    <!-- <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas> -->

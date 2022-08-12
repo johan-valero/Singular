@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gilda+Display&display=swap" rel="stylesheet"> 
 
     <!-- Css Styles -->
-    <link rel="shortcut icon" href="<?=ASSETS?>img/icon_singular.png">
+    <link rel="shortcut icon" href="<?=ASSETS?>img/logo/icon_singular.png">
     <link rel="stylesheet" href="<?=ASSETS?>css/plugins.css">
     <link rel="stylesheet" href="<?=ASSETS?>css/style.css">
 </head>
@@ -38,7 +38,7 @@
             <div class="logo-wrapper navbar-brand valign">
                 <a href="<?=ROOT?>">
                     <div class="logo">
-                        <img src="<?=ASSETS?>img/logo.png" class="logo-img" alt="logo_singular">
+                        <img src="<?=ASSETS?>img/logo/logo.png" class="logo-img" alt="logo_singular">
                     </div>
                 </a>
             </div>

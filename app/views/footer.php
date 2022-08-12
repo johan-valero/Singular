@@ -6,7 +6,7 @@
                     <div class="col-md-4">
                         <div class="footer-column footer-about">
                             <!-- <h3 class="footer-title">À propos de Singular</h3> -->
-                            <img class="logo-img" src="<?=ASSETS?>img/logo.png" alt="logo Singular">
+                            <img class="logo-img" src="<?=ASSETS?>img/logo/logo.png" alt="logo Singular">
                             <br><br>
                             <p class="footer-about-text">Nous sélectionnons pour vous des hébergements insolites partout en France ! Découvrez des endroits atypiques au cœur de nos belles régions françaises. Offrez-vous la magie d’une nuit insolite !</p>
                             <br>
