@@ -47,3 +47,14 @@ function redirect($link){
     header("Location: ".ROOT.$link);
     die;
 }
+
+// Générer un slug
+function str_to_slug($name){
+    $name = preg_replace('~[^\\pL0-9_]+~u', '-', $name);
+    $name = preg_replace("/(é|è|ê|ë)/", "e", $name);
+    $name = trim($name, "-");
+    $name = iconv("utf-8", "us-ascii//TRANSLIT", $name);
+    $name = strtolower($name);
+    $name = preg_replace('~[^-a-z0-9_]+~', '', $name);
+    return $name;
+}

@@ -31,14 +31,61 @@ class Admin extends Controller{
             $data['user_data'] = $user_data;
         }
 
+        $mode = "read";
+        if($mode == "read"){
+            $rooms = $Rooms->get_all_admin();
+        }
+
+        if(isset($_GET['add'])){
+            $mode = "add";
+            if(isset($_POST) && count($_POST) > 0 ){
+                $check = $Rooms->create($_POST, $_FILES);
+            }
+        }
+
+        if(isset($_GET['edit'])){
+            $mode = "edit";
+            $id = $_GET["edit"];
+            $rooms = $Rooms->get_one($id);
+            
+            if(empty($_FILES['image']['name'])){
+                $data['file'] = $rooms->img_category;
+            }else{
+                $data['file'] = $_FILES;
+            }
+
+            if(isset($_POST) && count($_POST) > 0 ){
+                $rooms->edit($_POST,$data['file'], $id);
+            }
+        }
+
+        if(isset($_GET['delete'])){
+            $mode = "delete";
+            $id = $_GET["delete"];
+            $rooms = $Rooms->get_one($id);
+        }
+        
+        if(isset($_GET['delete_confirmed'])){
+            $mode = "delete_confirmed";
+            $id = $_GET["delete_confirmed"];
+            $rooms = $Rooms->get_one($id);
+            if(isset($rooms)){
+                unlink($rooms->img_room);
+                unlink($rooms->img2_room);
+                unlink($rooms->img3_room);
+            }
+            $Rooms->delete($id);
+        } 
+
+        $data['mode'] = $mode; 
         $data['animals'] = $Animals->get_all();
         $data['beddings'] = $Beddings->get_all();
         $data['categories'] = $Categories->get_all();
         $data['accomodations'] = $Accomodation->get_all();
-        $data['rooms'] = $Rooms->get_all_admin();
+        $data['rooms'] = $rooms;
         $data['current_page'] = "Logements";
         $data['page_title'] = "Admin | Logements";
-        $this->view("admin/rooms", $data);
+        $this->view("admin/rooms2", $data);
     }
 
     // Gestion de l'onglet catégorie de la section admin
