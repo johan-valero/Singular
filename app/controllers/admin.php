@@ -51,7 +51,52 @@ class Admin extends Controller{
             $data['user_data'] = $user_data;
         }
 
-        $data['categories'] = $Categories->get_all();
+        $mode = "read";
+        if($mode == "read"){
+            $categories = $Categories->get_all();
+        }
+
+        if(isset($_GET['add'])){
+            $mode = "add";
+            if(isset($_POST) && count($_POST) > 0 ){
+                $check = $Categories->create($_POST, $_FILES);
+            }
+        }
+
+        if(isset($_GET['edit'])){
+            $mode = "edit";
+            $id = $_GET["edit"];
+            $categories = $Categories->get_one($id);
+            
+            if(empty($_FILES['image']['name'])){
+                $data['file'] = $categories->img_category;
+            }else{
+                $data['file'] = $_FILES;
+            }
+
+            if(isset($_POST) && count($_POST) > 0 ){
+                $Categories->edit($_POST,$data['file'], $id);
+            }
+        }
+
+        if(isset($_GET['delete'])){
+            $mode = "delete";
+            $id = $_GET["delete"];
+            $categories = $Categories->get_one($id);
+        }
+        
+        if(isset($_GET['delete_confirmed'])){
+            $mode = "delete_confirmed";
+            $id = $_GET["delete_confirmed"];
+            $categories = $Categories->get_one($id);
+            if(isset($categories)){
+                unlink($categories->img_category);
+            }
+            $Categories->delete($id);
+        } 
+
+        $data['mode'] = $mode;
+        $data['categories'] = $categories;
         $data['current_page'] = "Catégories";
         $data['page_title'] = "Admin | Catégories";
         $this->view("admin/categories", $data);
@@ -273,8 +318,9 @@ class Admin extends Controller{
         if(isset($_GET['delete_confirmed'])){
             $mode = "delete_confirmed";
             $id = $_GET["delete_confirmed"];
+            $partners = $Partners->get_one($id);
             if(isset($partners)){
-                unlink($partners[0]->img_partner);
+                unlink($partners->img_partner);
             }
             $Partners->delete($id);
         } 

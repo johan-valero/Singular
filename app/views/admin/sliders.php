@@ -27,13 +27,13 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Titre du carousel</label>
-                                                                        <input type="text" class="form-control" name="title" placeholder="Titre du carousel" required>
+                                                                        <input type="text" class="form-control" name="title" value="<?= isset($_POST['title']) ?$_POST['title']: ""; ?>" placeholder="Titre du carousel" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Lien du carousel</label>
-                                                                        <input type="text" class="form-control" name="link" placeholder="Lien du carousel" required>
+                                                                        <input type="text" class="form-control" name="link" value="<?= isset($_POST['link']) ?$_POST['link']: ""; ?>" placeholder="Lien du carousel" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -41,7 +41,7 @@
                                                                 <div class="col-md-8">
                                                                     <div class="form-group">
                                                                         <label>Message</label>
-                                                                        <textarea name="message" class="form-control" placeholder="Message du carousel" required></textarea>
+                                                                        <textarea name="message" class="form-control" placeholder="Message du carousel" required><?= isset($_POST['message']) ?$_POST['message']: ""; ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>

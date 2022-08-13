@@ -92,7 +92,7 @@
         </div>
     </section>
     <!-- Catégories -->
-    <?php if($categories): ?>
+    <?php if(isset($categories)): ?>
         <section class="news section-padding bg-black">
             <div class="container">
                 <div class="row">
@@ -129,7 +129,7 @@
         </section>
     <?php endif; ?>
     <!-- Rooms -->
-    <?php if($rooms): ?>
+    <?php if(isset($rooms)): ?>
         <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
             <div class="container">
                 <div class="row">

@@ -27,13 +27,13 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Nom du partenaire</label>
-                                                                        <input type="text" class="form-control" name="name" placeholder="Nom du partenaire" required>
+                                                                        <input type="text" class="form-control" name="name" value="<?= isset($_POST['name']) ?$_POST['name']: ""; ?>" placeholder="Nom du partenaire" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Lien du site partenaire</label>
-                                                                        <input type="text" class="form-control" name="link" placeholder="Lien du partenaire" required>
+                                                                        <input type="text" class="form-control" name="link" value="<?= isset($_POST['link']) ?$_POST['link']: ""; ?>" placeholder="Lien du partenaire" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
