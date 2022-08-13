@@ -252,8 +252,15 @@ class Admin extends Controller{
             $mode = "edit";
             $id = $_GET["edit"];
             $partners = $Partners->get_one($id);
+            
+            if(empty($_FILES['image']['name'])){
+                $data['file'] = $partners->img_partner;
+            }else{
+                $data['file'] = $_FILES;
+            }
+
             if(isset($_POST) && count($_POST) > 0 ){
-                $Partners->edit($_POST,$_FILES, $id);
+                $Partners->edit($_POST,$data['file'], $id);
             }
         }
 
@@ -277,5 +284,86 @@ class Admin extends Controller{
         $data['current_page'] = "Partenaires";
         $data['page_title'] = "Admin | Partenaire";
         $this->view("admin/partners", $data);
+    }
+
+    // Gestion de l'onglet paramètre/carousel de la section admin
+    public function Sliders(){
+        $Sliders = $this->load_model('Slider');
+        $User = $this->load_model('User');
+        $user_data = $User->check_login(true, ["admin"]);
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        
+        $mode = "read";
+        if($mode == "read"){
+            $sliders = $Sliders->get_all();
+        }
+
+        if(isset($_GET['add'])){
+            $mode = "add";
+            if(isset($_POST) && count($_POST) > 0 ){
+                $check = $Sliders->create($_POST, $_FILES);
+            }
+        }
+
+        if(isset($_GET['edit'])){
+            $mode = "edit";
+            $id = $_GET["edit"];
+            $sliders = $Sliders->get_one($id);
+            
+            if(empty($_FILES['image']['name'])){
+                $data['file'] = $sliders->img;
+            }else{
+                $data['file'] = $_FILES;
+            }
+
+            if(isset($_POST) && count($_POST) > 0 ){
+                $Sliders->edit($_POST,$data['file'], $id);
+            }
+        }
+
+        if(isset($_GET['delete'])){
+            $mode = "delete";
+            $id = $_GET["delete"];
+            $sliders = $Sliders->get_one($id);
+        }
+
+        if(isset($_GET['delete_confirmed'])){
+            $mode = "delete_confirmed";
+            $id = $_GET["delete_confirmed"];
+            if(isset($sliders)){
+                unlink($sliders[0]->img);
+            }
+            $Sliders->delete($id);
+        } 
+
+        $data['mode'] = $mode;
+        $data['sliders'] = $sliders;
+        $data['current_page'] = "Carousel";
+        $data['page_title'] = "Admin | Carousel";
+        $this->view("admin/sliders", $data);
+    }
+
+    // Gestion de l'onglet paramètre/réseaux de la section admin
+    public function Socials(){
+        $Socials = $this->load_model('Social');
+        $User = $this->load_model('User');
+        $user_data = $User->check_login(true, ["admin"]);
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        
+        if(count($_POST) > 0 ){
+            $Socials->edit($_POST);
+        }
+        $socials = $Socials->get_all();
+
+        $data['socials'] = $socials;
+        $data['current_page'] = "Réseaux";
+        $data['page_title'] = "Admin | Réseaux";
+        $this->view("admin/socials", $data);
     }
 }

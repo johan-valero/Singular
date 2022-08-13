@@ -49,7 +49,7 @@
                     <p>Messages</p>
                     </a>
                 </li>
-                <li <?=(isset($current_page) && $current_page == "Partenaires") ? ' class="active" ' : ""; ?>>
+                <li <?=(isset($current_page) && ($current_page == "Partenaires" || $current_page == "Carousel" || $current_page == "Réseaux")) ? ' class="active" ' : ""; ?>>
                     <a data-toggle="collapse" href="#settings">
                         <i class="fa-solid fa-gear"></i>
                         <p>Paramètres <b class="caret"></b></p>
@@ -57,7 +57,7 @@
                     <div class="collapse " id="settings">
                         <ul class="nav">
                             <li>
-                                <a href="<?=ROOT?>admin/slider">
+                                <a href="<?=ROOT?>admin/sliders">
                                     <span class="sidebar-normal">Carousel</span>
                                 </a>
                             </li>

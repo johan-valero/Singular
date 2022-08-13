@@ -8,11 +8,19 @@ function show($data){
     echo "</pre>";
 }
 
-// Fonction permettant de vérifier les erreur presente dans la session 
+// Fonction permettant de vérifier les erreurs presentent dans la session 
 function check_error(){
     if(isset($_SESSION['error']) && $_SESSION['error'] != ""){
         echo '<p class="status alert alert-danger">'.$_SESSION['error'].'</p>';
         unset($_SESSION['error']);
+    }
+}
+
+// Fonction permettant de vérifier les messages présents dans la session 
+function check_succes(){
+    if(isset($_SESSION['succes']) && $_SESSION['succes'] != ""){
+        echo '<p class="status alert alert-success">'.$_SESSION['succes'].'</p>';
+        unset($_SESSION['succes']);
     }
 }
 

@@ -3,71 +3,71 @@
 
     <!-- Booking Search -->
     <div class="booking-wrapper">
-            <div class="container">
-                <div class="booking-inner clearfix">
-                    <form action="rooms.html" class="form1 clearfix">
-                        <div class="col1 c1">
-                            <div class="input1_wrapper">
-                                <label>Arrivée</label>
-                                <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée">
-                                </div>
+        <div class="container">
+            <div class="booking-inner clearfix">
+                <form action="rooms.html" class="form1 clearfix">
+                    <div class="col1 c1">
+                        <div class="input1_wrapper">
+                            <label>Arrivée</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Arrivée">
                             </div>
                         </div>
-                        <div class="col1 c2">
-                            <div class="input1_wrapper">
-                                <label>Départ</label>
-                                <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Départ">
-                                </div>
+                    </div>
+                    <div class="col1 c2">
+                        <div class="input1_wrapper">
+                            <label>Départ</label>
+                            <div class="input1_inner">
+                                <input type="text" class="form-control input datepicker" placeholder="Départ">
                             </div>
                         </div>
-                        <div class="col2 c3">
-                            <div class="select1_wrapper">
-                                <label>Adultes</label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Adulte</option>
-                                        <option value="2">2 Adultes</option>
-                                        <option value="3">3 Adultes</option>
-                                        <option value="4">4 Adultes</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <div class="col2 c3">
+                        <div class="select1_wrapper">
+                            <label>Adultes</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Adulte</option>
+                                    <option value="2">2 Adultes</option>
+                                    <option value="3">3 Adultes</option>
+                                    <option value="4">4 Adultes</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col2 c4">
-                            <div class="select1_wrapper">
-                                <label>Enfants</label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">Enfant</option>
-                                        <option value="1">1 Enfant</option>
-                                        <option value="2">2 Enfants</option>
-                                        <option value="3">3 Enfants</option>
-                                        <option value="4">4 Enfants</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <div class="col2 c4">
+                        <div class="select1_wrapper">
+                            <label>Enfants</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">Enfant</option>
+                                    <option value="1">1 Enfant</option>
+                                    <option value="2">2 Enfants</option>
+                                    <option value="3">3 Enfants</option>
+                                    <option value="4">4 Enfants</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col2 c5">
-                            <div class="select1_wrapper">
-                                <label>Logements</label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Chambre</option>
-                                        <option value="2">2 Chambres</option>
-                                        <option value="3">3 Chambres</option>
-                                        <option value="4">4 Chambres</option>
-                                    </select>
-                                </div>
+                    </div>
+                    <div class="col2 c5">
+                        <div class="select1_wrapper">
+                            <label>Logements</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="1">1 Chambre</option>
+                                    <option value="2">2 Chambres</option>
+                                    <option value="3">3 Chambres</option>
+                                    <option value="4">4 Chambres</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col3 c6">
-                            <button type="submit" class="btn-form1-submit">Réserver</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="col3 c6">
+                        <button type="submit" class="btn-form1-submit">Réserver</button>
+                    </div>
+                </form>
             </div>
+        </div>
     </div>
     <!-- About -->
     <section class="about section-padding">
@@ -151,28 +151,30 @@
         </section>
     <?php endif; ?>
     <!-- Promo Video -->
-    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ROOT?>uploads/hobbit3.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2 text-center">
-                        <div class="section-subtitle"><span>Singular</span></div>
-                        <div class="section-title"><span>Vidéo promotionnelle</span></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="text-center col-md-12">
-                        <a class="vid" href="https://youtu.be/gbbLm5qgWU8">
-                        <div class="vid-butn">
-                            <span class="icon">
-                                <i class="fa-brands fa-youtube" style="line-height:2.5;"></i>
-                            </span>
+    <?php if(isset($youtube)): ?>
+        <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="<?=ROOT?>uploads/hobbit3.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 text-center">
+                            <div class="section-subtitle"><span>Singular</span></div>
+                            <div class="section-title"><span>Vidéo promotionnelle</span></div>
                         </div>
-                    </a>
                     </div>
+                    <div class="row">
+                        <div class="text-center col-md-12">
+                            <a class="vid" href="<?= $youtube->value ?>">
+                            <div class="vid-butn">
+                                <span class="icon">
+                                    <i class="fa-brands fa-youtube" style="line-height:2.5;"></i>
+                                </span>
+                            </div>
+                        </a>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-    </section>
+        </section>
+    <?php endif; ?>
     <!-- Facilities -->
     <?php if(isset($facilities)): ?>
         <section class="pricing section-padding">
@@ -219,13 +221,13 @@
                         <div class="reservations mb-30">
                             <div class="icon color-1"><span style="color:#cd701c;" class="fa-solid fa-phone"></span></div>
                             <div class="text">
-                                <p class="color-1">Réservation</p><a class="color-1" href="tel:855-100-4444">06 27 89 02 54</a>
+                                <p class="color-1">Réservation par téléphone</p><a class="color-1" href="tel:<?= isset($phone) ? $phone->value : " ";?>"><?= isset($phone) ? $phone->value : " ";?></a>
                             </div>
                         </div>
                         <div class="reservations mb-30">
                             <div class="icon color-1"><span style="color:#cd701c;" class="fa-solid fa-envelope"></span></div>
                             <div class="text">
-                                <p class="color-1">Réservation</p> <a class="color-1" href="">contact.singular.jv@gmail.com</a>
+                                <p class="color-1">Réservation par email</p> <a class="color-1" href="mailto:<?= isset($email) ? $email->value : " ";?>"><?= isset($email) ? $email->value : " ";?></a>
                             </div>
                         </div>
                     </div>
@@ -295,31 +297,20 @@
             </div>
         </div>
     </section>
-    <!-- Clients -->
-    <section class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 owl-carousel owl-theme">
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/1.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/2.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/3.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/4.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/5.png" alt=""></a>
-                    </div>
-                    <div class="clients-logo">
-                        <a href="#0"><img src="<?=ASSETS?>img/clients/6.png" alt=""></a>
+    <!-- Partenaires -->
+    <?php if(isset($partners) && is_array($partners)):?>
+        <section class="clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 owl-carousel owl-theme">
+                        <?php foreach($partners as $partner): ?>
+                            <div class="clients-logo">
+                                <a href="<?=$partner->link_partner?>"><img src="<?=$partner->img_partner?>" alt=""></a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
 <?php $this->view("footer", $data); ?>

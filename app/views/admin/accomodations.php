@@ -35,6 +35,7 @@
                                                                 <div class="form-group">
                                                                     <label>Icone</label>
                                                                     <input type="text" class="form-control" name="icon" placeholder="Icone de l'aménagement" value="<?= isset($_POST['icon']) ?$_POST['icon']: ""; ?>" required>
+                                                                    <p style="color:#666;font-size:10px;">Veuillez sélectionner une icone sur <a target="_blank" href="https://fontawesome.com/">Font awesome</a>.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -56,7 +57,6 @@
                                 </div>
                             </div>
                             <!-- Fin d'ajout d'aménagement -->
-                        
                         <?php elseif($mode == "read"): ?>
                             <a href="<?=ROOT?>admin/accomodations?add">
                                 <button class="btn-custom btn-primary-custom"><i class="fa-solid fa-square-plus"></i> Ajouter</button>
@@ -123,6 +123,7 @@
                                             <div class="form-group">
                                                 <label>Icone</label>
                                                 <input type="text" class="form-control" name="icon" value="<?=$accomodations->icon_accomodation ?>">
+                                                <p style="color:#666;font-size:10px;">Veuillez sélectionner une icone sur <a target="_blank" href="https://fontawesome.com/">Font awesome</a>.</p>
                                             </div>
                                         </div>
                                     </div>

@@ -6,6 +6,7 @@ class Contact extends Controller{
 
         $User = $this->load_model('User');
         $Contact = $this->load_model('Message');
+        $Socials = $this->load_model('Social');
         $user_data = $User->check_login();
         
         if(is_object($user_data)){
@@ -21,6 +22,12 @@ class Contact extends Controller{
                 die;
             }
         }
+
+        // Afficher les informations sociales
+        $data['instagram'] = $Socials->get_one("Instagram");
+        $data['phone'] = $Socials->get_one("Téléphone");
+        $data['email'] = $Socials->get_one("Email");
+        $data['adress'] = $Socials->get_one("Adresse");
 
         $DB = Database::newInstance();
         $data['page_title'] = "Contact";

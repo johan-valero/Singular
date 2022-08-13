@@ -20,24 +20,24 @@
                         <img src="<?=ASSETS?>img/logo/logo_dark.png" class="logo-img" alt="logo_singular">
                     </div>
                     <br>
-                    <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
+                    <p>Envoyez nous un message si vous avez la moindre question ou réclamation. Nous répondrons dans les plus brefs délais.</p>
                     <div class="reservations mb-30" style="margin-bottom:12px !important;">
                         <div class="icon"><span class="fa-solid fa-phone"></span></div>
                         <div class="text">
-                            <p>Numéro</p> <a  style="font-size:20px;" href="tel:06-27-89-02-54">06 27 89 02 54</a>
+                            <p>Numéro</p> <a  style="font-size:20px;" href="tel:<?= isset($phone) ? $phone->value : " ";?>"><?= isset($phone) ? $phone->value : " ";?></a>
                         </div>
                     </div>
                     <div class="reservations mb-30" style="margin-bottom:12px !important;">
                         <div class="icon"><span class="fa-solid fa-envelope"></span></div>
                         <div class="text">
-                            <p>Email</p> <a  style="font-size:20px;" href="mailto:contact.singular.jv@gmail.com">contact.singular.jv@gmail.com</a>
+                            <p>Email</p> <a  style="font-size:20px;" href="mailto:<?= isset($email) ? $email->value : " ";?>"><?= isset($email) ? $email->value : " ";?></a>
                         </div>
                     </div>
                     <div class="reservations mb-30">
                         <div class="icon"><span style="width:35px;height:35px;" class="fa-solid fa-location-dot"></span></div>
                         <div class="text">
-                            <p>Adresse</p><a style="font-size:20px;" >11 avenue de l'Europe, 31520 
-                            <br>Ramonville-Saint-Agne
+                            <p>Adresse</p><a style="font-size:20px;" ><?= isset($adress) ? $adress->value : " ";?>
+                            <br>
                             </a>
                         </div>
                     </div>

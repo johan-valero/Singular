@@ -1,30 +1,36 @@
 <?php 
 
-class Partner{
+class Slider{
 
     private $error = "";
-    // Fonction de création d'un partenaire
+    // Fonction de création d'un carousel
     public function create($DATA, $FILES){
         $this->error = "";
         $DB = Database::newInstance();
-        $arr['name'] = $DATA['name'];
+        $arr['title'] = $DATA['title'];
+        $arr['message'] = $DATA['message'];
         $arr['link'] = $DATA['link'];
 
-        // Si l'input name est vide en ajoute un message d'erreur dans la variable privé error 
-        if(empty(trim($arr['name']))){
-            $this->error .= "Veuillez entrer un nom de partenaire valide <br>";
+        // Si l'input title est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['title']))){
+            $this->error .= "Veuillez entrer un titre valide. <br>";
+        }
+
+        // Si l'input message est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['message']))){
+            $this->error .= "Veuillez entrer un message valide. <br>";
         }
 
         // Si l'input link est vide en ajoute un message d'erreur dans la variable privé error 
         if(empty(trim($arr['link']))){
-            $this->error .= "Veuillez entrer un lien valide <br>";
+            $this->error .= "Veuillez entrer un lien valide. <br>";
         }
 
         $arr['image'] = "";
         $allowed[] = "image/jpeg";
         $allowed[] = "image/png";
         $allowed[] = "image/gif";
-        $dir = "assets/img/partners/";
+        $dir = "assets/img/sliders/";
 
         // Si le dossier défini dans $dir existe alors on le crée avec les droit d'admin
         if(!file_exists($dir)){
@@ -42,62 +48,68 @@ class Partner{
             }
         }
 
-        // Si il n'ya pas de message d'erreur stocker on crée le partenaire
+        // Si il n'ya pas de message d'erreur stocker on crée le carousel
         if ($this->error == ""){
             $DB = Database::newInstance();
-            $query = "insert into partners (name_partner, link_partner, img_partner ) values (:name,:link,:image)";
+            $query = "insert into sliders (title, message, link, img ) values (:title,:message,:link, :image)";
             $check = $DB->write($query, $arr);
     
-            // Si le partenaire est crée on redirige vers la page partenaire
+            // Si le carousel est crée on redirige vers la page carousel
             if($check){
-                redirect("admin/partners");
+                redirect("admin/sliders");
                 return true;
             }
         }
         $_SESSION['error'] = $this->error;
     } 
 
-    // Fonction qui récupère tout les partenaires de la BDD
+    // Fonction qui récupère tout les carousels de la BDD
     public function get_all(){
         $DB = Database::newInstance();
-        $query = "select * from partners ";
+        $query = "select * from sliders ";
         $result = $DB->read($query);
         return $result;
     }
 
-    // Getter pour d'un partenaire en fonction de l'id
+    // Getter pour d'un carousel en fonction de l'id
     public function get_one($id){
         $id = (int)$id;
         $DB = Database::newInstance();
-        $data = $DB->read("select * from partners where id_partner = '$id' limit 1 ");
+        $data = $DB->read("select * from sliders where id_slider = '$id' limit 1 ");
         if($data){
             return $data[0];
         }
     } 
 
-    // Fonction suppression d'un partenaire
+    // Fonction suppression d'un carousel
     public function delete($id){
         $DB = Database::newInstance();
         $id = (int)$id;
-        $query = "delete from partners where id_partner = '$id' limit 1 ";
+        $query = "delete from sliders where id_slider = '$id' limit 1 ";
         $DB->write("$query");
     } 
 
-    // Fonction de modifications d'un partenaire
+    // Fonction de modifications d'un carousel
     public function edit($DATA,$FILES, $id){
         $this->error = "";
         $DB = Database::newInstance();
-        $arr['name'] = $DATA['name'];
+        $arr['title'] = $DATA['title'];
+        $arr['message'] = $DATA['message'];
         $arr['link'] = $DATA['link'];
 
-        // Si l'input name est vide en ajoute un message d'erreur dans la variable privé error 
-        if(empty(trim($arr['name']))){
-            $this->error .= "Veuillez entrer un nom de partenaire valide <br>";
+        // Si l'input title est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['title']))){
+            $this->error .= "Veuillez entrer un titre valide. <br>";
+        }
+
+        // Si l'input message est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['message']))){
+            $this->error .= "Veuillez entrer un message valide. <br>";
         }
 
         // Si l'input link est vide en ajoute un message d'erreur dans la variable privé error 
         if(empty(trim($arr['link']))){
-            $this->error .= "Veuillez entrer un lien valide <br>";
+            $this->error .= "Veuillez entrer un lien valide. <br>";
         }
 
         if(isset($FILES) && is_array($FILES)){
@@ -105,7 +117,7 @@ class Partner{
             $allowed[] = "image/jpeg";
             $allowed[] = "image/png";
             $allowed[] = "image/gif";
-            $dir = "assets/img/partners/";
+            $dir = "assets/img/sliders/";
     
             // Si le dossier défini dans $dir existe alors on le crée avec les droit d'admin
             if(!file_exists($dir)){
@@ -126,15 +138,15 @@ class Partner{
             $arr['image'] = $FILES;
         }
 
-        // Si il n'ya pas de message d'erreur stocker on crée le partenaire
+        // Si il n'ya pas de message d'erreur stocker on crée le carousel
         if ($this->error == ""){
             $DB = Database::newInstance();
-            $query = "update partners set name_partner = :name, link_partner = :link, img_partner = :image where id_partner = '$id' limit 1 ";      
+            $query = "update sliders set title = :title, message = :message, link = :link, img = :image where id_slider = '$id' limit 1 ";      
             $check = $DB->write($query, $arr);
     
-            // Si le partenaire est crée on redirige vers la page partenaire
+            // Si le carousel est crée on redirige vers la page carousel
             if($check){
-                redirect("admin/partners");
+                redirect("admin/sliders");
                 return true;
             }
         }
