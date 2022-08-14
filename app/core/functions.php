@@ -27,7 +27,7 @@ function check_succes(){
 // Fonction pour contaténer la date en français 
 function fr_date($date){
     setlocale(LC_ALL, 'fr_FR.UTF8', 'fr_FR','fr','fr','fra','fr_FR@euro');
-    return strftime("%d %B", strtotime($date));
+    return utf8_encode(strftime("%d %B", strtotime($date)));
 }
 
 // fonction pour générer un nom à une image

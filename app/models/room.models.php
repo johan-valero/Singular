@@ -221,24 +221,22 @@ class Room{
         $allowed[] = "image/gif";
         $dir = "assets/img/rooms/";
 
-        // Si le dossier défini dans $dir existe alors on le crée avec les droit d'admin
-        if(!file_exists($dir)){
-            mkdir($dir, 0777, true);
-        }
-
-        // Vérifie si il y a un fichier $_FILES et si le type de l'image est le même que ceux du tableau $allowed
-        foreach($FILES as $key => $img){
-            if(in_array($img['type'], $allowed)){
-                $destination = $dir . generate_filename(30). ".jpg";
-                move_uploaded_file($img ['tmp_name'], $destination);
-                $arr[$key] = $destination ;              
-            }else{
-                $this->error .= "Veuillez télécharger une image valide (.jpg, .png ou .gif).<br>";
-            }
-        }
-
         // Si il n'ya pas de message d'erreur stocker on crée la catégorie
         if ($this->error == ""){
+            // Si le dossier défini dans $dir existe alors on le crée avec les droit d'admin
+            if(!file_exists($dir)){
+                mkdir($dir, 0777, true);
+            }
+            
+            // Vérifie si il y a un fichier $_FILES et si le type de l'image est le même que ceux du tableau $allowed
+            foreach($FILES as $key => $img){
+                if(in_array($img['type'], $allowed)){
+                    $destination = $dir . generate_filename(30). ".jpg";
+                    move_uploaded_file($img ['tmp_name'], $destination);
+                    $arr[$key] = $destination ;   
+                }           
+            }
+            
             $DB = Database::newInstance();
             $query = "
             insert into rooms(
@@ -281,9 +279,15 @@ class Room{
                     :checkin, 
                     :checkout, 
                     :area)";
+                "insert into avoir(
+                    id_accomodation,
+                    id_room) 
+                values(
+                    
+                )";
             $check = $DB->write($query, $arr);
     
-            // Si la catégorie est crée on redirige vers la page 
+            // Si le logement est crée on redirige vers la page 
             if($check){
                 redirect("admin/rooms");
                 return true;
@@ -307,11 +311,169 @@ class Room{
         }
     } 
 
-        // Fonction suppression d'un logement
-        public function delete($id){
+    // Fonction suppression d'un logement
+    public function delete($id){
+        $DB = Database::newInstance();
+        $id = (int)$id;
+        $query = "delete from rooms where id_room = '$id' limit 1 ";
+        $DB->write("$query");
+    } 
+
+    // Fonction de modifications d'une catégorie
+    public function edit($DATA,$FILES, $id){
+        $this->error = "";
+        $DB = Database::newInstance();
+        $arr['name'] = $DATA['name'];
+        $arr['description'] = $DATA['description'];
+        $arr['category'] = $DATA['categories'];
+        $arr['animals'] = $DATA['animals'];
+        $arr['beddings'] = $DATA['beddings'];
+        $arr['price'] = $DATA['price'];
+        $arr['persons'] = $DATA['persons'];
+        $arr['address'] = $DATA['address'];
+        $arr['zip'] = $DATA['zip'];
+        $arr['city'] = $DATA['city'];
+        $arr['date_open'] = $DATA['date_open'];
+        $arr['date_close'] = $DATA['date_close'];
+        $arr['checkin'] = $DATA['checkin'];
+        $arr['checkout'] = $DATA['checkout'];
+        $arr['area'] = $DATA['area'];
+        $arr['slug'] = str_to_slug($DATA['name']);
+        $image = "";
+
+        // Si l'input name est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['name']))){
+            $this->error .= "Veuillez entrer un nom de partenaire valide. <br>";
+        }
+
+        // Si l'input description est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['description']))){
+            $this->error .= "Veuillez entrer une description valide. <br>";
+        }
+
+        // Si l'input adress est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['address']))){
+            $this->error .= "Veuillez entrer une adresse valide. <br>";
+        }
+
+        // Si l'input city est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty(trim($arr['city']))){
+            $this->error .= "Veuillez entrer une ville valide. <br>";
+        }
+
+        // Si l'input price est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['price']) && !is_numeric($arr['price'])){
+            $this->error .= "Veuillez entrer un prix valide. <br>";
+        }
+
+        // Si l'input persons est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['persons']) && !is_numeric($arr['persons'])){
+            $this->error .= "Veuillez entrer un nombre de personne valide. <br>";
+        }
+
+        // Si l'input zip est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['zip']) && !is_numeric($arr['zip'])){
+            $this->error .= "Veuillez entrer un nombre de personne valide. <br>";
+        }
+
+        // Si l'input area est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['area']) && !is_numeric($arr['area'])){
+            $this->error .= "Veuillez entrer une superficie valide. <br>";
+        }
+
+        // Si l'input date_open est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['date_open'])){
+            $this->error .= "Veuillez entrer une date d'ouverture valide. <br>";
+        }
+
+        // Si l'input date_close est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['date_close'])){
+            $this->error .= "Veuillez entrer une date de fermeture valide. <br>";
+        }
+
+        // Si l'input checkin est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['checkin'])){
+            $this->error .= "Veuillez entrer un horaire de départ valide. <br>";
+        }
+
+        // Si l'input checkout est vide en ajoute un message d'erreur dans la variable privé error 
+        if(empty($arr['checkout'])){
+            $this->error .= "Veuillez entrer une horaire d'arrivée valide. <br>";
+        }
+
+        // Si l'input category est vide en ajoute un message d'erreur dans la variable privé error 
+        if(trim($arr['category']) == "-- Catégories --"){
+            $this->error .= "Veuillez séléctionner une catégorie. <br>";
+        }
+
+         // Si l'input beddings est vide en ajoute un message d'erreur dans la variable privé error 
+        if(trim($arr['beddings']) == "-- Lit --"){
+            $this->error .= "Veuillez séléctionner une litterie. <br>";
+        }
+
+         // Si l'input animals est vide en ajoute un message d'erreur dans la variable privé error 
+        if(trim($arr['animals']) == "-- Animaux --"){
+            $this->error .= "Veuillez séléctionner une option pour les animaux. <br>";
+        }
+
+        $allowed[] = "image/jpeg";
+        $allowed[] = "image/png";
+        $allowed[] = "image/gif";
+        $dir = "assets/img/rooms/";
+
+        // Si le dossier défini dans $dir existe alors on le crée avec les droit d'admin
+        if(!file_exists($dir)){
+            mkdir($dir, 0777, true);
+        }
+
+        // Si il n'ya pas de message d'erreur stocker on crée la catégorie
+        if ($this->error == ""){
+            // Vérifie si il y a un fichier $_FILES et si le type de l'image est le même que ceux du tableau $allowed
+            foreach($FILES as $key => $img){
+                if(in_array($img['type'], $allowed)){
+                    $destination = $dir . generate_filename(30). ".jpg";
+                    move_uploaded_file($img ['tmp_name'], $destination);
+                    $arr[$key] = $destination;
+                    // $image .= ",".$key."= :" .$key;
+                    if($key == 'image'){
+                        $image .= ",img_room = :" .$key;
+                    }elseif($key == 'image2'){
+                        $image .= ",img2_room = :" .$key;
+                    }elseif($key == 'image3'){
+                        $image .= ",img3_room = :" .$key;
+                    }      
+                }
+            }
             $DB = Database::newInstance();
-            $id = (int)$id;
-            $query = "delete from rooms where id_room = '$id' limit 1 ";
-            $DB->write("$query");
-        } 
+            $query = "
+                update rooms set 
+                name_room = :name, 
+                id_category = :category, 
+                id_animal = :animals, 
+                description_room = :description, 
+                price_room = :price,
+                id_bedding = :beddings, 
+                persons = :persons, 
+                address_room = :address, 
+                zip_room = :zip,
+                city_room = :city,
+                date_open = :date_open, 
+                date_close = :date_close, 
+                hour_checkin = :checkin, 
+                hour_checkout = :checkout,
+                area_room = :area,
+                slug = :slug
+                $image
+                where id_room = '$id' limit 1 "; 
+                
+            $check = $DB->write($query, $arr);
+            
+            // Si le logement est crée on redirige vers la page logements
+            if($check){
+                redirect("admin/rooms");
+                return true;
+            }
+        }
+        $_SESSION['error'] = $this->error;
+    } 
 }

@@ -47,15 +47,9 @@ class Admin extends Controller{
             $mode = "edit";
             $id = $_GET["edit"];
             $rooms = $Rooms->get_one($id);
-            
-            if(empty($_FILES['image']['name'])){
-                $data['file'] = $rooms->img_category;
-            }else{
-                $data['file'] = $_FILES;
-            }
 
             if(isset($_POST) && count($_POST) > 0 ){
-                $rooms->edit($_POST,$data['file'], $id);
+                $Rooms->edit($_POST,$_FILES, $id);
             }
         }
 
@@ -70,9 +64,15 @@ class Admin extends Controller{
             $id = $_GET["delete_confirmed"];
             $rooms = $Rooms->get_one($id);
             if(isset($rooms)){
-                unlink($rooms->img_room);
-                unlink($rooms->img2_room);
-                unlink($rooms->img3_room);
+                if(file_exists($rooms->img_room)){
+                    unlink($rooms->img_room);
+                }
+                if(file_exists($rooms->img2_room)){
+                    unlink($rooms->img2_room);
+                }
+                if(file_exists($rooms->img3_room)){
+                    unlink($rooms->img3_room);
+                }
             }
             $Rooms->delete($id);
         } 
@@ -84,8 +84,8 @@ class Admin extends Controller{
         $data['accomodations'] = $Accomodation->get_all();
         $data['rooms'] = $rooms;
         $data['current_page'] = "Logements";
-        $data['page_title'] = "Admin | Logements";
-        $this->view("admin/rooms2", $data);
+        $data['page_title'] = "Admin | Logements";      
+        $this->view("admin/rooms", $data);
     }
 
     // Gestion de l'onglet catégorie de la section admin

@@ -60,7 +60,6 @@
                     <?php if($accomodations): ?>
                         <div class="widget-title">
                             <h6 style="font-size:20px;">Options et services</h6>
-                            <?php $num_a = 0 ?>
                             <?php foreach($accomodations as $accomodation):?>
                                 <div>
                                     <input type="checkbox" name="accomodations[<?=$accomodation->name_accomodation?>]" value="<?=$accomodation->id_accomodation?>">
