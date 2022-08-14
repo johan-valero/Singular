@@ -1,5 +1,6 @@
- <!-- Footer -->
- <footer class="footer">
+
+<!-- Footer -->
+<footer class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
@@ -54,13 +55,11 @@
                     <div class="col-md-12">
                         <div class="footer-bottom-inner" style="text-align:center;">
                             <ul style="display:flex;justify-content:center;" class="footer-bottom-copy-right">
-                                <li style="padding:0px 10px 0px 0px;"><a href="#">Mentions légales</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><a target="_blank" href="<?=ASSETS?>documents/mentions-légales.pdf">Mentions légales</a></li>
                                 <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
-                                <li style="padding:0px 10px 0px 0px;"><a href="#">Confidentialité</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><a target="_blank" href="<?=ASSETS?>documents/Politique-de-confidentialité.pdf">Confidentialité</a></li>
                                 <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
-                                <li style="padding:0px 10px 0px 0px;"><a href="#">Responsabilités</a></li>
-                                <li style="padding:0px 10px 0px 0px;"><b>|</b></li>
-                                <li style="padding:0px 10px 0px 0px;"><a href="#">Contactez-nous</a></li>
+                                <li style="padding:0px 10px 0px 0px;"><a href="<?=ROOT?>contact">Contactez-nous</a></li>
                             </ul>
                         </div>
                         <div class="footer-bottom-inner">

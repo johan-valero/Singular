@@ -43,20 +43,7 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                    
-                    <!-- Pagination -->
-                    <?php if(isset($page_number)): ?>
-                        <div class="col-md-12 text-center">
-                            <ul class="news-pagination-wrap align-center mb-30 mt-30">
-                                <li><i class="ti-angle-left"></i></li>
-                                <?php for($i=1;$i<=$page_number;$i++): ?>
-                                        <li><a href="?page=<?=$i?>"><?=$i?></a></li>
-                                <?php endfor;?>
-                                <li><i class="ti-angle-right"></i></li>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
