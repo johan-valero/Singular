@@ -28,6 +28,11 @@ class Room_details extends Controller{
 
             // Récolte les logements disponibles dans la même catégorie
             $similar = $Categories->get_rooms_by_id_category($details[0]->id_category);
+            foreach($similar as $key => $value){
+                if($value->id_room == $details[0]->id_room){
+                    unset($similar[$key]);
+                }
+            }
 
             $data['accom'] = $accom;
             $data['details'] = $details[0];

@@ -144,7 +144,7 @@
             </div>
         </section>
         <!-- Similiar Room -->
-        <?php if(isset($similar_rooms)): ?>
+        <?php if(isset($similar_rooms) && !empty($similar_rooms)): ?>
             <section class="pricing section-padding bg-black">
                 <div class="container">
                     <div class="row">
