@@ -103,16 +103,6 @@
                 <span class="navbar-toggler-bar navbar-kebab"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                <form>
-                <div class="input-group no-border">
-                    <input type="text" value="" class="form-control" placeholder="Recherche">
-                    <div class="input-group-append">
-                    <div class="input-group-text">
-                        <i class="now-ui-icons ui-1_zoom-bold"></i>
-                    </div>
-                    </div>
-                </div>
-                </form>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -133,9 +123,9 @@
                             </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Profil</a>
-                            <a class="dropdown-item" href="#">Paramètres du compte</a>
-                            <a class="dropdown-item" href="#">Déconnexion</a>
+                            <a class="dropdown-item" href="<?=ROOT?>profil">Profil</a>
+                            <a class="dropdown-item" href="<?=ROOT?>profil?edit">Paramètres du compte</a>
+                            <a class="dropdown-item" href="<?=ROOT?>logout">Déconnexion</a>
                         </div>
                     </li>
                 </ul>

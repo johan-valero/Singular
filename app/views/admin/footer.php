@@ -15,6 +15,7 @@
     <script src="<?=ASSETS?>admin/js/core/popper.min.js"></script>
     <script src="<?=ASSETS?>admin/js/core/bootstrap.min.js"></script>
     <script src="<?=ASSETS?>admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript" src="<?=ASSETS?>admin/DataTables/datatables.js"></script>
     <!-- Chart JS -->
     <script src="<?=ASSETS?>admin/js/plugins/chartjs.min.js"></script>
     <!-- Notifications Plugin -->
@@ -23,3 +24,25 @@
     <script src="<?=ASSETS?>admin/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
 </body>
 </html>
+
+<script>
+$(document).ready(function () {
+    $('#table_id').DataTable({
+        "ordering": false,
+        // pagingType: 'numbers',
+        language: {
+            search: "Recherche :",
+            searchPlaceholder: "",
+            lengthMenu: 'Afficher _MENU_ par page',
+            zeroRecords: 'Pas de résultats disponibles.',
+            info: 'Page _PAGE_ sur _PAGES_',
+            infoEmpty: 'Pas de résultats disponibles.',
+            infoFiltered: '(Sur _MAX_ résultats)',
+            "paginate": {
+                "previous": "Précédent",
+                "next": "Suivant"
+            },
+        },
+    } );
+});
+</script>

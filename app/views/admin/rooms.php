@@ -215,7 +215,7 @@
                             </a>    
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped" id="table_id" style="width:100%;">
                                         <thead class=" text-primary" style="font-size:20px;">
                                             <th>Id</th>
                                             <th>Nom</th>
@@ -247,7 +247,7 @@
                                                         <td>
                                                             <?= $room->name_category ?>
                                                         </td>
-                                                        <td>
+                                                        <td class="Data ">
                                                             Animaux <?= $room->name_animal ?>
                                                         </td>
                                                         <td>
