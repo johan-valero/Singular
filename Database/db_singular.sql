@@ -92,10 +92,10 @@ CREATE TABLE rooms_booking (
   total_booking double not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE settings (
-  id_setting int primary key auto_increment,
-  name_setting varchar(30) not null,
-  value_setting varchar(2048) not null
+CREATE TABLE socials (
+  id_social int primary key auto_increment,
+  name varchar(30) not null,
+  value varchar(2048) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE sliders (

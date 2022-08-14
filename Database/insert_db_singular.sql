@@ -82,3 +82,16 @@ INSERT INTO avoir(id_room,id_accomodation) values
 
 INSERT INTO users (id_user, url_user, name_user, firstname_user, email_user, phone_user, password_user,birthday_user, date_user, rank_user) VALUES
 (1, '1TfOsxX4EoSahcxtrUdmSLm88hEA8vEnWA6NNyQ9gVwatL2sTQve4fH4', 'Leo', 'Johan', 'cynocephales@gmail.com', '0627890254', '7c4a8d09ca3762af61e59520943dc26494f8941b','1992-09-29','2022-07-27 14:34:42', 'admin');
+
+INSERT INTO sliders (id_slider, title, message, link, img) VALUES
+(1, 'Singular', ' Vivez l\'expérience d\'une nuit insolite ', 'http://localhost/Singular/public/rooms' , 'assets/img/sliders/Jw2cnexmBYR7QOreh1lyFMgrendj1R.jpg'),
+(2,'Un endroit unique','Un endroit parfait pour vous','http://localhost/Singular/public/rooms ','assets/img/sliders/f5ngP8VocQ308RoSwzOysh5tQTjL8N.jpg' );
+
+INSERT INTO socials (id_social, name, value) VALUES
+(1, 'Téléphone','0627890254' ),
+(2, 'Email','contact.singular.jv@gmail.com'),
+(3, 'Facebook','https://www.instagram.com/singular.jv'),
+(4, 'Instagram','https://www.facebook.com/singular.jv'),
+(5, 'Github','https://www.github.com/johan-valero'),
+(6, 'Adresse','11 avenue de l\'Europe, 31520 Ramonville-Saint-Agne '),
+(7, 'Vidéo Youtube','https://youtu.be/gbbLm5qgWU8');
