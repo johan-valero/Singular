@@ -1,4 +1,3 @@
-
 <!-- Footer -->
 <footer class="footer">
         <div class="footer-top">
@@ -70,7 +69,16 @@
             </div>
         </div>
     </footer>
+    <!-- Cookie alert -->
+    <div class="alert text-center cookiealert" role="alert" style="position:fixed;">
+        <b>Vous aimez les cookies?</b> &#x1F36A; Nous utilisons des cookies pour améliorer votre expérience sur notre site web. <a href="https://cookiesandyou.com/" target="_blank">En savoir plus</a>
+        <button type="button" class="btn-custom btn-primary-custom btn-sm acceptcookies">
+            Accepter
+        </button>
+    </div>
+
     <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
     <script src="<?=ASSETS?>js/jquery-3.6.0.min.js"></script>
     <script src="<?=ASSETS?>js/jquery-migrate-3.0.0.min.js"></script>
     <script src="<?=ASSETS?>js/modernizr-2.6.2.min.js"></script>
