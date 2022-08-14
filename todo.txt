@@ -10,7 +10,7 @@ X - Pagination
   - Fix affichages des partenaires 
 
 - partie Admin :
-   - Ajout tableau de bord
+   - Ajout contenu dans le tableau de bord
  X - Ajout Clients
  X - Ajout catégorie
  X - Ajout litterie 
