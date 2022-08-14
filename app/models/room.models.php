@@ -76,6 +76,14 @@ class Room{
             $query .= " beddings.id_bedding = '$GET[beddings]' AND ";
         }
 
+        if(isset($GET['min-price']) && !isset($GET['max-price'])){
+            $query .= "rooms.price_room >= '".$GET['min-price']."' AND ";
+        }elseif(isset($GET['max-price']) && !isset($GET['min-price'])){
+            $query .= "rooms.price_room <= '".$GET['max-price']."' AND";
+        }elseif(isset($GET['min-price']) && isset($GET['max-price'])){
+            $query .= " (rooms.price_room BETWEEN '".$_GET['min-price']."' AND '".$_GET['max-price']."') AND ";
+        }
+
         if(isset($GET['animals'])){
             if(count($GET['animals']) > 1){
                 $query .= " animals.id_animal IN (";
@@ -113,6 +121,7 @@ class Room{
         GROUP BY name_room
         ";
 
+        show($query);
         $rooms = $DB->read($query);
         return $rooms;
     }

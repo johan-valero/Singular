@@ -65,6 +65,16 @@ Class Rooms extends Controller{
                 }
             }
 
+            // Ajoute le prix min a la recherche si celle si est set
+            if(isset($_GET['max-price']) &&  trim($_GET['max-price']) != ""){
+                $GET['max-price'] = (float)$_GET['max-price']; 
+            }
+
+            // Ajoute le prix max a la recherche si celle si est set
+            if(isset($_GET['min-price']) && trim($_GET['min-price']) != ""){
+                $GET['min-price'] = (float)$_GET['min-price']; 
+            }
+
             $filter = $Rooms->results_filter($GET);
             $data['rooms'] = $filter;
         
