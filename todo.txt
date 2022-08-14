@@ -3,36 +3,40 @@ Complémentaire :
   - système de commentaires *
   - Afficher les détails *
   - Afficher les commentaires *
+  - Mise en place des mails * 
+X - Pagination
 
-- partie Admin : 
-  - Ajout logements
-  - Ajout settings
-  - Ajout slider
-  - Ajout message
-  - Ajout réservation
- 
-  - Partie détails :
-  - Fix articles similaires 
-  - réservation
+- Index:
+  - Fix affichages des partenaires 
+
+- partie Admin :
+   - Ajout tableau de bord
+ X - Ajout Clients
+ X - Ajout catégorie
+ X - Ajout litterie 
+ X - Ajout logements
+ X - Ajout settings
+ X - Ajout slider
+ X - Ajout message
+   - Ajout réservation
+   - Fix aménagements dans l'ajout et modification de logement 
+
+- Partie détails :
+ X - Fix articles similaires 
+   - réservation
 
 - Partie logements:
-  - Finir les filtres(ajouter le prix comme filtre). 
-  - Mise en place des settings générales (partenaires, réseaux, numéro, mail)
-  - Pagination
-  - réservation
-
-Index:
-X - Pagination sur les aménagements
+X  - Finir les filtres(ajouter le prix comme filtre). 
+X  - Mise en place des settings générales (partenaires, réseaux, numéro, mail)
+   - réservation 
  
 - Footer : 
-  - Pages annexe 
-  - Cookie 
-
-- Générale : 
-  - Mise en place des mails
+X - Pages annexe 
+X - Cookie 
 
 - Database: 
-  - Ajout de contenu après la partie Admin
+X  - Ajout de contenu après la partie Admin
 
 - User:
- - Profil
+X - Profil
+  - Affichage des réservation
