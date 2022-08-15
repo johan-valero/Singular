@@ -48,7 +48,10 @@ class Category{
         join rooms on categories.id_category = rooms.id_category 
         join beddings on beddings.id_bedding = rooms.id_bedding
         join animals on animals.id_animal = rooms.id_animal   
-        where categories.id_category = '$id'");
+        where categories.id_category = '$id'
+        order by id_room desc
+        limit 4"
+        );
     }
 
     // Fonction création d'une catégorie

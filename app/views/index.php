@@ -2,79 +2,81 @@
 <?php $this->view("slider", $data); ?>
 
     <!-- Booking Search -->
-    <div class="booking-wrapper">
-        <div class="container">
-            <div class="booking-inner clearfix">
-                <form action="rooms.html" class="form1 clearfix">
-                    <div class="col1 c1">
-                        <div class="input1_wrapper">
-                            <label>Arrivée</label>
-                            <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Arrivée">
+    <?php if(isset($sliders)&& is_array($sliders)):?>
+        <div class="booking-wrapper">
+            <div class="container">
+                <div class="booking-inner clearfix">
+                    <form action="rooms.html" class="form1 clearfix">
+                        <div class="col1 c1">
+                            <div class="input1_wrapper">
+                                <label>Arrivée</label>
+                                <div class="input1_inner">
+                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col1 c2">
-                        <div class="input1_wrapper">
-                            <label>Départ</label>
-                            <div class="input1_inner">
-                                <input type="text" class="form-control input datepicker" placeholder="Départ">
+                        <div class="col1 c2">
+                            <div class="input1_wrapper">
+                                <label>Départ</label>
+                                <div class="input1_inner">
+                                    <input type="text" class="form-control input datepicker" placeholder="Départ">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col2 c3">
-                        <div class="select1_wrapper">
-                            <label>Adultes</label>
-                            <div class="select1_inner">
-                                <select class="select2 select" style="width: 100%">
-                                    <option value="1">1 Adulte</option>
-                                    <option value="2">2 Adultes</option>
-                                    <option value="3">3 Adultes</option>
-                                    <option value="4">4 Adultes</option>
-                                </select>
+                        <div class="col2 c3">
+                            <div class="select1_wrapper">
+                                <label>Adultes</label>
+                                <div class="select1_inner">
+                                    <select class="select2 select" style="width: 100%">
+                                        <option value="1">1 Adulte</option>
+                                        <option value="2">2 Adultes</option>
+                                        <option value="3">3 Adultes</option>
+                                        <option value="4">4 Adultes</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col2 c4">
-                        <div class="select1_wrapper">
-                            <label>Enfants</label>
-                            <div class="select1_inner">
-                                <select class="select2 select" style="width: 100%">
-                                    <option value="1">Enfant</option>
-                                    <option value="1">1 Enfant</option>
-                                    <option value="2">2 Enfants</option>
-                                    <option value="3">3 Enfants</option>
-                                    <option value="4">4 Enfants</option>
-                                </select>
+                        <div class="col2 c4">
+                            <div class="select1_wrapper">
+                                <label>Enfants</label>
+                                <div class="select1_inner">
+                                    <select class="select2 select" style="width: 100%">
+                                        <option value="1">Enfant</option>
+                                        <option value="1">1 Enfant</option>
+                                        <option value="2">2 Enfants</option>
+                                        <option value="3">3 Enfants</option>
+                                        <option value="4">4 Enfants</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col2 c5">
-                        <div class="select1_wrapper">
-                            <label>Logements</label>
-                            <div class="select1_inner">
-                                <select class="select2 select" style="width: 100%">
-                                    <option value="1">1 Chambre</option>
-                                    <option value="2">2 Chambres</option>
-                                    <option value="3">3 Chambres</option>
-                                    <option value="4">4 Chambres</option>
-                                </select>
+                        <div class="col2 c5">
+                            <div class="select1_wrapper">
+                                <label>Logements</label>
+                                <div class="select1_inner">
+                                    <select class="select2 select" style="width: 100%">
+                                        <option value="1">1 Chambre</option>
+                                        <option value="2">2 Chambres</option>
+                                        <option value="3">3 Chambres</option>
+                                        <option value="4">4 Chambres</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col3 c6">
-                        <button type="submit" class="btn-form1-submit">Réserver</button>
-                    </div>
-                </form>
+                        <div class="col3 c6">
+                            <button type="submit" class="btn-form1-submit">Réserver</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
     <!-- About -->
     <section class="about section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                    <div class="section-subtitle">Singular</div>
+                    <div class="section-subtitle"><span>Singular</span></div>
                     <div class="section-title">Vivez une expérience hors du commun</div>
                     <p>
                         Nous sélectionnons pour vous des hébergements insolites partout en France !  Découvrez des endroits atypiques au cœur de nos belles régions françaises.
@@ -92,7 +94,7 @@
         </div>
     </section>
     <!-- Catégories -->
-    <?php if(isset($categories)): ?>
+    <?php if(isset($categories) && is_array($categories)): ?>
         <section class="news section-padding bg-black">
             <div class="container">
                 <div class="row">
@@ -108,15 +110,12 @@
                                 foreach($categories as $category){
                                     echo'
                                         <div class="item" style="text-align:center;">
-                                            <div class="position-re o-hidden"> <img style="height:275px;object-fit:cover;" src="'.ROOT.$category->img_category.'" alt="">
-                                                <div class="date" style="background-color:#fff;">
-                                                    <span><i style="color:#cd701c;">'.$category->id_category.'</i></span> 
-                                                </div>
+                                            <div class="position-re o-hidden"> <img style="height:275px;object-fit:cover;" src="'.ROOT.$category->img_category.'" alt="Imga catégorie">
                                             </div>
                                             <div class="con"> <span class="category">
                                                     <a style="font-size:10px;line-height:14px;" href="'.ROOT.'rooms/category/'.$category->name_category.'">'.$category->description_category.'</a>
                                                 </span>
-                                                <h5><a href="'.ROOT.'rooms/'.$category->name_category.'">'.$category->name_category.'</a></h5>
+                                                <h5><a href="'.ROOT.'rooms/'.$category->name_category.'"><i class="'.$category->icon_category.'" style="color:#cd701c;margin-right:10px;"></i>'. $category->name_category.'</a></h5>
                                             </div>
                                         </div>
                                     ';
@@ -129,12 +128,12 @@
         </section>
     <?php endif; ?>
     <!-- Rooms -->
-    <?php if(isset($rooms)): ?>
+    <?php if(isset($rooms) && is_array($rooms)): ?>
         <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="section-subtitle">Logements</div>
+                        <div class="section-subtitle"><span>Logements</span></div>
                         <div class="section-title">Nos derniers hébergements</div>
                     </div>
                 </div>
@@ -156,7 +155,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 offset-md-2 text-center">
-                            <div class="section-subtitle"><span>Singular</span></div>
+                            <div class="section-subtitle"><span style="color:#cd701c;">Singular</span></div>
                             <div class="section-title"><span>Vidéo promotionnelle</span></div>
                         </div>
                     </div>
@@ -176,12 +175,12 @@
         </section>
     <?php endif; ?>
     <!-- Facilities -->
-    <?php if(isset($facilities)): ?>
+    <?php if(isset($facilities) && is_array($facilities)): ?>
         <section class="pricing section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="section-subtitle">Nos services</div>
+                        <div class="section-subtitle"><span>Nos services</span></div>
                         <div class="section-title"> Équipements des établissements</div>
                     </div>
                 </div>

@@ -224,17 +224,17 @@ $(function () {
                 items: 1,
             },
             600: {
-                items: 1
+                items: 2
             },
             1000: {
-                items: 1
+                items: 3
             }
         }
     });
     
     // Pricing owlCarousel *
     $('.pricing .owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 30,
         mouseDrag: true,
         autoplay: false,
@@ -248,9 +248,30 @@ $(function () {
                 items: 1
             },
             600: {
-                items: 1
+                items: 2
             },
             1000: {
+                items: 3
+            }
+        }
+    });
+
+    // Rooms details owlCarousel *
+    $('.similar .owl-carousel').owlCarousel({
+        loop: false,
+        margin: 30,
+        mouseDrag: true,
+        autoplay: false,
+        dots: false,
+        autoplayHoverPause: true,
+        nav: false,
+        navText: ["<span class='lnr ti-angle-left'></span>","<span class='lnr ti-angle-right'></span>"],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
                 items: 2
             }
         }
@@ -262,8 +283,8 @@ $(function () {
         margin: 30,
         mouseDrag: true,
         autoplay: false,
-        dots: false,
-        nav: true,
+        dots: true,
+        nav: false,
         navText: ["<span class='lnr ti-angle-left'></span>","<span class='lnr ti-angle-right'></span>"],
         responsiveClass: true,
         responsive: {
@@ -309,7 +330,7 @@ $(function () {
     
     // Clients owlCarousel *
     $('.clients .owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 30,
         mouseDrag: true,
         autoplay: true,
@@ -493,7 +514,7 @@ $(function () {
     $(".datepicker").datepicker({
         orientation: "top"
     });
-     
+
 });
 
 

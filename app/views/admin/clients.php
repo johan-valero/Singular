@@ -1,8 +1,7 @@
 <?php $this->view("admin/header", $data); ?>
 <?php $this->view("admin/sidebar", $data); ?>
 
-<div class="panel-header panel-header-sm">
-    </div>
+<div class="panel-header panel-header-sm"></div>
     <div class="content" style="background-color:#f8f5f0;">
         <div class="row">
             <div class="col-md-12">

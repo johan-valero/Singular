@@ -95,3 +95,6 @@ INSERT INTO socials (id_social, name, value) VALUES
 (5, 'Github','https://www.github.com/johan-valero'),
 (6, 'Adresse','11 avenue de l\'Europe, 31520 Ramonville-Saint-Agne '),
 (7, 'Vidéo Youtube','https://youtu.be/gbbLm5qgWU8');
+
+INSERT INTO partners (id_partner, name_partner, link_partner, img_partner) VALUES
+(1, 'Todolist', 'https://todolist.com', 'assets/img/partners/todo.png') 

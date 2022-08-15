@@ -51,19 +51,19 @@
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Prix</label>
-                                                                        <input type="number" class="form-control" name="price" value="<?= isset($_POST['price']) ? $_POST['price'] : "" ;?>" placeholder="Choisir un prix" required>
+                                                                        <input type="number" class="form-control" min="1" max="999" name="price" value="<?= isset($_POST['price']) ? $_POST['price'] : "" ;?>" placeholder="Choisir un prix" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Personnes</label>
-                                                                        <input type="number" class="form-control" name="persons" value="<?= isset($_POST['persons']) ? $_POST['persons'] : "" ;?>" placeholder="Choisir le nombre de personne" required>
+                                                                        <input type="number" class="form-control" min="1" max="999" name="persons" value="<?= isset($_POST['persons']) ? $_POST['persons'] : "" ;?>" placeholder="Choisir le nombre de personne" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
                                                                         <label>Superficie</label>
-                                                                        <input type="number" class="form-control" name="area" value="<?= isset($_POST['area']) ? $_POST['area'] : "" ;?>" placeholder="Choisir la superficie du logement en m²" required>
+                                                                        <input type="number" class="form-control" min="1" max="999" name="area" value="<?= isset($_POST['area']) ? $_POST['area'] : "" ;?>" placeholder="Choisir la superficie du logement en m²" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -326,19 +326,19 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Prix</label>
-                                                    <input type="number" class="form-control" name="price" value="<?= $rooms->price_room?>" placeholder="Choisir un prix" required>
+                                                    <input type="number" class="form-control" name="price" min="1" max="999" value="<?= $rooms->price_room?>" placeholder="Choisir un prix" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Personnes</label>
-                                                    <input type="number" class="form-control" name="persons" value="<?= $rooms->persons?>" placeholder="Choisir le nombre de personne" required>
+                                                    <input type="number" class="form-control" name="persons" min="1" max="999" value="<?= $rooms->persons?>" placeholder="Choisir le nombre de personne" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Superficie</label>
-                                                    <input type="number" class="form-control" name="area" value="<?= $rooms->area_room ?>" placeholder="Choisir la superficie du logement en m²" required>
+                                                    <input type="number" class="form-control" name="area" min="1" max="999" value="<?= $rooms->area_room ?>" placeholder="Choisir la superficie du logement en m²" required>
                                                 </div>
                                             </div>
                                         </div>

@@ -10,7 +10,7 @@
                                 <div class="col-md-10 offset-md-1">
                                     <h4 style="color:#cd701c;font-weight:600;"><?=$slider->title ?></h4>
                                     <h1><?=$slider->message ?></h1>
-                                    <div class="butn-light mt-30 mb-30"> <a target="_blank" href="<?=$slider->link ?>"><span>Découvrir</span></a> </div>
+                                    <div class="butn-light mt-30 mb-30"> <a href="<?=$slider->link ?>"><span>Découvrir</span></a> </div>
                                 </div>
                             </div>
                         </div>

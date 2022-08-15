@@ -3,12 +3,13 @@
 <!-- Room Page Slider -->
 <?php if(isset($details)): ?>
     <header class="header slider">
-            <div class="owl-carousel owl-theme">
+            <div class="rooms-page owl-carousel owl-theme">
                 <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
                 <div class="text-center item bg-img" data-overlay-dark="3" data-background="<?= ROOT.$details->img_room?>"></div>
                 <?php if(file_exists($details->img2_room)): ?>
                     <div class="text-center item bg-img" data-overlay-dark="3" data-background="<?= ROOT.$details->img2_room ?>"></div>
-                <?php elseif(file_exists($details->img3_room)): ?>
+                <?php endif; ?>
+                <?php if(file_exists($details->img3_room)): ?>
                     <div class="text-center item bg-img" data-overlay-dark="3" data-background="<?= ROOT.$details->img3_room ?>"></div>
                 <?php endif; ?>
             </div>
@@ -23,7 +24,7 @@
                 <!-- project content -->
                 <div class="row">
                     <div class="col-md-12"> 
-                        <div class="section-subtitle">Logement</div>
+                        <div class="section-subtitle"><span>Logement</span></div>
                         <div class="section-title"><?= $details->name_room ?></div>
                     </div>
                     <div class="col-md-8">
@@ -31,7 +32,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h6>Instructions d'arrivée</h6>
-                                <p>Les visiteurs recevront un email lors de la réservations contenant les instructions liées à leurs location. Pour plus de détails, veuillez contacter le service client avec vos informations de réservations.</p>
+                                <p>Les visiteurs recevront un email lors de la réservations contenant les instructions liées à leurs location. Pour plus de détails, veuillez <a href="<?=ROOT?>contact" style="font-weight:600;"> contacter le service client </a> avec vos informations de réservations.</p>
                             </div>
                             <div class="col-md-4">
                                 <h6>Heure d'arrivée</h6>
@@ -73,7 +74,7 @@
                                 
                             </div>
                             <div class="col-md-12">
-                                <div class="butn-dark mt-15 mb-30"> <a href="rooms2.html"><span>Réserver maintenant</span></a> </div>
+                                <div class="butn-dark mt-15 mb-30"> <a href="<?=ROOT?>booking/<?= $details->slug?>"><span>Réserver maintenant</span></a></div>
                             </div>
                         </div>
                     </div>
@@ -145,7 +146,7 @@
         </section>
         <!-- Similiar Room -->
         <?php if(isset($similar_rooms) && !empty($similar_rooms)): ?>
-            <section class="pricing section-padding bg-black">
+            <section class="similar section-padding bg-black" style="padding: 20px 0px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -156,15 +157,12 @@
                         <div class="col-md-8">
                             <div class="owl-carousel owl-theme">
                                 <?php foreach($similar_rooms as $room): ?>
-                                <div class="pricing-card" style="font-size:21px;">
-                                    <img src="<?=ROOT.$room->img_room?>" alt="">
-                                    <div class="desc" style="padding:25px;">
-                                        <div class="name" style="height:35px;"><?=$room->name_room?></div>
-                                        <div class="amount"><?=$room->price_room?>€<span>/ jours</span></div>
-                                        <div style="display:flex;justify-content:space-between;">
-                                            <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>
-                                            <div class="butn-dark mt-15"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Réserver</span></a> </div>                                                                      
-                                        </div>
+                                <div class="pricing-card">
+                                    <img src="<?=ROOT.$room->img_room?>" alt="Logement" style="object-fit:cover;height:200px;">
+                                    <div class="desc" style="padding:20px;text-align:center;">
+                                        <div class="amount" style="text-align:center;"><?=$room->price_room?>€<span>/ nuits</span></div>
+                                        <div class="name" style="height:50px;"><?=$room->name_room?></div>
+                                        <div class="butn-dark mt-15" style="text-align:center;"> <a href="<?=ROOT?>room_details/<?=$room->slug?>"><span>Détails</span></a> </div>                                                                     
                                     </div>
                                 </div>
                                 <?php endforeach;?>
@@ -193,7 +191,11 @@
                 <div class="row">
                     <div class="col-md-12"> 
                         <div class="section-subtitle">Singular</div>
-                        <div class="section-title"><h5>Pas de détails disponibles pour cet hébergement.</h5></div>
+                        <div class="section-title"><h5>Pas de détails disponibles pour cet hébergement.</h5>
+                        </div>
+                        <a href="<?=ROOT?>rooms">
+                            <button class="btn-custom btn-primary-custom">Retour aux logements</button>
+                        </a>
                     </div>
                 </div>
             </div>

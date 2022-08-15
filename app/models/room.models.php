@@ -120,8 +120,6 @@ class Room{
         $query .= "
         GROUP BY name_room
         ";
-
-        show($query);
         $rooms = $DB->read($query);
         return $rooms;
     }

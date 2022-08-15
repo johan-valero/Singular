@@ -16,7 +16,9 @@ class Social{
         $DB = Database::newInstance();
         $query = "select * from socials where name = '$name' limit 1";
         $result = $DB->read($query);
-        return $result[0];
+        if($result){
+            return $result[0];
+        }
     }
 
     // Fonction de modifications d'un réseaux.

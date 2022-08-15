@@ -4,39 +4,46 @@ Complémentaire :
   - Afficher les détails *
   - Afficher les commentaires *
   - Mise en place des mails * 
-X - Pagination
+
+- Réservation(!) :
+  - Mis en place de la fonctionnalité réservation  
+  - Affichage sur la section Admin
+  - Affichage dans le profil utilisateur
 
 - Index:
-  - Fix affichages des partenaires 
+X - Fix affichages des partenaires 
 
 - partie Admin :
-   - Ajout contenu dans le tableau de bord
- X - Ajout Clients
- X - Ajout catégorie
- X - Ajout litterie 
- X - Ajout logements
- X - Ajout settings
- X - Ajout slider
- X - Ajout message
-   - Ajout réservation
-   - Fix aménagements dans l'ajout et modification de logement 
+  - Ajout contenu dans le tableau de bord
+X - Ajout clients
+X - Ajout catégorie
+X - Ajout litterie 
+X - Ajout logements
+X - Ajout settings
+X - Ajout slider
+X - Ajout message
+X - Pagination sur toutes les pages
+  - Fix aménagements dans l'ajout et modification de logement 
 
 - Partie détails :
- X - Fix articles similaires 
-   - réservation
+X - Fix articles similaires
+  - Revoir le templates articles similaires.*
+  - Ajouter un calendrier des dates disponibles.  
 
 - Partie logements:
-X  - Finir les filtres(ajouter le prix comme filtre). 
-X  - Mise en place des settings générales (partenaires, réseaux, numéro, mail)
-   - réservation 
+X - Finir les filtres(ajouter le prix comme filtre). 
+X - Mise en place des settings générales (partenaires, réseaux, numéro, mail).
+  - Pagination sur les logements.  
  
 - Footer : 
 X - Pages annexe 
 X - Cookie 
 
 - Database: 
-X  - Ajout de contenu après la partie Admin
+X - Ajout de contenu après la partie Admin
 
 - User:
 X - Profil
-  - Affichage des réservation
+
+- Database:
+  - Rajouter les delete on cascade pour permettre la suppression d'items liés

@@ -39,7 +39,7 @@ class Room_details extends Controller{
             $data['similar_rooms'] = $similar;
         }
         
-        $data['page_title'] = "Détails du logement";
+        $data['page_title'] = $details[0]->name_room;
         $this->view("room_details", $data);
     }
 }
