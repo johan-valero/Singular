@@ -139,7 +139,7 @@
                                 <div class="card card-user" style="background:#f8f5f0;">
                                     <div class="card-body" style="text-align:center;">
                                         <h3>Vos réservations</h3>
-                                        <table>
+                                        <table class="table-responsive">
                                             <thead>
                                                 <th>N° de réservation</th>
                                                 <th>Date de la réservation</th>

@@ -5,7 +5,7 @@ class Booking_room{
     private $error = "";
 
     // Fonction pour vérifier si les données de la reservation sont valides.
-    public function validate($POST){
+    public function validate($POST,$days){
         // Si l'input name est vide on ajoute un message d'erreur dans la variable privé error 
         if(empty($POST['name'])){
             $this->error .= "Veuillez entrer un nom de partenaire valide. <br>";
@@ -45,11 +45,9 @@ class Booking_room{
         if($POST['persons'] == 0 || !is_numeric($POST['persons'])){
             $this->error .= "Veuillez sélectionner un nombre de personne valide. <br>";
         }
-
-        $POST['days'] = ceil((strtotime($POST['checkout']) - strtotime($POST['checkin'])) / 86400);
         
         // Si le nombre de jours est inférieur à 0 on ajoute un message d'erreur. 
-        if($POST['days'] <= 0 ){
+        if($days <= 0 ){
             $this->error .= "Les dates que vous avez choisi ne sont pas valide. Veuillez entrer un intervalle de date correct.";
         }
 
@@ -118,6 +116,13 @@ class Booking_room{
             }
     } 
 
+    // Récupère toute les dates de réservation
+    public function get_all_date($id){
+        $DB = Database::newInstance();
+        $query = "select check_in, check_out from booking where id_room = '$id'";
+        return $DB->read($query);
+    }
+
     // Récupère toutes les réservations
     public function get_all(){
         $DB = Database::newInstance();
@@ -142,7 +147,7 @@ class Booking_room{
         }
     }
     
-    // Fonction suppression d'une catégorie
+    // Fonction suppression d'une réservation
     public function delete($id){
         $DB = Database::newInstance();
         $id = (int)$id;

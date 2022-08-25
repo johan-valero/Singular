@@ -97,5 +97,6 @@
     <script src="<?=ASSETS?>js/datepicker.js"></script>
     <script src="<?=ASSETS?>js/smooth-scroll.min.js"></script>
     <script src="<?=ASSETS?>js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>

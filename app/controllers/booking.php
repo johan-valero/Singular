@@ -28,14 +28,17 @@ class Booking extends Controller{
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $_SESSION['POST_DATA'] = $_POST;
             $days = ceil((strtotime($_POST['checkout']) - strtotime($_POST['checkin'])) / 86400);
+            $total = $days * $details[0]->price_room; 
             $_SESSION['days'] = $days;
-            $_SESSION['total'] = $days * $details[0]->price_room; 
-            $Bookings->validate($_POST);
+            $_SESSION['total'] = $total;
+            $Bookings->validate($_POST, $days);
             if($_SESSION['error'] == ""){
                 redirect("booking/summary");
             }
         }
         
+        $dates = $Bookings->get_all_date($details[0]->id_room);
+        $data['dates'] = $dates;
         $data['page_title'] = "Réservation";
         $this->view("booking", $data);
     }

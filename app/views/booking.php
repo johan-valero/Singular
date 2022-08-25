@@ -153,11 +153,11 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Départ <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date de départ" value="<?= isset($_POST['checkin']) ? $_POST['checkin'] : "" ?>" name="checkin" min="<?=date('Y-m-d')?>" required>
+                                                <input type="date" class="form-control date_input" placeholder="Date de départ" value="<?= isset($_POST['checkin']) ? $_POST['checkin'] : "" ?>" name="checkin" min="<?=date('Y-m-d')?>" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Arrivée <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date d'arrivée" value="<?= isset($_POST['checkout']) ? $_POST['checkout'] : "" ?>" min="<?=date('Y-m-d')?>" name="checkout" required>
+                                                <input type="date" class="form-control date_input" placeholder="Date d'arrivée" value="<?= isset($_POST['checkout']) ? $_POST['checkout'] : "" ?>" min="<?=date('Y-m-d')?>" name="checkout" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Nombre de personnes <span style="color:#CD701C;">*</span></label>
@@ -190,3 +190,21 @@
         </div>
     </section>
 <?php $this->view("footer", $data); ?>
+
+
+<script>
+    flatpickr(".date_input", {
+        minDate: "today",
+        disable: [
+        <?php if(isset($dates) && is_array($dates)):?>
+            <?php foreach($dates as $date):?>
+                {
+                from: "<?=$date->check_in?>",
+                to: "<?=$date->check_out?>"  
+                },      
+            <?php endforeach; ?>
+        <?php endif; ?>
+        ]
+        
+    });
+</script>

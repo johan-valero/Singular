@@ -22,6 +22,10 @@
     <!-- Cookie -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
+    <!-- Flatpickr -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_orange.css">
+    
     <!-- Css Styles -->
     <link rel="shortcut icon" href="<?=ASSETS?>img/logo/icon_singular.png">
     <link rel="stylesheet" href="<?=ASSETS?>css/plugins.css">
