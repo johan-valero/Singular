@@ -78,20 +78,6 @@ create table avoir(
     foreign key(id_accomodation) references accomodations(id_accomodation)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE rooms_booking (
-  id_booking bigint primary key auto_increment,
-  name_user varchar(30) not null,
-  firstname_user varchar(30) not null,
-  url_user varchar(60) not null,
-  date_booking date not null,
-  phone_user varchar(20) not null,
-  check_in date not null,
-  check_out date not null,
-  days int not null,
-  room bigint not null,
-  total_booking double not null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 CREATE TABLE socials (
   id_social int primary key auto_increment,
   name varchar(30) not null,
@@ -117,4 +103,24 @@ CREATE TABLE users (
   birthday_user date not null,
   date_user datetime not null,
   rank_user varchar(10) not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE booking (
+  id_booking bigint primary key auto_increment,
+  name_user varchar(30) not null,
+  firstname_user varchar(30) not null,
+  email_user varchar(150) not null,
+  birthday date not null,
+  date_booking datetime not null,
+  phone_user varchar(20) not null,
+  check_in date not null,
+  check_out date not null,
+  persons int not null,
+  days int not null,
+  id_room int,
+  foreign key(id_room) references rooms(id_room),
+  total_booking double not null,
+  id_user int,
+  foreign key(id_user) references users(id_user),
+  demand text default null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

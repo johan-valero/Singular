@@ -286,12 +286,6 @@ class Room{
                     :checkin, 
                     :checkout, 
                     :area)";
-                "insert into avoir(
-                    id_accomodation,
-                    id_room) 
-                values(
-                    
-                )";
             $check = $DB->write($query, $arr);
     
             // Si le logement est crée on redirige vers la page 

@@ -152,26 +152,19 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Départ <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date de départ" value="<?= isset($_SESSION['checkin_user']) ? $_SESSION['checkin_user'] : "" ?>" name="checkin_user" required>
+                                                <input type="date" class="form-control" placeholder="Date de départ" value="<?= isset($_POST['checkin']) ? $_POST['checkin'] : "" ?>" name="checkin" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Arrivée <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date d'arrivée" value="<?= isset($_SESSION['checkout_user']) ? $_SESSION['checkout_user'] : "" ?>" name="checkout_user" required>
+                                                <input type="date" class="form-control" placeholder="Date d'arrivée" value="<?= isset($_POST['checkout']) ? $_POST['checkout'] : "" ?>" name="checkout" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Nombre de personnes <span style="color:#CD701C;">*</span></label>
-                                                <select class="form-control" value="<?= isset($_SESSION['persons']) ? $_SESSION['persons'] : "" ?>" name="persons">
-                                                    <option value="0">Personnes</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
+                                                <select class="form-control" name="persons">
+                                                    <?php for ($i = 0; $i <= 10; $i++): ?>
+                                                        <option value=<?=$i?> <?= isset($_POST['persons']) && $_POST['persons'] == $i ? 'selected = "selected"' : "" ;?> ><?=$i?></option>
+                                                    }
+                                                    <?php endfor; ?>
                                                 </select>
                                             </div>
                                             <div class="col-md-12">

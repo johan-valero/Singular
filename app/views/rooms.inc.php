@@ -1,5 +1,5 @@
 <div class="item">
-    <div class="position-re o-hidden"> <img style="height:300px;object-position:center;object-fit:cover;" src="<?= ROOT.$data->img_room?>" alt="Logement"> </div> <span class="category"><a href="#">Réserver</a></span>
+    <div class="position-re o-hidden"> <img style="height:300px;object-position:center;object-fit:cover;" src="<?= ROOT.$data->img_room?>" alt="Logement"> </div> <span class="category"><a href="<?=ROOT?>booking/<?= $data->slug?>">Réserver</a></span>
     <div class="con">
         <h6><a href="room-details.html"><?= $data->price_room ?>€ / Nuits</a></h6>
         <h5><a href="room-details.html"><?= $data->name_room ?></a> </h5>

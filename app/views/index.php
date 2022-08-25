@@ -209,102 +209,23 @@
             </div>
         </section>
     <?php endif; ?>
-    <!-- Reservation & Booking Form -->
-    <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?=ROOT?>uploads/boat1.jpg" data-overlay-dark="2">
-            <div class="container">
-                <div class="row">
-                    <!-- Reservation -->
-                    <div class="col-md-5 mb-30 mt-30">
-                        <h5>Chacun de nos logements garantit une expérience hors du commun.</h5>
-                        <div class="reservations mb-30">
-                            <div class="icon color-1"><span style="color:#cd701c;" class="fa-solid fa-phone"></span></div>
-                            <div class="text">
-                                <p class="color-1">Réservation par téléphone</p><a class="color-1" href="tel:<?= isset($phone) ? $phone->value : " ";?>"><?= isset($phone) ? $phone->value : " ";?></a>
-                            </div>
-                        </div>
-                        <div class="reservations mb-30">
-                            <div class="icon color-1"><span style="color:#cd701c;" class="fa-solid fa-envelope"></span></div>
-                            <div class="text">
-                                <p class="color-1">Réservation par email</p> <a class="color-1" href="mailto:<?= isset($email) ? $email->value : " ";?>"><?= isset($email) ? $email->value : " ";?></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Booking From -->
-                    <div class="col-md-5 offset-md-2">
-                        <div class="booking-box">
-                            <div class="head-box">
-                                <h6>Logements et suites</h6>
-                                <h4>Formulaire de réservation</h4>
-                            </div>
-                            <div class="booking-inner clearfix">
-                                <form action="rooms2.html" class="form1 clearfix">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="input1_wrapper">
-                                                <label>Arrivée</label>
-                                                <div class="input1_inner">
-                                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="input1_wrapper">
-                                                <label>Départ</label>
-                                                <div class="input1_inner">
-                                                    <input type="text" class="form-control input datepicker" placeholder="Départ">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="select1_wrapper">
-                                                <label>Adultes</label>
-                                                <div class="select1_inner">
-                                                    <select class="select2 select" style="width: 100%">
-                                                        <option value="0">Adultes</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="select1_wrapper">
-                                                <label>Enfants</label>
-                                                <div class="select1_inner">
-                                                    <select class="select2 select" style="width: 100%">
-                                                        <option value="0">Enfants</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <button type="submit" class="btn-form1-submit mt-15">Disponibilité</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- Partenaires -->
     <?php if(isset($partners) && is_array($partners)):?>
-        <section class="clients">
+        <section class="clients" style="background-color:#f8f5f0;padding:100px;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7 owl-carousel owl-theme">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-subtitle"><span>Partenariat </span></div>
+                            <div class="section-title"> Tous nos partenaires</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 owl-carousel owl-theme">
                         <?php foreach($partners as $partner): ?>
                             <div class="clients-logo">
                                 <a href="<?=$partner->link_partner?>"><img src="<?=$partner->img_partner?>" alt=""></a>
+                                <p style="text-align:center;"><?=$partner->name_partner?></p>
                             </div>
                         <?php endforeach; ?>
                     </div>
