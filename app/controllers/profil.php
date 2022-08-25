@@ -4,6 +4,8 @@
 class Profil extends Controller{
     public function index(){
         $User = $this->load_model('User');
+        $Booking = $this->load_model('Booking_room');
+        $Room = $this->load_model('Room');
         $user_data = $User->check_login();
         
         if(is_object($user_data)){
@@ -34,7 +36,9 @@ class Profil extends Controller{
                 $User->delete($id);
             }
         } 
-
+        $books = $Booking->get_all_by_user($user_data->id_user);
+        
+        $data['reservations'] = $books;
         $data['mode'] = $mode;
         $data['page_title'] = "Profil";
         $this->view("profil", $data);

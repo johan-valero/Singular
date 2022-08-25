@@ -459,4 +459,50 @@ class Admin extends Controller{
         $data['page_title'] = "Admin | Réseaux";
         $this->view("admin/socials", $data);
     }
+
+    // Gestion de l'onglet réservations de la section admin
+    public function Bookings(){
+        $User = $this->load_model('User');
+        $Booking = $this->load_model('Booking_room');
+        $user_data = $User->check_login(true, ["admin"]);
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        
+        $mode = "read";
+        if($mode == "read"){
+            $books = $Booking->get_all();
+        }
+
+        if(isset($_GET['validate'])){
+            $mode = "validate";
+            $id = $_GET["validate"];
+            $books = $Booking->get_one($id);
+        }
+
+        if(isset($_GET['validation_confirmed'])){
+            $mode = "validation_confirmed";
+            $id = $_GET["validation_confirmed"];
+            $Booking->confirmed($id);
+        } 
+
+        if(isset($_GET['delete'])){
+            $mode = "delete";
+            $id = $_GET["delete"];
+            $books = $Booking->get_one($id);
+        }
+
+        if(isset($_GET['delete_confirmed'])){
+            $mode = "delete_confirmed";
+            $id = $_GET["delete_confirmed"];
+            $Booking->delete($id);
+        } 
+
+        $data['mode'] = $mode;
+        $data['bookings'] = $books;
+        $data['current_page'] = "Réservations";
+        $data['page_title'] = "Admin | Réservations";
+        $this->view("admin/bookings", $data);
+    }
 }

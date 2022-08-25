@@ -148,15 +148,16 @@
                                         </div>
                                         <div class="head-box" style="padding-top: 25px;">
                                             <h4>Réservation</h4>
+                                            <p>La durée de votre séjour ne peut pas être inférieur à 2 nuits. Il s'agit d'une pré-réservation le paiement se fera auprès de l'établissement concerné lors de votre arrivé sur les lieux.</p>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Départ <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date de départ" value="<?= isset($_POST['checkin']) ? $_POST['checkin'] : "" ?>" name="checkin" required>
+                                                <input type="date" class="form-control" placeholder="Date de départ" value="<?= isset($_POST['checkin']) ? $_POST['checkin'] : "" ?>" name="checkin" min="<?=date('Y-m-d')?>" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Arrivée <span style="color:#CD701C;">*</span></label>
-                                                <input type="date" class="form-control" placeholder="Date d'arrivée" value="<?= isset($_POST['checkout']) ? $_POST['checkout'] : "" ?>" name="checkout" required>
+                                                <input type="date" class="form-control" placeholder="Date d'arrivée" value="<?= isset($_POST['checkout']) ? $_POST['checkout'] : "" ?>" min="<?=date('Y-m-d')?>" name="checkout" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Nombre de personnes <span style="color:#CD701C;">*</span></label>

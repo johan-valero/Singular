@@ -42,7 +42,7 @@
                                         <div>
                                             <img src="<?=ROOT.$_SESSION['details']->img_room?>" alt="" style="width: 100px; max-width: 600px; height: auto; margin-bottom: 20px;">
                                             <div class="text">
-                                                <h3><?=$_SESSION['details']->name_room?></h3>
+                                                <h3><a target="_blank" href="<?=ROOT."room_details/".$_SESSION['details']->slug?>"><?=$_SESSION['details']->name_room?></a></h3>
                                                 <span>Réservation du <b><?=date("d/m/Y", strtotime($_SESSION['POST_DATA']['checkin']))?></b> au <b><?=date("d/m/Y", strtotime($_SESSION['POST_DATA']['checkout']))?></b> (<?=$_SESSION['days']?> nuits)</span>
                                                 <p>Pour <?=$_SESSION['POST_DATA']['persons']?> personnes</p>
                                             </div>
@@ -68,7 +68,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <span style="font-size: 20px;"><?=$_SESSION['total']?>€</span>
+                                        <span style="font-size: 20px;">Montant total : <?=$_SESSION['total']?>€</span><br>
+                                        <span style="font-size: 20px;">Montant total dû : <?=$_SESSION['total']?>€</span>
                                     </td>
                                 </tr>
                             </table>
@@ -77,7 +78,7 @@
                             <td>
                                 <!-- <div style="display:flex;justify-content:space-between;"> -->
                                     <form method="POST">
-                                        <input type="submit" class="btn-custom btn-primary-custom" value="Valider votre réservation">
+                                        <input type="submit" onclick="return confirm('Etes vous sure de vouloir pré-réserver votre séjour ?')" class="btn-custom btn-primary-custom" value="Valider votre réservation">
                                     </form>
                                     <a href="javascript:history.go(-1)"><button style="font-family:Gilda Display;" class="btn-custom btn-primary-custom">Annuler</button></a>
                                 <!-- </div> -->

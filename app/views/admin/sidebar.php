@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li <?=(isset($current_page) && $current_page == "Réservations") ? ' class="active" ' : ""; ?>>
-                    <a href="<?=ROOT?>admin/reservations">
+                    <a href="<?=ROOT?>admin/bookings">
                     <i class="fa-solid fa-book"></i>
                     <p>Réservations</p>
                     </a>

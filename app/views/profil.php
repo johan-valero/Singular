@@ -133,8 +133,48 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <!-- </div> -->
+                        <?php if(isset($reservations) && is_array($reservations)):?>
+                            <div class="col-md-8">
+                                <div class="card card-user" style="background:#f8f5f0;">
+                                    <div class="card-body" style="text-align:center;">
+                                        <h3>Vos réservations</h3>
+                                        <table>
+                                            <thead>
+                                                <th>N° de réservation</th>
+                                                <th>Date de la réservation</th>
+                                                <th>Date du séjour</th>
+                                                <th>Logement</th>
+                                                <th>Image</th>
+                                                <th>Prix</th>
+                                                <th>Nombre de personne</th>
+                                                <th>Statut</th>
+                                                <th>Total</th>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach($reservations as $reservation):?>
+                                                <tr>
+                                                    <td><?=$reservation->id_booking?></td>
+                                                    <td><?=date('d/m/Y', strtotime($reservation->date_booking))?></td>
+                                                    <td>Du <?=date('d/m/Y',strtotime($reservation->check_in))?> au <?=date('d/m/Y',strtotime($reservation->check_out))?></td>
+                                                    <td><?=$reservation->name_room?></td>
+                                                    <td><img src="<?=$reservation->img_room?>" style="width:80px;height:80px;"></td>
+                                                    <td><?=$reservation->price_room?>€/nuits</td>
+                                                    <td>Pour <?=$reservation->persons?> personnes</td>
+                                                    <td><?=$reservation->validate = $reservation->validate ? "Validé" : "En cours de validation"?></td>
+                                                    <td><?=$reservation->total_booking?>€</td>
+                                                </tr>
+                                                <?php endforeach;?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <p>Pas encore de réservation en cours</p>
+                        <?php endif; ?>
                     <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>

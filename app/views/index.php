@@ -6,12 +6,12 @@
         <div class="booking-wrapper">
             <div class="container">
                 <div class="booking-inner clearfix">
-                    <form action="rooms.html" class="form1 clearfix">
+                    <form action="<?=ROOT."rooms"?>" class="form1 clearfix" method="GET">
                         <div class="col1 c1">
                             <div class="input1_wrapper">
                                 <label>Arrivée</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée">
+                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée" name="checkin">
                                 </div>
                             </div>
                         </div>
@@ -19,51 +19,37 @@
                             <div class="input1_wrapper">
                                 <label>Départ</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Départ">
+                                    <input type="text" class="form-control input datepicker" placeholder="checkout">
                                 </div>
                             </div>
                         </div>
                         <div class="col2 c3">
                             <div class="select1_wrapper">
-                                <label>Adultes</label>
+                                <label>Nombre de personnes <span style="color:#CD701C;">*</span></label>
                                 <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Adulte</option>
-                                        <option value="2">2 Adultes</option>
-                                        <option value="3">3 Adultes</option>
-                                        <option value="4">4 Adultes</option>
+                                    <select class="select2 select" style="width: 100%" name="persons">
+                                        <?php for ($i = 0; $i <= 10; $i++): ?>
+                                            <option value=<?=$i?> <?= isset($_POST['persons']) && $_POST['persons'] == $i ? 'selected = "selected"' : "" ;?> ><?=$i > 1 ? $i. ' personnes' : $i. ' personne' ?></option>
+                                        }
+                                        <?php endfor; ?>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="col2 c4">
                             <div class="select1_wrapper">
-                                <label>Enfants</label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">Enfant</option>
-                                        <option value="1">1 Enfant</option>
-                                        <option value="2">2 Enfants</option>
-                                        <option value="3">3 Enfants</option>
-                                        <option value="4">4 Enfants</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col2 c5">
-                            <div class="select1_wrapper">
                                 <label>Logements</label>
                                 <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%">
-                                        <option value="1">1 Chambre</option>
-                                        <option value="2">2 Chambres</option>
-                                        <option value="3">3 Chambres</option>
-                                        <option value="4">4 Chambres</option>
+                                    <select class="select2 select" style="width: 100%" name="category">
+                                    <option>-- Catégorie --</option>
+                                    <?php foreach($categories as $category):?>
+                                        <option value="<?=$category->id_category?>" <?= isset($_GET['categories']) && $_GET['categories'] == $category->id_category ? 'selected = "selected"' : "" ;?> ><?=$category->name_category?></option>
+                                    <?php endforeach;?>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col3 c6">
+                        <div class="col3 c5">
                             <button type="submit" class="btn-form1-submit">Réserver</button>
                         </div>
                     </form>

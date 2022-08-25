@@ -34,14 +34,13 @@ class Booking extends Controller{
             if($_SESSION['error'] == ""){
                 redirect("booking/summary");
             }
-            // $Bookings->create($_POST, $user_data, $data['details']);
         }
         
         $data['page_title'] = "Réservation";
         $this->view("booking", $data);
     }
 
-    public function summary($slug){
+    public function summary(){
         $User = $this->load_model('User');
         $Bookings = $this->load_model('Booking_room');
         $user_data = $User->check_login(true, ["admin","customer"]);
@@ -57,12 +56,22 @@ class Booking extends Controller{
                 unset($_SESSION['total']);
                 unset($_SESSION['days']);
                 unset($_SESSION['details']);
-                echo "<script type='text/javascript'> alert('Réservation validé ! Vous recevrez un mail avec toutes les informations de votre réservation.')</script>";
-                redirect("profil"); 
+                redirect("booking/thanks"); 
             }
 
         }
         $data['page_title'] = "Récapitulatif de votre réservation";
         $this->view("booking.summary", $data);
+    }
+
+    public function thanks(){
+        $User = $this->load_model('User');
+        $user_data = $User->check_login();
+        
+        if(is_object($user_data)){
+            $data['user_data'] = $user_data;
+        }
+        $data['page_title'] = "Finalisation de la réservation";
+        $this->view("booking.thanks", $data);
     }
 }
