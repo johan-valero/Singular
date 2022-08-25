@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/a1dea6f958.js" crossorigin="anonymous"></script>
     
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="<?=ASSETS?>admin/DataTables/datatables.css"/>
+    <link rel="stylesheet" type="text/css" href="<?=ASSETS?>dataTables/datatables.css"/>
     <link href="<?=ASSETS?>admin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?=ASSETS?>admin/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
 </head>

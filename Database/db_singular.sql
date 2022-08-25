@@ -122,5 +122,6 @@ CREATE TABLE booking (
   total_booking double not null,
   id_user int,
   foreign key(id_user) references users(id_user),
-  demand text default null
+  demand text default null,
+  validate tinyint default 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

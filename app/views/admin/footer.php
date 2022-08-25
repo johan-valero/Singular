@@ -15,7 +15,7 @@
     <script src="<?=ASSETS?>admin/js/core/popper.min.js"></script>
     <script src="<?=ASSETS?>admin/js/core/bootstrap.min.js"></script>
     <script src="<?=ASSETS?>admin/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-    <script type="text/javascript" src="<?=ASSETS?>admin/DataTables/datatables.js"></script>
+    <script type="text/javascript" src="<?=ASSETS?>dataTables/datatables.js"></script>
     <!-- Chart JS -->
     <script src="<?=ASSETS?>admin/js/plugins/chartjs.min.js"></script>
     <!-- Notifications Plugin -->
