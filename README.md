@@ -8,11 +8,10 @@ Dans le cadre de la formation DEV - DEVOPS 2022 de l'Adrar Pole numérique. Sing
 
 <ul>
   <li>Bootstrap</li>
-  <li>Magnific pop-up</li>
   <li>Owl carousel</li>
   <li>Animate on scroll</li>
   <li>Font awesome</li>
-  <li>Date picker</li>
+  <li>Flatpickr</li>
 </ul>
 
 # Fonctionnalités du site
@@ -24,7 +23,6 @@ Dans le cadre de la formation DEV - DEVOPS 2022 de l'Adrar Pole numérique. Sing
   <li>Envoie de message via page contact.</li>
   <li>Affichages des logements avec filtre de recherche avancée.</li>
   <li>Affichages des réservations côté client.</li>
-  <li>Système de commentaires et notation des logements.</li>
 </ul>
 
 <h2> Partie Administrateur</h2>
@@ -35,5 +33,4 @@ Dans le cadre de la formation DEV - DEVOPS 2022 de l'Adrar Pole numérique. Sing
   <li>Visualisation ou suppression des messages.</li>
   <li>Affichages ou ajout de clients.</li>
   <li>Affichages des réservations et validation de ceux-ci.</li>
-  <li>Affichage des commentaires et notation des logements.</li>
 </ul>
