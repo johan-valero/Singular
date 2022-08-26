@@ -97,4 +97,8 @@ INSERT INTO socials (id_social, name, value) VALUES
 (7, 'Vidéo Youtube','https://youtu.be/gbbLm5qgWU8');
 
 INSERT INTO partners (id_partner, name_partner, link_partner, img_partner) VALUES
-(1, 'Todolist', 'https://todolist.com', 'assets/img/partners/todo.png') 
+(1, 'Todolist', 'https://todolist.com', 'assets/img/partners/todo.png'),
+(2, 'GameFinder', 'https://gamefinder.com', 'assets/img/partners/gf.png'),
+(3, 'Ace', 'https://ace.com', 'assets/img/partners/ace.png'),
+(4, 'AquaNote', 'https://aquanote.com', 'assets/img/partners/aquanote.png'),
+(5, 'Speed Quizz', 'https://speedquizz.com', 'assets/img/partners/sq.png')

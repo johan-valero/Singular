@@ -39,9 +39,8 @@
                                 <p class="footer-contact-text" style="padding-bottom: 0px;"><span><i class="fa-solid fa-envelope"></i></span> contact.singular.jv@gmail.com</p>
                             </div>
                             <div class="footer-about-social-list">
-                                <a href="#"><i class="ti-instagram"></i></a>
-                                <a href="#"><i class="ti-github"></i></a>
-                                <a href="#"><i class="ti-facebook"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/singular.jv"><i class="ti-instagram"></i></a>
+                                <a target="_blank" href="https://github.com/johan-valero"><i class="ti-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +93,6 @@
     <script src="<?=ASSETS?>js/jquery.magnific-popup.js"></script>
     <script src="<?=ASSETS?>js/YouTubePopUp.js"></script>
     <script src="<?=ASSETS?>js/select2.js"></script>
-    <script src="<?=ASSETS?>js/datepicker.js"></script>
     <script src="<?=ASSETS?>js/smooth-scroll.min.js"></script>
     <script src="<?=ASSETS?>js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

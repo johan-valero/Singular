@@ -6,9 +6,9 @@ Complémentaire :
   - Mise en place des mails * 
 
 - Réservation(!) :
-  - Mis en place de la fonctionnalité réservation  
-  - Affichage sur la section Admin
-  - Affichage dans le profil utilisateur
+X - Mis en place de la fonctionnalité réservation  
+X - Affichage sur la section Admin
+X - Affichage dans le profil utilisateur
 
 - Index:
 X - Fix affichages des partenaires 
@@ -27,8 +27,8 @@ X - Pagination sur toutes les pages
 
 - Partie détails :
 X - Fix articles similaires
-  - Revoir le templates articles similaires.*
-  - Ajouter un calendrier des dates disponibles.  
+X - Revoir le templates articles similaires.*
+X - Ajouter un calendrier des dates disponibles.  
 
 - Partie logements:
 X - Finir les filtres(ajouter le prix comme filtre). 

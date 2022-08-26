@@ -11,7 +11,7 @@
                             <div class="input1_wrapper">
                                 <label>Arrivée</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="Arrivée" name="checkin">
+                                    <input type="date" class="form-control input" placeholder="Arrivée" name="checkin">
                                 </div>
                             </div>
                         </div>
@@ -19,7 +19,7 @@
                             <div class="input1_wrapper">
                                 <label>Départ</label>
                                 <div class="input1_inner">
-                                    <input type="text" class="form-control input datepicker" placeholder="checkout">
+                                    <input type="date" class="form-control" placeholder="départ" name="checkout">
                                 </div>
                             </div>
                         </div>
@@ -209,9 +209,8 @@
                     </div>
                     <div class="col-md-12 owl-carousel owl-theme">
                         <?php foreach($partners as $partner): ?>
-                            <div class="clients-logo">
-                                <a href="<?=$partner->link_partner?>"><img src="<?=$partner->img_partner?>" alt=""></a>
-                                <p style="text-align:center;"><?=$partner->name_partner?></p>
+                            <div class="clients-logo" style="text-align:center;">
+                                <a href="<?=$partner->link_partner?>"><img src="<?=$partner->img_partner?>" alt="" style="width:100%;height:80px;object-fit:contain;"><p style="text-align:center;"><?=$partner->name_partner?></p></a>
                             </div>
                         <?php endforeach; ?>
                     </div>

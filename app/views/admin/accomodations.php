@@ -72,7 +72,7 @@
                                             <th class="text-right">Action</th>
                                         </thead>
                                         <tbody>
-                                        <?php if(isset($accomodations)):?>
+                                        <?php if(isset($accomodations) && is_array($accomodations)):?>
                                             <?php foreach($accomodations as $accomodation):?>
                                                 <tr>
                                                     <td >

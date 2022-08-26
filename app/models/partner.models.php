@@ -34,7 +34,7 @@ class Partner{
         // Vérifie si il y a un fichier $_FILES et si le type de l'image est le même que ceux du tableau $allowed
         foreach($FILES as $key => $img){
             if(in_array($img['type'], $allowed)){
-                $destination = $dir . generate_filename(30). ".jpg";
+                $destination = $dir . generate_filename(30). ".png";
                 move_uploaded_file($img ['tmp_name'], $destination);
                 $arr[$key] = $destination ;              
             }else{

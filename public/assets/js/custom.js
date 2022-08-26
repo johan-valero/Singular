@@ -279,7 +279,7 @@ $(function () {
     
     // News owlCarousel *
     $('.news .owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 30,
         mouseDrag: true,
         autoplay: false,
@@ -341,13 +341,13 @@ $(function () {
         responsive: {
             0: {
                 margin: 10,
-                items: 3
+                items: 1
             },
             600: {
-                items: 3
+                items: 2
             },
             1000: {
-                items: 3
+                items: 4
             }
         }
     });
