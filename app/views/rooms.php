@@ -31,12 +31,28 @@
                         <?php endif;?>
                     </div>
                     <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
+                        <!-- affichage des logements -->
                         <?php if(isset($rooms) && is_array($rooms)):?>
                             <?php foreach($rooms as $room):?>
                                 <div class="col-md-4">
                                     <?php $this->view('rooms.inc',$room)?>
                                 </div>
                             <?php endforeach; ?>
+                        <!-- Affichage des catégories -->
+                        <?php elseif(isset($categories) && is_array($categories)): ?>
+                            <?php foreach($categories as $category): ?>
+                                <div class="col-md-4">
+                                    <div class="item" style="text-align:center;">
+                                        <div> <img style="height:275px;object-fit:cover;" src="<?=ROOT.$category->img_category?>" alt="Image catégorie">
+                                        </div>
+                                        <div class="con"> 
+                                            <h5><a href="<?=ROOT.'rooms/'.$category->name_category?>"><i class="<?=$category->icon_category?>" style="color:#cd701c;margin-right:10px;margin-bottom:15px;"></i><?=$category->name_category?></a></h5>
+                                            <a style="font-size:15px;color:#fff;line-height:15px;" href="<?=ROOT.'rooms/'.$category->name_category?>"><?=$category->description_category?></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach;?>    
+                        <!-- Cas ou il n'y a aucun resultats -->
                         <?php else: ?>
                             <div class="col-md-4">
                                 Pas de logements disponibles.

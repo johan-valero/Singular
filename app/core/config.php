@@ -10,6 +10,12 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
     define('DB_PASS', "");
     define('DB_TYPE', "mysql");
     define('DB_HOST', "localhost");
+}else{
+    define('DB_NAME', "singu1947273");
+    define('DB_USER', "singu1947273");
+    define('DB_PASS', "ftmd4rhnub");
+    define('DB_TYPE', "mysql");
+    define('DB_HOST', "91.216.107.183");
 }
 
 // Definir la global url

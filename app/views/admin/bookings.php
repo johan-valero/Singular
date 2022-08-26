@@ -64,6 +64,7 @@
                                     <table class="table table-striped">
                                     <thead class=" text-primary" style="font-size:20px;">
                                         <th>N° de réservation</th>
+                                        <th>Client</th>
                                         <th>Date de la réservation</th>
                                         <th>Date du séjour</th>
                                         <th>Logement</th>
@@ -77,6 +78,7 @@
                                         <p class="status alert alert-warning">Etes-vous sur de vouloir confirmer cette réservation ? </p>
                                         <tr style="position:relative;">
                                             <td><?=$bookings->id_booking?></td>
+                                            <td><?=$bookings->firstname_user." ".$bookings->name_user?></td>
                                             <td><?=date('d/m/Y', strtotime($bookings->date_booking))?></td>
                                             <td>Du <?=date('d/m/Y',strtotime($bookings->check_in))?> au <?=date('d/m/Y',strtotime($bookings->check_out))?></td>
                                             <td><?=$bookings->name_room?></td>

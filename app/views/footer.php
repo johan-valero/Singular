@@ -21,7 +21,13 @@
                                 <li><a href="<?=ROOT?>rooms">Logements</a></li>
                                 <li><a href="<?=ROOT?>about">À propos</a></li>
                                 <li><a href="<?=ROOT?>contact">Contact</a></li>
-                                <li><a href="<?=ROOT?>profil">Compte</a></li>
+                                <?php
+                                    if(isset($data['user_data'])){
+                                            echo '<li><a href="'.ROOT.'profil">Compte</a></li>'
+                                    ;}else{
+                                        echo '<li><a href="'.ROOT.'login">Compte</a></li>';
+                                    }
+                                ?>
                                 <?php
                                     if(isset($data['user_data']) && $data['user_data']->rank_user == "admin" ){
                                             echo '<li><a href="'.ROOT.'admin">Admin</a></li>'

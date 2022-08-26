@@ -54,8 +54,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="<?= $page_title == "Accueil" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>home"> Accueil </a></li>
-                    <li class="nav-item"><a class="<?= $page_title == "À propos" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>about">À propos</a></li>
                     <li class="nav-item"><a class="<?= $page_title == "Logements" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>rooms">Logements</a></li>
+                    <li class="nav-item"><a class="<?= $page_title == "À propos" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>about">À propos</a></li>
                     <li class="nav-item"><a class="<?= $page_title == "Contact" ? "nav-link active" : "nav-link";?>" href="<?=ROOT?>contact">Contact</a></li>
                     <?php if(!isset($data['user_data'])): ?>
                         <li class="nav-item dropdown"> <span class="<?= $page_title == "Inscription" || $page_title == "Connexion" ? "nav-link active" : "nav-link";?>">Compte <i class="ti-angle-down"></i></span>

@@ -47,3 +47,10 @@ X - Profil
 
 - Database:
   - Rajouter les delete on cascade pour permettre la suppression d'items liés
+
+Axes d'améliorations
+- Dans logements mettre toutes les catégories dans le filtre
+- Fix réservation date qui se chevauche
+- Bandeau de réservation, front à fix 
+- Bouton réserver sur les vignettes trop petit.
+- Ajouter déploiement au mémoire 

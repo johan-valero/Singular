@@ -510,10 +510,10 @@ $(function () {
     });
     
     
-    // Datapicker
-    $(".datepicker").datepicker({
-        orientation: "top"
-    });
+    // // Datapicker
+    // $(".datepicker").datepicker({
+    //     orientation: "top"
+    // });
 
 });
 
