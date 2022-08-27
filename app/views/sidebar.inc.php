@@ -13,7 +13,7 @@
                     <h6 style="font-size:20px;">Catégories</h6>
                 </div>
                 <ul>
-                    <li><a href="<?=ROOT?>rooms/categories"><i class="fa-solid fa-chevron-right"></i>Toutes les catégories</a></li>
+                    <li><a href="<?=ROOT?>rooms?all_categories"><i class="fa-solid fa-chevron-right"></i>Toutes les catégories</a></li>
                     <?php if($categories): ?>
                         <?php foreach($categories as $category):?>
                             <li><a href="<?=ROOT?>rooms/<?= $category->name_category?>"><i class="fa-solid fa-chevron-right"></i><?= $category->name_category?></a></li>

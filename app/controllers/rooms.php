@@ -24,6 +24,10 @@ Class Rooms extends Controller{
             $search = "%".$find."%";
             $search_rooms = $Rooms->search_results($search);
             $data['rooms'] = $search_rooms;
+        
+        }elseif(isset($_GET['all_categories'])){
+            $data['categ'] = $Categories->get_all();
+        
 
         // Si l'utilisateur utilise la recherche avancée  
         }elseif(isset($_GET['filter'])){

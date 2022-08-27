@@ -41,8 +41,8 @@
                             <?php endforeach; ?>
 
                         <!-- Affichage des catégories -->
-                        <?php elseif(isset($_GET['categories']) && isset($categories) && is_array($categories)): ?>
-                            <?php foreach($categories as $category): ?>
+                        <?php elseif(isset($categ) && is_array($categ)): ?>
+                            <?php foreach($categ as $category): ?>
                                 <div class="col-md-4">
                                     <div class="item" style="text-align:center;">
                                         <div> <img style="height:275px;object-fit:cover;" src="<?=ROOT.$category->img_category?>" alt="Image catégorie">

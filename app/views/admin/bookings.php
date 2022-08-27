@@ -46,7 +46,9 @@
                                                     <td><?=$reservation->total_booking?>€</td>
                                                     <td class="text-right">
                                                         <a href="<?=ROOT?>admin/bookings?delete=<?=$reservation->id_booking?>" class="btn btn-round btn-danger btn-icon btn-sm"><i class="fas fa-times"></i></a>
-                                                        <a href="<?=ROOT?>admin/bookings?validate=<?=$reservation->id_booking?>" class="btn btn-round btn-success btn-icon btn-sm"><i style="font-size:15px;padding:8px;" class="fa-solid fa-check"></i></a>
+                                                        <?php if($reservation->validate == "En cours de validation"): ?>
+                                                            <a href="<?=ROOT?>admin/bookings?validate=<?=$reservation->id_booking?>" class="btn btn-round btn-success btn-icon btn-sm"><i style="font-size:15px;padding:8px;" class="fa-solid fa-check"></i></a>
+                                                        <?php endif;?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
