@@ -5,53 +5,72 @@ class Booking_room{
     private $error = "";
 
     // Fonction pour vérifier si les données de la reservation sont valides.
-    public function validate($POST,$days){
-        // Si l'input name est vide on ajoute un message d'erreur dans la variable privé error 
+    public function validate($POST,$days, $disable_dates, $between_post){
+        // Si l'input name est vide on ajoute un message d'erreur dans la variable privé error.
         if(empty($POST['name'])){
             $this->error .= "Veuillez entrer un nom de partenaire valide. <br>";
         }
 
-        // Si l'input firstname est vide on ajoute un message d'erreur dans la variable privé error 
+        // Si l'input firstname est vide on ajoute un message d'erreur dans la variable privé error.
         if(empty($POST['firstname'])){
             $this->error .= "Veuillez entrer un prénom valide. <br>";
         }
 
-        // Si l'input email est vide on ajoute un message d'erreur dans la variable privé error 
+        // Si l'input email est vide on ajoute un message d'erreur dans la variable privé error. 
         if(empty($POST['email'])){
             $this->error .= "Veuillez entrer une adresse email valide. <br>";
         }
 
-        // Si les input email ne correspondent pas on ajoute un message d'erreur dans la variable privé error 
+        // Si les input email ne correspondent pas on ajoute un message d'erreur dans la variable privé error. 
         if($POST['email'] != $POST['email2']){
             $this->error .= "Les adresses emails ne correspondent pas. <br>";
         }
-        
-        // Si l'input phone est vide on ajoute un message d'erreur dans la variable privé error 
+
+        // Si l'input phone est vide on ajoute un message d'erreur dans la variable privé error. 
         if(empty($POST['phone'])){
             $this->error .= "Veuillez entrer un numéro de téléphone valide. <br>";
         }
 
-        // Si l'input checkin est vide on ajoute un message d'erreur dans la variable privé error 
+        // Si l'input checkin est vide on ajoute un message d'erreur dans la variable privé error. 
         if(empty($POST['checkin'])){
             $this->error .= "Veuillez entrer une date d'arrivé valide. <br>";
         }
 
-        // Si l'input checkin est vide on ajoute un message d'erreur dans la variable privé error 
-        if(empty($POST['checkout'] || $POST['checkout'] < $POST['checkin'])){
+        // Si l'input checkin est vide on ajoute un message d'erreur dans la variable privé error. 
+        if(empty($POST['checkout'])){
             $this->error .= "Veuillez entrer une date de départ valide. <br>";
         }
 
-        // Si l'input persons est égale à 0 on ajoute un message d'erreur dans la variable privé error 
+        // Fais un seul tableau avec toutes les dates déjà réservée. 
+        $d = array();
+        foreach($disable_dates as $disable){
+            foreach($disable as $data){
+                $d[] = $data;
+            }
+        }
+
+        // Vérifie si il y a des dates en commun avec la fct PHP qui compare les deux tableaux. 
+        $result = array_intersect($between_post,$d);
+
+        // Si des dates sont communes on envoie le message que les dates sont indisponible. 
+        if(!empty($result)){
+            $this->error .= "Les dates de votre séjour ne sont pas disponible.<br>";
+        } 
+
+        // Si l'input persons est égale à 0 et que le post est bien de type numérique on ajoute un message d'erreur dans la variable privé error 
         if($POST['persons'] == 0 || !is_numeric($POST['persons'])){
             $this->error .= "Veuillez sélectionner un nombre de personne valide. <br>";
         }
-        
+
         // Si le nombre de jours est inférieur à 0 on ajoute un message d'erreur. 
         if($days <= 0 ){
             $this->error .= "Les dates que vous avez choisi ne sont pas valide. Veuillez entrer un intervalle de date correct.";
         }
 
-        $data['demand'] = $POST['demand'];
+        // Vérifie si l'input 'demand' est remplie ou non 
+        if(!empty($POST['demand'])){
+            $data['demand'] = $POST['demand'];
+        }
 
         // Si il n'y à pas d'erreur on redirige vers 
         if($this->error == ""){

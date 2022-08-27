@@ -38,7 +38,7 @@ class Home extends Controller{
         $data['phone'] = $Socials->get_one("Téléphone");
         $data['email'] = $Socials->get_one("Email");
         $data['youtube'] = $Socials->get_one("Vidéo Youtube");
-
+        
         $data['page_title'] = "Accueil";
         $this->view("index", $data);
     }

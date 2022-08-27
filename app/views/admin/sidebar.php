@@ -28,7 +28,7 @@
                 <li <?=(isset($current_page) && $current_page == "Litteries") ? ' class="active" ' : ""; ?>>
                     <a href="<?=ROOT?>admin/beddings">
                     <i class="fa-solid fa-bed"></i>
-                    <p>Litteries</p>
+                    <p>Literies</p>
                     </a>
                 </li>
                 <li <?=(isset($current_page) && $current_page == "Aménagements") ? ' class="active" ' : ""; ?>>
@@ -58,7 +58,7 @@
                         <ul class="nav">
                             <li>
                                 <a href="<?=ROOT?>admin/sliders">
-                                    <span class="sidebar-normal">Carousel</span>
+                                    <span class="sidebar-normal">Carrousel</span>
                                 </a>
                             </li>
                             <li>

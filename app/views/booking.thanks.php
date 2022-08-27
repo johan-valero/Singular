@@ -12,6 +12,11 @@
                 </div>
             </div>
             <div style="text-align:center;margin: 200px 0px 200px 0px;">
+                <ul class="breadcrumb" style="justify-content:center;align-items:center">
+                    <li class="breadcrumb-item">Réservation</li>
+                    <li class="breadcrumb-item">Récapitulatif</li>
+                    <li class="breadcrumb-item active">Validation</li>
+                </ul>
                 <h5>Merci pour votre réservation.</h5>
                 <h8>Vous recevrez un email sous 48h avec tous les détails de votre séjour.</h8>
                 <div style="text-align:center;"><br>

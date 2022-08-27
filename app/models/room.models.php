@@ -68,6 +68,10 @@ class Room{
             $query .= " WHERE ";
         }
 
+        if(isset($GET['persons'])){
+            $query .= " rooms.persons = '$GET[persons]' AND ";
+        }
+
         if(isset($GET['categories'])){
             $query .= " categories.id_category = '$GET[categories]' AND ";
         }

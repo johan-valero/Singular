@@ -31,6 +31,7 @@
                         <?php endif;?>
                     </div>
                     <div class="col-md-12" style="display:flex;flex-wrap:inherit;">
+
                         <!-- affichage des logements -->
                         <?php if(isset($rooms) && is_array($rooms)):?>
                             <?php foreach($rooms as $room):?>
@@ -38,8 +39,9 @@
                                     <?php $this->view('rooms.inc',$room)?>
                                 </div>
                             <?php endforeach; ?>
+
                         <!-- Affichage des catégories -->
-                        <?php elseif(isset($categories) && is_array($categories)): ?>
+                        <?php elseif(isset($_GET['categories']) && isset($categories) && is_array($categories)): ?>
                             <?php foreach($categories as $category): ?>
                                 <div class="col-md-4">
                                     <div class="item" style="text-align:center;">
@@ -51,7 +53,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php endforeach;?>    
+                            <?php endforeach;?>  
+
                         <!-- Cas ou il n'y a aucun resultats -->
                         <?php else: ?>
                             <div class="col-md-4">

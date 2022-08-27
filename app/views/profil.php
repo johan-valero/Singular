@@ -157,7 +157,7 @@
                                                     <td><?=$reservation->id_booking?></td>
                                                     <td><?=date('d/m/Y', strtotime($reservation->date_booking))?></td>
                                                     <td>Du <?=date('d/m/Y',strtotime($reservation->check_in))?> au <?=date('d/m/Y',strtotime($reservation->check_out))?></td>
-                                                    <td><?=$reservation->name_room?></td>
+                                                    <td><a target="_blank" href="<?=ROOT.'room_details/'.$reservation->slug?>"><?=$reservation->name_room?></a></td>
                                                     <td><img src="<?=$reservation->img_room?>" style="width:80px;height:80px;"></td>
                                                     <td><?=$reservation->price_room?>€/nuits</td>
                                                     <td>Pour <?=$reservation->persons?> personnes</td>

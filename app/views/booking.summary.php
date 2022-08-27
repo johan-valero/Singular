@@ -24,6 +24,11 @@
                                     <tr>
                                         <td>
                                             <div class="text">
+                                                <ul class="breadcrumb">
+                                                    <li class="breadcrumb-item">Réservation</li>
+                                                    <li class="breadcrumb-item active">Récapitulatif</li>
+                                                    <li class="breadcrumb-item">Validation</li>
+                                                </ul>
                                                 <h4>Veuillez-vérifiez les informations relatives à votre réservation.</h4>
                                             </div>
                                         </td>

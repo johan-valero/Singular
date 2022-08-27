@@ -58,3 +58,17 @@ function str_to_slug($name){
     $name = preg_replace('~[^-a-z0-9_]+~', '', $name);
     return $name;
 }
+
+// Récupére toutes les dates entre 2
+function get_between_dates($checkin, $checkout){
+    $all_dates = [];
+    $checkin = strtotime($checkin);
+    $checkout = strtotime($checkout);
+    for ($currentDate = $checkin; 
+        $currentDate <= $checkout; 
+        $currentDate += (86400)) {
+        $date = date('Y-m-d', $currentDate);
+        $all_dates[] = $date;
+    }
+    return $all_dates;
+}

@@ -1,62 +1,6 @@
 <?php $this->view("header", $data); ?>
 <?php $this->view("slider", $data); ?>
 
-    <!-- Booking Search -->
-    <?php if(isset($sliders)&& is_array($sliders)):?>
-        <div class="booking-wrapper">
-            <div class="container">
-                <div class="booking-inner clearfix">
-                    <form action="<?=ROOT."rooms"?>" class="form1 clearfix" method="GET">
-                        <div class="col1 c1">
-                            <div class="input1_wrapper">
-                                <label>Arrivée</label>
-                                <div class="input1_inner">
-                                    <input type="date" class="form-control input" placeholder="Arrivée" name="checkin">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col1 c2">
-                            <div class="input1_wrapper">
-                                <label>Départ</label>
-                                <div class="input1_inner">
-                                    <input type="date" class="form-control" placeholder="départ" name="checkout">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col2 c3">
-                            <div class="select1_wrapper">
-                                <label>Nombre de personnes <span style="color:#CD701C;">*</span></label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%" name="persons">
-                                        <?php for ($i = 0; $i <= 10; $i++): ?>
-                                            <option value=<?=$i?> <?= isset($_POST['persons']) && $_POST['persons'] == $i ? 'selected = "selected"' : "" ;?> ><?=$i > 1 ? $i. ' personnes' : $i. ' personne' ?></option>
-                                        }
-                                        <?php endfor; ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col2 c4">
-                            <div class="select1_wrapper">
-                                <label>Logements</label>
-                                <div class="select1_inner">
-                                    <select class="select2 select" style="width: 100%" name="category">
-                                    <option>-- Catégorie --</option>
-                                    <?php foreach($categories as $category):?>
-                                        <option value="<?=$category->id_category?>" <?= isset($_GET['categories']) && $_GET['categories'] == $category->id_category ? 'selected = "selected"' : "" ;?> ><?=$category->name_category?></option>
-                                    <?php endforeach;?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col3 c5">
-                            <button type="submit" class="btn-form1-submit">Réserver</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
     <!-- About -->
     <section class="about section-padding">
         <div class="container">
@@ -79,6 +23,84 @@
             </div>
         </div>
     </section>
+
+    <!-- Reservation & Booking Form -->
+    <section class="testimonials">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="uploads/mountain.jpg" data-overlay-dark="2">
+            <div class="container">
+                <div class="row">
+                    <!-- Reservation -->
+                    <div class="col-md-5 mb-30 mt-30">
+                        <h5>Pour toutes informations relatives à vos réservation ou tout autres demandes contactez-nous !</h5>
+                        <div class="reservations mb-30">
+                            <div class="icon color-1"><span><i class="fa-solid fa-phone"></i></span></div>
+                            <div class="text">
+                                <p class="color-1">Téléphone</p> <a class="color-1" href="tel:<?=$phone->value?>"><?=$phone->value?></a>
+                            </div>
+                        </div>
+                        <div class="reservations mb-30">
+                            <div class="icon color-1"><span><i class="fa-solid fa-envelope"></i></span></div>
+                            <div class="text">
+                                <p class="color-1">Adresse email</p> <a class="color-1" href="tel:<?=$email->value?>"><?=$email->value?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Booking From -->
+                    <div class="col-md-5 offset-md-2">
+                        <div class="booking-box">
+                            <div class="head-box">
+                                <h6>Singular</h6>
+                                <h4>Formulaire de réservation</h4>
+                            </div>
+                            <div class="booking-inner clearfix">
+                                <form action="rooms">
+                                    <div class="row">
+                                        <div class="col-md-12 form-group">
+                                            <label>Date d'arrivée</label>
+                                            <div>
+                                                <input style="width:100%;border:none;padding:10px;color:#666;text-align:center;" type="date" placeholder="Arrivée" name="checkin" min="<?=date("Y-m-d")?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                            <label>Date de départ</label>
+                                            <div>
+                                                <input style="width:100%;border:none;padding:10px;color:#666;text-align:center;" type="date" placeholder="Départ" name="checkout" min="<?=date("Y-m-d")?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div>
+                                                <label>Personnes</label>
+                                                <select name="persons" style="width:100%;" required>
+                                                    <?php for ($i = 0; $i <= 10; $i++): ?>
+                                                        <option value=<?=$i?> <?= isset($_POST['persons']) && $_POST['persons'] == $i ? 'selected = "selected"' : "" ;?> ><?=$i > 1 ? $i. ' personnes' : $i. ' personne' ?></option>
+                                                    }
+                                                    <?php endfor; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <div>
+                                                <label>Catégories</label>
+                                                <select name="categories" style="width:100%;" required>
+                                                    <?php foreach($categories as $category):?>
+                                                        <option value="<?=$category->id_category?>" <?= isset($_GET['categories']) && $_GET['categories'] == $category->id_category ? 'selected = "selected"' : "" ;?> ><?=$category->name_category?></option>
+                                                    <?php endforeach;?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn-form1-submit mt-15" name="filter">Rechercher</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Catégories -->
     <?php if(isset($categories) && is_array($categories)): ?>
         <section class="news section-padding bg-black">

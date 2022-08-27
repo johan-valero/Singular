@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
+
     <!-- Formulaire de réservation -->
     <section class="section-padding">
         <div class="container">
@@ -111,6 +112,11 @@
                                 </div>
                             </div>
                             <div class="col-md-8" >
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item active"><a href="<?=ROOT.'booking/'.$details->slug?>"><?=$page_title?></a></li>
+                                    <li class="breadcrumb-item">Récapitulatif</li>
+                                    <li class="breadcrumb-item">Validation</li>
+                                </ul>
                                 <div class="booking-box" style="padding:15px;">
                                     <div class="head-box">
                                         <h4>Informations personnelles</h4>
@@ -148,7 +154,7 @@
                                         </div>
                                         <div class="head-box" style="padding-top: 25px;">
                                             <h4>Réservation</h4>
-                                            <p>La durée de votre séjour ne peut pas être inférieur à 2 nuits. Il s'agit d'une pré-réservation le paiement se fera auprès de l'établissement concerné lors de votre arrivé sur les lieux.</p>
+                                            <p>Il s'agit d'une pré-réservation le paiement se fera auprès de l'établissement concerné lors de votre arrivé sur les lieux.</p>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
