@@ -164,7 +164,7 @@
                                     <button class="btn-custom btn-primary-custom" type="reset">Réinitialiser</button>
                                 </form>
                             </div>
-                        <?php elseif($mode == "delete" && isset($partners)): ?>
+                        <?php elseif($mode == "delete" && isset($sliders)): ?>
                             <div class="card-header" style=display:flex;justify-content:space-between;>
                                 <h5 class="title">Supprimer un carousel</h5>
                                 <a href="<?=ROOT?>admin/sliders" style="cursor:pointer;"><i style="font-size:20px;" class="fa-solid fa-xmark"></i></a>
@@ -189,10 +189,10 @@
                                                 <img src="<?=ROOT.$sliders->img ?>" alt='img partner' style="width:50px;height:50px;object-fit:cover;">
                                             </td>
                                         </tr>
-                                        <a href="<?=ROOT?>admin/partners?delete_confirmed=<?=$sliders->id_slider?>">
+                                        <a href="<?=ROOT?>admin/sliders?delete_confirmed=<?=$sliders->id_slider?>">
                                             <input class="btn-custom btn-primary-custom" value="Supprimer"/>
                                         </a>
-                                        <a href="<?=ROOT?>admin/partners">
+                                        <a href="<?=ROOT?>admin/sliders">
                                             <input class="btn-custom btn-primary-custom" value="Annuler"/>
                                         </a>
                                     </tbody>
