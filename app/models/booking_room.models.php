@@ -67,11 +67,6 @@ class Booking_room{
             $this->error .= "Les dates que vous avez choisi ne sont pas valide. Veuillez entrer un intervalle de date correct.";
         }
 
-        // Vérifie si l'input 'demand' est remplie ou non 
-        if(!empty($POST['demand'])){
-            $data['demand'] = $POST['demand'];
-        }
-
         // Si il n'y à pas d'erreur on redirige vers 
         if($this->error == ""){
             redirect("booking/summary");
