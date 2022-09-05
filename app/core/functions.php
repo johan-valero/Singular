@@ -72,3 +72,14 @@ function get_between_dates($checkin, $checkout){
     }
     return $all_dates;
 }
+
+
+// // Récupére toutes les dates entre 2
+// function get_between_dates($checkin, $checkout){
+//     $dates = [];
+//     for($i = strtotime($checkin); $i <= strtotime($checkout); $i += (86400)) {
+//         $date = date('Y-m-d', $i);
+//         $dates[] = $date;
+//     }
+//     return $dates;
+// }

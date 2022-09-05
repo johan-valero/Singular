@@ -13,7 +13,7 @@ class Room{
         where slug = :slug", ['slug'=>$slug]);
     }
 
-    // Affichage des 4 derniers logementsen incluant la catégorie pour le template des cards
+    // Affichage des 4 derniers logements en incluant la catégorie pour le template des cards
     public function get_last(){
         $DB = Database::newInstance();
         return $DB->read("select * from rooms 
